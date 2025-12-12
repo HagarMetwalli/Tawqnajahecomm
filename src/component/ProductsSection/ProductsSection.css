@@ -21,14 +21,14 @@
     text-decoration: none;
 }
 
-.customer-products-grid {
+/* .customer-products-grid {
      margin-top: 25px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     direction: rtl;
     margin-bottom: 42px;
-}
+} */
 
 .customer-product-card {
     background: #fff;

@@ -46,390 +46,140 @@ import market4 from "../../assets/market4.jpg";
 import star from "../../assets/Star 3.png";
 import carticon from "../../assets/whitecarts.png";
 
+
+const sections = [
+  {
+    title: "الملابس",
+    products: [
+      { id: 1, img: item1, name: "بلوزة صوف", desc: "دفء وأناقة", oldPrice: 450, price: 250, rate: 4.9, discount: 20 },
+      { id: 2, img: item2, name: "تيشيرت شتوي", desc: "خامة ثقيلة", oldPrice: 400, price: 240, rate: 4.8, discount: 20 },
+      { id: 3, img: item3, name: "بنطلون كلاسيك", desc: "ستايل فورمال", oldPrice: 500, price: 299, rate: 4.9, discount: 40 },
+      { id: 4, img: item1, name: "جاكيت شتوي", desc: "مقاوم للبرد", oldPrice: 600, price: 399, rate: 4.7, discount: 35 },
+    ],
+  },
+
+  {
+    title: "الإلكترونيات",
+    products: [
+      { id: 5, img: airpods, name: "سماعات بلوتوث", desc: "صوت نقي", oldPrice: 300, price: 220, rate: 4.9, discount: 25 },
+      { id: 6, img: watch, name: "ساعة ذكية", desc: "متابعة صحية", oldPrice: 500, price: 380, rate: 4.8, discount: 20 },
+      { id: 7, img: keyboard, name: "كيبورد RGB", desc: "إضاءة احترافية", oldPrice: 250, price: 180, rate: 4.7, discount: 20 },
+      { id: 8, img: laptop, name: "لابتوب عملي", desc: "أداء قوي", oldPrice: 3500, price: 2999, rate: 4.9, discount: 15 },
+    ],
+  },
+
+  {
+    title: "الأثاث",
+    products: [
+      { id: 9, img: furn1, name: "كرسي مريح", desc: "تصميم عصري", oldPrice: 400, price: 299, rate: 4.8, discount: 25 },
+      { id: 10, img: furn2, name: "طاولة قهوة", desc: "خشب طبيعي", oldPrice: 500, price: 350, rate: 4.9, discount: 30 },
+      { id: 11, img: furn3, name: "كنبة فاخرة", desc: "3 مقاعد", oldPrice: 1500, price: 1199, rate: 5.0, discount: 20 },
+      { id: 12, img: furn4, name: "وحدة تخزين", desc: "مودرن", oldPrice: 800, price: 599, rate: 4.7, discount: 20 },
+    ],
+  },
+
+  {
+    title: "المطبخ",
+    products: [
+      { id: 13, img: kitchen1, name: "خلاط كهربائي", desc: "قوة عالية", oldPrice: 300, price: 199, rate: 4.9, discount: 20 },
+      { id: 14, img: kitchen2, name: "مقلاة جرانيت", desc: "غير لاصقة", oldPrice: 200, price: 150, rate: 4.8, discount: 25 },
+      { id: 15, img: kitchen3, name: "غلاية كهربائية", desc: "سعة كبيرة", oldPrice: 180, price: 130, rate: 4.7, discount: 20 },
+      { id: 16, img: kitchen4, name: "طقم أواني", desc: "خامة ممتازة", oldPrice: 500, price: 380, rate: 4.8, discount: 20 },
+    ],
+  },
+
+  {
+    title: "الألعاب",
+    products: [
+      { id: 17, img: game1, name: "لعبة تركيب", desc: "تنمية الذكاء", oldPrice: 80, price: 55, rate: 4.9, discount: 20 },
+      { id: 18, img: game2, name: "سيارة تحكم", desc: "سرعة عالية", oldPrice: 150, price: 110, rate: 4.8, discount: 25 },
+      { id: 19, img: game3, name: "دمية أطفال", desc: "ناعمة", oldPrice: 60, price: 40, rate: 4.7, discount: 20 },
+      { id: 20, img: game4, name: "لعبة ذكاء", desc: "تركيز أعلى", oldPrice: 90, price: 65, rate: 4.9, discount: 20 },
+    ],
+  },
+
+  {
+    title: "الصحة",
+    products: [
+      { id: 21, img: health1, name: "ميزان ذكي", desc: "دقة عالية", oldPrice: 250, price: 180, rate: 4.8, discount: 20 },
+      { id: 22, img: health2, name: "جهاز مساج", desc: "راحة فورية", oldPrice: 300, price: 230, rate: 5.0, discount: 25 },
+      { id: 23, img: health3, name: "جهاز بخار", desc: "نضارة البشرة", oldPrice: 200, price: 150, rate: 4.7, discount: 20 },
+      { id: 24, img: health4, name: "فرشاة كهربائية", desc: "تنظيف عميق", oldPrice: 180, price: 130, rate: 4.8, discount: 20 },
+    ],
+  },
+
+  {
+    title: "السوق",
+    products: [
+      { id: 25, img: market1, name: "منتج غذائي", desc: "جودة ممتازة", oldPrice: 30, price: 20, rate: 4.6, discount: 15 },
+      { id: 26, img: market2, name: "سلعة يومية", desc: "طازجة", oldPrice: 25, price: 18, rate: 4.7, discount: 20 },
+      { id: 27, img: market3, name: "منظف منزلي", desc: "قوة تنظيف", oldPrice: 40, price: 28, rate: 4.8, discount: 30 },
+      { id: 28, img: market4, name: "مستلزمات", desc: "اقتصادي", oldPrice: 20, price: 14, rate: 4.7, discount: 15 },
+    ],
+  },
+];
+
 export default function ProductsSection() {
   const navigate = useNavigate();
 
-  const sections = [
-    // ✅ الملابس
-    {
-      title: "الملابس",
-      products: [
-        {
-          id: 1,
-          img: item1,
-          name: "بلوزة صوف",
-          desc: "دفء وأناقة",
-          oldPrice: 450,
-          price: 250,
-          rate: 4.9,
-          discount: 20,
-        },
-        {
-          id: 2,
-          img: item2,
-          name: "تيشيرت شتوي",
-          desc: "خامة ثقيلة",
-          oldPrice: 400,
-          price: 240,
-          rate: 4.8,
-          discount: 20,
-        },
-        {
-          id: 3,
-          img: item3,
-          name: "بنطلون كلاسيك",
-          desc: "ستايل فورمال",
-          oldPrice: 500,
-          price: 299,
-          rate: 4.9,
-          discount: 40,
-        },
-        {
-          id: 4,
-          img: item1,
-          name: "جاكيت شتوي",
-          desc: "مقاوم للبرد",
-          oldPrice: 600,
-          price: 399,
-          rate: 4.7,
-          discount: 35,
-        },
-      ],
-    },
-
-    // ✅ الإلكترونيات
-    {
-      title: "الإلكترونيات",
-      products: [
-        {
-          id: 5,
-          img: airpods,
-          name: "سماعات بلوتوث",
-          desc: "صوت نقي",
-          oldPrice: 300,
-          price: 220,
-          rate: 4.9,
-          discount: 25,
-        },
-        {
-          id: 6,
-          img: watch,
-          name: "ساعة ذكية",
-          desc: "متابعة صحية",
-          oldPrice: 500,
-          price: 380,
-          rate: 4.8,
-          discount: 20,
-        },
-        {
-          id: 7,
-          img: keyboard,
-          name: "كيبورد RGB",
-          desc: "تصميم احترافي",
-          oldPrice: 250,
-          price: 180,
-          rate: 4.7,
-          discount: 20,
-        },
-        {
-          id: 8,
-          img: laptop,
-          name: "لابتوب عملي",
-          desc: "أداء قوي",
-          oldPrice: 3500,
-          price: 2999,
-          rate: 4.9,
-          discount: 15,
-        },
-      ],
-    },
-
-    // ✅ الأثاث
-    {
-      title: "الأثاث",
-      products: [
-        {
-          id: 9,
-          img: furn1,
-          name: "كرسي مريح",
-          desc: "تصميم عصري",
-          oldPrice: 400,
-          price: 299,
-          rate: 4.8,
-          discount: 25,
-        },
-        {
-          id: 10,
-          img: furn2,
-          name: "طاولة قهوة",
-          desc: "خشب طبيعي",
-          oldPrice: 500,
-          price: 350,
-          rate: 4.9,
-          discount: 30,
-        },
-        {
-          id: 11,
-          img: furn3,
-          name: "كنبة فاخرة",
-          desc: "3 مقاعد",
-          oldPrice: 1500,
-          price: 1199,
-          rate: 5.0,
-          discount: 20,
-        },
-        {
-          id: 12,
-          img: furn4,
-          name: "وحدة تخزين",
-          desc: "مودرن",
-          oldPrice: 800,
-          price: 599,
-          rate: 4.7,
-          discount: 20,
-        },
-      ],
-    },
-
-    // ✅ المطبخ
-    {
-      title: "المطبخ",
-      products: [
-        {
-          id: 13,
-          img: kitchen1,
-          name: "خلاط كهربائي",
-          desc: "قوة عالية",
-          oldPrice: 300,
-          price: 199,
-          rate: 4.9,
-          discount: 20,
-        },
-        {
-          id: 14,
-          img: kitchen2,
-          name: "مقلاة جرانيت",
-          desc: "غير لاصقة",
-          oldPrice: 200,
-          price: 150,
-          rate: 4.8,
-          discount: 25,
-        },
-        {
-          id: 15,
-          img: kitchen3,
-          name: "غلاية كهربائية",
-          desc: "سعة كبيرة",
-          oldPrice: 180,
-          price: 130,
-          rate: 4.7,
-          discount: 20,
-        },
-        {
-          id: 16,
-          img: kitchen4,
-          name: "طقم أواني",
-          desc: "خامة ممتازة",
-          oldPrice: 500,
-          price: 380,
-          rate: 4.8,
-          discount: 20,
-        },
-      ],
-    },
-
-    // ✅ الألعاب
-    {
-      title: "الألعاب",
-      products: [
-        {
-          id: 17,
-          img: game1,
-          name: "لعبة تركيب",
-          desc: "تنمية الذكاء",
-          oldPrice: 80,
-          price: 55,
-          rate: 4.9,
-          discount: 20,
-        },
-        {
-          id: 18,
-          img: game2,
-          name: "سيارة تحكم",
-          desc: "سرعة عالية",
-          oldPrice: 150,
-          price: 110,
-          rate: 4.8,
-          discount: 25,
-        },
-        {
-          id: 19,
-          img: game3,
-          name: "دمية أطفال",
-          desc: "ناعمة",
-          oldPrice: 60,
-          price: 40,
-          rate: 4.7,
-          discount: 20,
-        },
-        {
-          id: 20,
-          img: game4,
-          name: "لعبة ذكاء",
-          desc: "تركيز أعلى",
-          oldPrice: 90,
-          price: 65,
-          rate: 4.9,
-          discount: 20,
-        },
-      ],
-    },
-
-    // ✅ الصحة
-    {
-      title: "الصحة",
-      products: [
-        {
-          id: 21,
-          img: health1,
-          name: "ميزان ذكي",
-          desc: "دقة عالية",
-          oldPrice: 250,
-          price: 180,
-          rate: 4.8,
-          discount: 20,
-        },
-        {
-          id: 22,
-          img: health2,
-          name: "جهاز مساج",
-          desc: "راحة فورية",
-          oldPrice: 300,
-          price: 230,
-          rate: 5.0,
-          discount: 25,
-        },
-        {
-          id: 23,
-          img: health3,
-          name: "جهاز بخار",
-          desc: "نضارة البشرة",
-          oldPrice: 200,
-          price: 150,
-          rate: 4.7,
-          discount: 20,
-        },
-        {
-          id: 24,
-          img: health4,
-          name: "فرشاة كهربائية",
-          desc: "تنظيف عميق",
-          oldPrice: 180,
-          price: 130,
-          rate: 4.8,
-          discount: 20,
-        },
-      ],
-    },
-
-    // ✅ السوق
-    {
-      title: "السوق",
-      products: [
-        {
-          id: 25,
-          img: market1,
-          name: "منتج غذائي",
-          desc: "جودة ممتازة",
-          oldPrice: 30,
-          price: 20,
-          rate: 4.6,
-          discount: 15,
-        },
-        {
-          id: 26,
-          img: market2,
-          name: "سلعة يومية",
-          desc: "طازجة",
-          oldPrice: 25,
-          price: 18,
-          rate: 4.7,
-          discount: 20,
-        },
-        {
-          id: 27,
-          img: market3,
-          name: "منظف منزلي",
-          desc: "قوة تنظيف",
-          oldPrice: 40,
-          price: 28,
-          rate: 4.8,
-          discount: 30,
-        },
-        {
-          id: 28,
-          img: market4,
-          name: "مستلزمات",
-          desc: "اقتصادي",
-          oldPrice: 20,
-          price: 14,
-          rate: 4.7,
-          discount: 15,
-        },
-      ],
-    },
-  ];
-
   return (
-    <div className="products-wrapper">
+    <div className="products-wrapper container">
+
       {sections.map((sec, index) => (
-        <div key={index}>
-          <div className="customer-products-header container ">
+        <div key={index} className="mt-2">
+
+          {/* عنوان القسم */}
+          <div className="customer-products-header">
             <h2 className="customer-products-title">{sec.title}</h2>
-            <span className="customer-view-more">{/* رؤية المزيد */}</span>
+            <span className="customer-view-more">رؤية المزيد</span>
           </div>
 
-          <div className="customer-products-grid productssection container">
+          {/* الكروت Bootstrap Responsive */}
+          <div className="row g-4 ">
             {sec.products.map((p) => (
-              <ProductCard key={p.id} p={p} navigate={navigate} />
+              <div
+                key={p.id}
+                className="col-12 col-sm-6 col-md-4 col-lg-3"
+              >
+                <ProductCard p={p} navigate={navigate} />
+              </div>
             ))}
           </div>
         </div>
       ))}
+
     </div>
   );
 }
 
-// ✅ الكارد كما هو بدون أي تغيير
+/* ----------------------------------------------------------
+      Component: Product Card
+------------------------------------------------------------- */
+
 function ProductCard({ p, navigate }) {
   return (
     <Link
       to="/productssection"
       state={{ product: p }}
-      className="customer-product-card  mb-md-5 "
+      className="customer-product-card d-block"
       style={{ textDecoration: "none", color: "inherit" }}
     >
-      <div className="customer-discount ">{p.discount}%</div>
+      <div className="customer-discount">{p.discount}%</div>
 
       <img src={p.img} className="customer-product-img" alt={p.name} />
 
-      <div className="heart">
-        <i className="fa fa-heart heart-icon position-absolute" />
-      </div>
+      <i className="fa fa-heart heart-icon position-absolute" />
 
-      <div className="d-flex justify-content-around gap-5">
+      <div className="d-flex justify-content-between px-3 mt-2">
         <h3 className="customer-product-name">{p.name}</h3>
         <div className="customer-rate">
-          <img src={star} /> {p.rate}
+          <img src={star} alt="" /> {p.rate}
         </div>
       </div>
 
-      <p
-        className="customer-desc"
-        dangerouslySetInnerHTML={{ __html: p.desc }}
-      ></p>
+      <p className="customer-desc px-3">{p.desc}</p>
 
-      <div className="customer-price">
+      <div className="customer-price px-3">
         <span className="new">{p.price} ر.س</span>
         <span className="old">{p.oldPrice} ر.س</span>
       </div>
@@ -438,12 +188,11 @@ function ProductCard({ p, navigate }) {
         className="customer-add-btn"
         onClick={(e) => {
           e.preventDefault();
-          e.stopPropagation();
           navigate("/paymentpage");
         }}
       >
         <span className="carts">إضافة للعربة</span>
-        <img src={carticon} />
+        <img src={carticon} alt="cart" />
       </button>
     </Link>
   );

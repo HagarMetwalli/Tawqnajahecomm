@@ -53,23 +53,79 @@ export default function Navbar() {
           </div>
 
           {/* ✅ الروابط */}
-          <Nav className={`tn-nav-links ${menuOpen ? "open" : ""}`}>
-            <NavLink to="/home" className="tn-nav-link">الرئيسية</NavLink>
-            <NavLink to="/shopping" className="tn-nav-link">التسوق</NavLink>
-            <NavLink to="/confirmedorders" className="tn-nav-link">طلباتي</NavLink>
-            <NavLink to="/favorites" className="tn-nav-link">المفضلة</NavLink>
-            <NavLink to="/abouttawq" className="tn-nav-link">قالوا عن طوق نجاة</NavLink>
-            <NavLink to="/communitypartnerships" className="tn-nav-link">الشراكات المجتمعية
+   <Nav className={`tn-nav-links ${menuOpen ? "open" : ""}`}>
+  <NavLink 
+    to="/home" 
+    className="tn-nav-link"
+    onClick={() => setMenuOpen(false)}
+  >
+    الرئيسية
   </NavLink>
-  <NavLink to="/marketers" className="tn-nav-link">المسوّقين</NavLink>
-            <NavLink to="/sellers" className="tn-nav-link">
-            التجار
-</NavLink>
-            <NavLink to="/productssection" className="tn-nav-link">
-            عروض طوق نجاة
-</NavLink>
-          </Nav>
 
+  <NavLink 
+    to="/shopping" 
+    className="tn-nav-link"
+    onClick={() => setMenuOpen(false)}
+  >
+    التسوق
+  </NavLink>
+
+  <NavLink 
+    to="/confirmedorders" 
+    className="tn-nav-link"
+    onClick={() => setMenuOpen(false)}
+  >
+    طلباتي
+  </NavLink>
+
+  <NavLink 
+    to="/favorites" 
+    className="tn-nav-link"
+    onClick={() => setMenuOpen(false)}
+  >
+    المفضلة
+  </NavLink>
+
+  <NavLink 
+    to="/abouttawq" 
+    className="tn-nav-link"
+    onClick={() => setMenuOpen(false)}
+  >
+    قالوا عن طوق نجاة
+  </NavLink>
+
+  <NavLink 
+    to="/communitypartnerships" 
+    className="tn-nav-link"
+    onClick={() => setMenuOpen(false)}
+  >
+    الشراكات المجتمعية
+  </NavLink>
+
+  <NavLink 
+    to="/marketers" 
+    className="tn-nav-link"
+    onClick={() => setMenuOpen(false)}
+  >
+    المسوّقين
+  </NavLink>
+
+  <NavLink 
+    to="/sellers" 
+    className="tn-nav-link"
+    onClick={() => setMenuOpen(false)}
+  >
+    التجار
+  </NavLink>
+
+  <NavLink 
+    to="/productssection" 
+    className="tn-nav-link"
+    onClick={() => setMenuOpen(false)}
+  >
+    عروض طوق نجاة
+  </NavLink>
+</Nav>
           {/* ✅ زر الهامبرجر */}
           <button className="tn-nav-hamburger" onClick={toggleMenu}>☰</button>
 

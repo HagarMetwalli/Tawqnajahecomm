@@ -236,9 +236,9 @@ font-weight: bold;
 /* ===================== MOBILE & TABLET FIX ===================== */
 @media (max-width: 768px) {
 
-  .category-page {
+  /* .category-page {
         padding-top: 95%;
-  }
+  } */
 
   .category-page .row {
     flex-direction: column;

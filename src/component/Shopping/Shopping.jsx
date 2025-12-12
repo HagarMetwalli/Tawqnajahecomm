@@ -45,15 +45,15 @@ export default function Shopping() {
   ];
 
   return (
-    <div className="category-page">
+    <div className="category-page ">
       <div className="container">
         <div className="row">
 
           {/* ===== SIDEBAR ===== */}
-          <div className="col-md-3 filter-column">
+          <div className="col-md-3 filter-column pt-5">
             <div className="box">
 
-              <h3 className="sidebar-title">اختيار التصنيف</h3>
+              <h3 className="sidebar-title ">اختيار التصنيف</h3>
 
               {/* ✅ الفئة */}
               <div className="catsec">
@@ -152,7 +152,7 @@ export default function Shopping() {
           </div>
 
           {/* ===== PRODUCTS ===== */}
-          <div className="col-md-9 shopping-left">
+          <div className="col-md-9 shopping-left pt-5">
             <h1 className="breadcrumb-title">التسوق</h1>
             <p className="results">النتيجة 1 - 12 من 214526</p>
 
