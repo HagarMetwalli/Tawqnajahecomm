@@ -56,7 +56,7 @@ export default function ConfirmedOrders() {
             <div className="cards-wrapper mt-5">
               {orders.map((order, i) => (
                 <div key={i} className="corder-mobile-card">
-                  <img src={order.img} alt="" className="order-mobile-img" />
+                  <img src={order.img} alt="" className="corder-mobile-img " />
                   <div className="order-mobile-content">
                     <h3 className="corder-mobile-title">{order.title}</h3>
                     <p className="corder-mobile-desc">{order.desc}</p>

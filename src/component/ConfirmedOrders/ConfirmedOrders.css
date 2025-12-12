@@ -8,7 +8,6 @@
     padding: 0 27px;
     direction: rtl;
 }
-/* يمين الصفحة */
 .orders-right-tabs {
     display: flex;
     flex-direction: column;
@@ -55,7 +54,7 @@ font-weight: bold;
     margin-bottom: 25px;
 }
 
-.order-mobile-img {
+.corder-mobile-img {
   width: 95px;
   height: 95px;
   border-radius: 12px;
@@ -109,10 +108,18 @@ font-weight: bold;
   }
 }
 @media screen and (max-width:767px){
-
+  .corder-mobile-desc {
+    font-size: 13px;
+  }
+  .corder-mobile-img {
+        margin-top: 33px;
+  }
+.orders-page{
+  padding-top: 43px;
+}
 .orders-right-tabs .cright-btn{
           font-size: 19px;
-          margin-top:46%;
+          margin-top:2%;
 
 }
 .orders-right-tabs .cright-btn2{
