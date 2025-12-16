@@ -122,13 +122,13 @@ export default function ProductsSection() {
   const navigate = useNavigate();
 
   return (
-    <div className="products-wrapper ">
-      <div className="container ">
+    <div className="products-wrapper  mt-5 mb-5 pb-5">
+      <div className="container mb-5 pb-5">
         {sections.map((sec, index) => (
-          <section key={index} className="mt-5">
+          <section key={index} className="">
             {/* عنوان القسم */}
             <div className="customer-products-header ">
-              <h2 className="customer-products-title mt-5">{sec.title}</h2>
+              <h2 className="customer-products-title ">{sec.title}</h2>
               {/* <span className="customer-view-more">رؤية المزيد</span> */}
             </div>
 

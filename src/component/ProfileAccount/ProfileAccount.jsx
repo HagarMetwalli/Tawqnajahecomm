@@ -25,7 +25,7 @@ export default function ProfileAccount() {
   ];
 
   return (
-    <div className="profile-wrapper container" style={{ marginTop: "180px" }}>
+    <div className="profile-wrapper container" style={{ marginTop: "120px" }}>
 
       {/* ===== SIDEBAR ===== */}
       <div className="profilemarketing-sidebar acc-profile">
@@ -121,7 +121,7 @@ export default function ProfileAccount() {
     {/* خانة الرقم */}
     <input
       type="text"
-      className="phone-input"
+      className="phone-input mt-3"
       placeholder="789 456 123"
       value={phone}
       onChange={(e) => setPhone(e.target.value)}

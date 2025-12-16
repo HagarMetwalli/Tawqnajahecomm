@@ -131,6 +131,7 @@ font-size: 20px;
     width: 50%;
     padding: 4px 28px;
     text-align: center;
+    border-radius: 39px;
 }
 .installement{
         background-color: #FF580E;
@@ -140,7 +141,7 @@ font-size: 20px;
 
 }
 .installement img,.international img{
-      width: 8%;
+      width: 12%;
 }
 
 .international{
@@ -264,3 +265,275 @@ font-size: 20px;
   transform: scale(1.2);
 }
 
+/* Mobile Responsive (max-width: 767px) */
+@media (max-width: 767px) {
+  .product-page {
+    margin-top: 10%; /* Adjust top margin */
+    direction: rtl;
+    text-align: center; /* Ensure text is always centered */
+    padding: 0 20px; /* Add responsive padding for mobile */
+  }
+
+  .product-wrapper {
+    width: 100%; /* Full width for better mobile experience */
+    flex-direction: column; /* Stack product image and info vertically */
+    align-items: center; /* Center all content */
+    justify-content: center; /* Ensure alignment in smaller screens */
+    gap: 20px; /* Reduce spacing to optimize screen space */
+    margin-top: 25px; /* Adjust spacing */
+  }
+
+  .product-image-box {
+    width: 91%; /* Adjust image box to fit screen width */
+    height: auto; /* Dynamic height for proportional resizing */
+    max-width: 100%; /* Prevent overflowing beyond screen edges */
+    border-radius: 15px; /* Slightly reduced rounded corners */
+    overflow: hidden;
+  }
+
+  .main-image img {
+    width: 100%; /* Fill container width */
+    height: auto; /* Maintain image aspect ratio */
+  }
+
+  .product-info {
+    width: 100%; /* Expand info section to full width */
+    text-align: center; /* Center-align content */
+    gap: 15px; /* Adjust spacing between items */
+  }
+
+  .product-title {
+    font-size: 22px; /* Smaller font size for mobile */
+    font-weight: bold;
+  }
+
+  .price-row {
+    flex-direction: column; /* Stack price elements vertically */
+    align-items: center; /* Center-align for better visibility */
+    gap: 10px; /* Reduce spacing to fit mobile layout */
+    margin: 10px 0; /* Adjust vertical spacing */
+  }
+
+  .current-price,
+  .old-price,
+  .discount {
+    font-size: 18px; /* Reduce font size slightly for smaller screens */
+  }
+
+  .product-desc2 {
+    font-size: 14px; /* Maintain readability */
+    line-height: 22px; /* Adjust spacing between lines */
+    margin: 5px auto; /* Center description in mobile view */
+  }
+
+  .rating-row {
+    justify-content: center; /* Center rating elements */
+    gap: 10px; /* Adjust space between stars and numbers */
+  }
+
+  .rate-number {
+    font-size: 18px; /* Reduce rating number size */
+  }
+
+  .installement,
+  .international {
+    font-size: 16px; /* Resize buttons for smaller screens */
+    width: 100%; /* Stretch buttons to occupy full width */
+    padding: 8px; /* Reduce padding size */
+    text-align: center;
+    border-radius: 25px; /* Smaller rounding for better alignment */
+  }
+
+  .installement img,
+  .international img {
+    width: 12%; /* Scale down associated images */
+  }
+
+  .action.d-flex {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Add spacing between stacked buttons */
+  }
+
+  .share-box {
+    gap: 10px; /* Reduce spacing between icons */
+    font-size: 20px; /* Adjust font size */
+    justify-content: center; /* Center-align the icons */
+  }
+
+  .product-bottom-box {
+    padding: 15px; /* Adjust padding for compactness */
+    margin-top: 20px;
+  }
+
+  .seller-box {
+    flex-direction: column; /* Stack seller image and info vertically */
+    gap: 15px; /* Ensure spacing for elements */
+    text-align: center; /* Center content alignment */
+    margin: 20px 0; /* Reduce vertical spacing */
+  }
+
+  .seller-img {
+    width: 60px; /* Reduce seller image size */
+    height: 60px;
+  }
+
+  .share-icons {
+    justify-content: center; /* Center share icons */
+    gap: 12px; /* Adjust gap between icons */
+  }
+
+  .share-icons img {
+    width: 24px; /* Scale down icons */
+  }
+
+  /* Product Rating Section */
+  .rate-title {
+    font-size: 18px; /* Adjust rating title font size */
+    text-align: center; /* Center the title */
+  }
+
+  .stars {
+    font-size: 28px; /* Reduce star size */
+    justify-content: center; /* Center the stars */
+  }
+
+  .stars img {
+    width: 25px; /* Scale down star icons */
+    margin: 0 5px; /* Adjust margin between stars */
+  }
+}
+/* Tablet Responsive (max-width: 768px) */
+@media (max-width: 768px) {
+  .product-page {
+    margin-top: 10%; /* Reduce top margin for tablets */
+    direction: rtl;
+    text-align: center; /* Center-align text */
+    padding: 0 30px; /* Add padding on both sides */
+  }
+
+  .product-wrapper {
+    width: 100%; /* Stretch to full width */
+    flex-direction: column; /* Stack product image and info vertically */
+    align-items: center; /* Center all elements */
+    gap: 30px; /* Add balanced spacing between sections */
+    margin-top: 20px; /* Reduce top spacing */
+  }
+
+  .product-image-box {
+    width: 85%; /* Adjust width for full tablet display */
+    height: auto; /* Let the height adjust dynamically */
+    border-radius: 15px; /* Slightly rounded corners for tablet */
+    overflow: hidden;
+  }
+
+  .main-image img {
+    width: 100%; /* Ensure the product image fills its container */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .product-info {
+    width: 100%; /* Make product info use full width */
+    text-align: center; /* Center-align the text */
+    gap: 20px; /* Increase spacing for tablet readability */
+  }
+
+  .product-title {
+    font-size: 24px; /* Slightly larger font size for tablets */
+    font-weight: bold;
+  }
+
+  .price-row {
+    flex-direction: row; /* Utilize horizontal layout on tablet */
+    justify-content: center; /* Center price elements */
+    gap: 15px; /* Balance spacing */
+    margin: 10px 0; /* Adjust spacing */
+  }
+
+  .current-price,
+  .old-price,
+  .discount {
+    font-size: 20px; /* Maintain readable price size */
+  }
+
+  .product-desc2 {
+    font-size: 16px; /* Slightly larger font for the tablet */
+    line-height: 24px; /* Adjust spacing for readability */
+    margin: 5px auto; /* Center text */
+  }
+
+  .rating-row {
+    justify-content: center; /* Center the rating stars */
+    gap: 12px; /* Slightly reduced gap */
+  }
+
+  .rate-number {
+    font-size: 20px; /* Keep numeric rating size readable */
+  }
+
+  .installement,
+  .international {
+    font-size: 18px; /* Adjust text size for visibility */
+    width: 45%; /* Buttons fit side-by-side */
+    padding: 12px; /* Slightly larger padding for tap area */
+    text-align: center;
+  }
+
+  .installement img,
+  .international img {
+    width: 15%; /* Rescale button icons for tablets */
+  }
+
+  .action.d-flex {
+    flex-direction: row; /* Row-based layout for buttons */
+    justify-content: center;
+    gap: 12px; /* Balanced space between buttons */
+  }
+
+  .share-box {
+    gap: 12px; /* Adjust spacing between icons */
+    font-size: 24px; /* Slightly larger icons for tablets */
+    justify-content: center; /* Center icons */
+  }
+
+  .product-bottom-box {
+    padding: 20px; /* Add padding for spacing */
+    margin-top: 40px; /* Maintain spacing from content above */
+  }
+
+  .seller-box {
+    flex-direction: row; /* Keep seller image and info side-by-side */
+    justify-content: space-between; /* Space elements evenly */
+    gap: 15px; /* Adjust spacing */
+    margin: 25px 0; /* Smaller margins */
+  }
+
+  .seller-img {
+    width: 70px; /* Optimal size for tablets */
+    height: 70px;
+  }
+
+  .share-icons {
+    justify-content: flex-end; /* Align icons to the right */
+    gap: 12px; /* Adjust gap */
+  }
+
+  .share-icons img {
+    width: 28px; /* Rescale icons for tablets */
+  }
+
+  /* Product Rating Section */
+  .rate-title {
+    font-size: 20px; /* Adapt rating title size */
+    text-align: center; /* Center-align rating title */
+  }
+
+  .stars {
+    font-size: 32px; /* Maintain accessible star size */
+    justify-content: center; /* Align stars to center */
+  }
+
+  .stars img {
+    width: 30px; /* Resize star icons slightly for tablets */
+    margin: 0 8px; /* Adjust margin for spacing */
+  }
+}

@@ -2,9 +2,8 @@
 .marketers-page {
   background: #f5f5f7;
   direction: rtl;
-  /* responsive top offset (min 40px, scales with viewport, max 120px) */
-  /* padding-top: clamp(40px, 6vw, 120px); */
-  padding-top: 10%;
+
+  padding-top: 4%;
   padding-bottom: 40px;
 }
 
@@ -60,12 +59,7 @@ input.form-control {
    MOBILE: up to 768px
    =========================== */
 @media (max-width: 768px) {
-  .marketers-page {
-    /* padding-top: 56px;  */
-    /* padding-bottom: 28px; */
-            margin-top: 123px;
-
-  }
+ 
 
   .marketers-card {
     margin: 16px;

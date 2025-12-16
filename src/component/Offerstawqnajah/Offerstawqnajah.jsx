@@ -74,7 +74,6 @@ const sections = [
   );
 }
 
-// ✅ الكارد كما هو بدون أي تغيير
 function ProductCard({ p, navigate }) {
  return (
     <Link

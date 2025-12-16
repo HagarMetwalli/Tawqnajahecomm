@@ -7,7 +7,7 @@ label {
   padding-top: 30px;
 }
 .community-header{
-  padding-top: 2px;
+  padding-top: 0px;
 }
 .community-wrapper {
   width: 100%;
@@ -275,16 +275,23 @@ textarea.form-control {
    MOBILE / SMALL TABLET: up to 768px
    (stacked, full-width controls)
    =========================== */
+ @media (max-width: 767px) {
+
+ }  
+
 @media (max-width: 768px) {
   .community-wrapper {
     padding: 18px 12px;
   }
-  .community-page { padding-top: 0px; } /* phones */
+  .community-page { 
+    padding-top: 0px;
+            padding-bottom: 73px;
+   } /* phones */
 
   .community-card {
     width: 100%;
     max-width: 100%;
-    padding:20px 16px 20px 16px;
+    padding:0px 16px 20px 16px;
     margin: 0;
     /* padding-right: 16px;
     padding-bottom: 20px; */

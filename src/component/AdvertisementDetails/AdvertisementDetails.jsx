@@ -33,7 +33,7 @@ export default function AddverisementDetails() {
   };
 
   return (
-    <div className="product-page  pt-5 container c">
+    <div className="product-page  pt-1 container c">
 
       {/* العنوان */}
       <h1 className="product-heading ">
