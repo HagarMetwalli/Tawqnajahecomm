@@ -1,18 +1,23 @@
- .customer-products-header {
+ .offersproducts-wrapper{
+  padding-bottom: 30px;
+    padding-top: 14%;
+
+ }
+ .offerscustomer-products-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   direction: rtl;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
-.customer-products-title {
+.offerscustomer-products-title {
     font-size: 24px;
     font-weight: bold;
     padding-top: 0px;
 }
 
-.customer-view-more {
+.offerscustomer-view-more {
  color: #1D3A77;
     font-size: 24px;
     font-weight: 400;
@@ -20,7 +25,7 @@
     text-decoration: none;
 }
 
-.customer-products-grid {
+.offerscustomer-products-grid {
      margin-top: 25px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -29,7 +34,7 @@
     margin-bottom: 42px;
 }
 
-.customer-product-card {
+.offerscustomer-product-card {
     background: #fff;
     border-radius: 16px;
     /* padding: 4px 0px 11px 0px; */
@@ -43,12 +48,12 @@ ease-in-out;
 
 }
 
-.customer-product-card:hover {
+.offerscustomer-product-card:hover {
   transform: translateY(-5px);
 }
 
 /* Discount */
-.customer-discount {
+.offerscustomer-discount {
     position: absolute;
     top: 0px;
     left: 0%;
@@ -63,7 +68,7 @@ ease-in-out;
 }
 
 /* Image */
-.customer-product-img {
+.offerscustomer-product-img {
     width: 100%;
     height: 247px;
     border-top-left-radius: 12px;
@@ -77,21 +82,21 @@ ease-in-out;
 }
 
 /* Name */
-.customer-product-name {
+.offerscustomer-product-name {
   font-size: 20px;
   font-weight: bold;
   /* margin-top: 10px; */
 }
 
 /* Rating */
-.customer-rate {
+.offerscustomer-rate {
     margin-top: 5px;
     color: #000;
     font-size: 16px;
     font-weight: bold;
 }
 /* Description */
-.customer-desc {
+.offerscustomer-desc {
      font-size: 16px;
     color: #000;
     height: 45px;
@@ -101,7 +106,7 @@ ease-in-out;
 }
 
 /* Price */
-.customer-price {
+.offerscustomer-price {
    margin-top: 10px;
     display: flex;
     justify-content: flex-start;
@@ -109,19 +114,19 @@ ease-in-out;
     padding-right: 9px;
 }
 
-.customer-price .old {
+.offerscustomer-price .old {
   text-decoration: line-through;
   color: #999;
 }
 
-.customer-price .new {
+.offerscustomer-price .new {
   color: #ff4a00;
   font-size: 18px;
   font-weight: bold;
 }
 
 /* Button */
-.customer-add-btn {
+.offerscustomer-add-btn {
 width: 94%;
     background: #FF580E;
     color: #fff;
@@ -135,14 +140,14 @@ width: 94%;
     margin-right: 9px;
     
 }
-.customer-add-btn img{
+.offerscustomer-add-btn img{
 width: 7%;
     height: 100%;
     object-fit: contain;
     margin-right: 13px;
 }
 
-.customer-add-btn:hover {
+.offerscustomer-add-btn:hover {
   background: #e55f00;
 }
 .carts{
@@ -162,18 +167,38 @@ width: 7%;
         bottom: 91%;
     right: 16px;
     color: #FF580E;
-    background: #00000033;
+    /* background: #00000033; */
     padding: 8px 8px 5px 27px;
     border-radius: 26px;
     font-size: 20px;
+  
 }
-.customer-categories-section {
+.customer-heart {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.heart-icon {
+  color: #FF580E;
+  font-size: 18px;
+}
+
+.offerscustomer-categories-section {
   margin-top: 50px;
-  margin-bottom: 50px; /* مسافة أسفل السيكشن */
+  margin-bottom: 50px;
 }
 
 /* العنوان */
-.customer-categories-title {
+.offerscustomer-categories-title {
   font-size: 28px;
   font-weight: bold;
   text-align: right;
@@ -182,7 +207,7 @@ width: 7%;
 }
 
 /* الشبكة */
-.customer-categories-grid {
+.offerscustomer-categories-grid {
   display: grid;
     grid-template-columns: repeat(7, 1fr);
   gap: 35px;               
@@ -192,7 +217,7 @@ width: 7%;
 }
 
 /* البوكس */
-.customer-category-box {
+.offerscustomer-category-box {
   background: linear-gradient(45deg, #ff9f4d, #ffb977);
   border-radius: 16px;
   padding: 35px 10px;
@@ -202,12 +227,12 @@ width: 7%;
 }
 
 /* Hover */
-.customer-category-box:hover {
+.offerscustomer-category-box:hover {
   transform: translateY(-5px);
 }
 
 /* الأيقونة */
-.customer-category-icon {
+.offerscustomer-category-icon {
   width: 45px;
   height: 45px;
   object-fit: contain;
@@ -223,14 +248,14 @@ width: 7%;
 }
 
 /* تصغير أيقونة الإلكترونيات فقط */
-.customer-category-box:first-child img {
+.offerscustomer-category-box:first-child img {
   width: 35px;
   height: 35px;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .customer-categories-grid {
+  .offerscustomer-categories-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
   }

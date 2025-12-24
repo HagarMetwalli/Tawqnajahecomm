@@ -12,51 +12,44 @@
 
 /* ===== SIDEBAR ===== */
 .m-marketing-sidebar {
-    width: 26%;
-    display: flex;
-    flex-direction: column;
+  width: 26%; /* By default, the width occupies 26% */
+  display: flex;
+  flex-direction: column;
   gap: 18px;
 }
 
 .side-btn {
   display: flex;
   align-items: center;
-  text-decoration: none;   /* يشيل الخط */
-  color: inherit;          /* يخلي اللون زي ما هو */
+  text-decoration: none;   /* Removes underline */
+  color: inherit;          /* Maintains inherited color */
 }
 
-
-/* زر عادي */
+/* Default Button Style */
 .side-btn.white {
   background: #fff;
   color: #000;
 }
 
-/* الزر النشط */
+/* Active Button Style */
 .side-btn.active {
   background: #0C3B85;
   color: #fff;
   border-color: #0C3B85;
 }
 
-/* تسجيل خروج */
+/* Logout Button */
 .side-btn.logout {
   background: #D21F25;
   color: #fff;
   border-color: #D21F25;
 }
 
-/* تصغير أيقونات */
-/* .side-btn img {
-  width: 26px;
-} */
-
 /* ===== MAIN CONTENT ===== */
 .marketing-content {
   max-width: 700px;
   text-align: center;
-      margin-top: 8%;
-
+  margin-top: 5%;
 }
 
 .marketing-logo {
@@ -65,7 +58,7 @@
 }
 
 .marketing-text {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 40px;
   margin-bottom: 40px;
@@ -73,7 +66,7 @@
 }
 
 .marketing-main-btn {
-    width: 85%;
+  width: 85%;
   padding: 16px;
   border-radius: 12px;
   border: none;
@@ -90,36 +83,63 @@
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .marketing-page {
-    flex-direction: column;
+@media (max-width: 768px) {
+  /* Layout adjustments for tablet screens */
+  .mmarketing-page {
+    flex-direction: column; /* Stack sidebar and content vertically */
     align-items: center;
+    gap: 30px; /* Reduce gap to adjust for narrower screen */
+    padding: 20px; /* Adjust padding to utilize available space effectively */
+  }
+.marketing-content {
+  margin: auto !important;
+  font-size: 16px;
+}
+  .m-marketing-sidebar {
+    width: 80%; /* Sidebar takes 80% of the width on tablets */
+    gap: 15px; /* Slightly reduce spacing between buttons */
   }
 
-  .marketing-sidebar {
-    width: 90%;
+  .side-btn {
+    padding: 14px; /* Adjust padding for proportional button sizing */
+    font-size: 16px; /* Scale down font size for smaller screens */
+  }
+
+
+
+  .marketing-logo {
+    width: 220px; /* Resize logo to fit better on tablets */
+  }
+
+  .marketing-text {
+    font-size: 20px; /* Smaller text for responsive design */
+    line-height: 34px; /* Adjust line height for compact layout */
+    margin-bottom: 30px; /* Reduce bottom margin */
   }
 
   .marketing-main-btn {
-    width: 80%;
+    width: 90%; /* Wider button for better touch interaction */
+    font-size: 18px; /* Slightly smaller text for proportionality */
   }
 }
 
 @media (max-width: 600px) {
+  /* Mobile layout adjustments */
   .m-marketing-sidebar {
-    width: 100%;
+    width: 100%; /* Sidebar takes full width */
   }
 
   .marketing-text {
-    font-size: 22px;
-    line-height: 32px;
+    font-size: 20px;
+    line-height: 30px;
   }
 
   .marketing-logo {
-    width: 180px;
+    width: 180px; /* Resize logo for smaller screens */
   }
 
   .marketing-main-btn {
-    width: 95%;
+    width: 95%; /* Button spans almost the full width */
+    font-size: 16px;
   }
 }

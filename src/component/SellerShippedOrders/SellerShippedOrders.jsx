@@ -1,64 +1,107 @@
-import React from "react";
-import "../SellerShippedOrders/SellerShippedOrders.css";
-import { Link } from "react-router-dom";
-import burgersale from "../../assets/burger-sale.jpg";
+import React from 'react'
+import '../SellerShippedOrders/SellerShippedOrders.css'
+import img from "../../assets/winter-shirt.jpg";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function SellerShippedOrders() {
+
+  const navigate = useNavigate(); 
+  const location = useLocation();
+
   const orders = [
     {
       id: 1,
-      title: "عرض البرجر",
-      desc: "وجبة برجر شهية بسعر مميز",
-      price: "89.97",
-      qty: 3,
-      img: burgersale,
+      title: "جاكيت شتوي",
+      desc: "جاكيت أبيض - تخفيض خاص",
+      category: "ملابس",
+      qty: 1,
+      price: "149.99 ر.س",
+      img: img,
     },
   ];
 
+  const goToDetails = (id) => {
+    navigate(`/seller/sellershippedordersdetails`);
+  };
+
   return (
-    <div className="orders-page container">
+    <div className="container neworders-page mt-5 pt-5 mb-5 pb-5">
 
-      {/* ===== Tabs ===== */}
-      <div className="tabs-row">
-        <Link to="/seller/sellerconfirmedorders" className="tab">
-          (1) المؤكدة
-        </Link>
+      <div className="row">
 
-          <Link to="/seller/sellershippedorders" className="tab-active">
-                    (1) المشحونة
+        {/* ====== الجزء اليمين (التابات) ====== */}
+        <div className="col-lg-3  d-lg-block pt-5 ">
+          <div className="orders-right-tabs ">
+            
+           <button
+                className={`cright-tab cright-btn ${
+                  location.pathname === "/seller/sellerconfirmedorders" ? "active" : ""
+                }`}
+                onClick={() => navigate("/seller/sellerconfirmedorders")}
+              >
+                الطلبات الحالية
+              </button>
 
-          </Link>
+              <button
+                className={`cright-tab cright-btn2 ${
+                  location.pathname === "/seller/sellershippedorders" ? "active" : ""
+                }`}
+                onClick={() => navigate("/seller/sellershippedorders")}
+              >
+                الطلبات المكتملة
+              </button>
 
-        <Link to="/seller/sellermydeliveredorders" className="tab">
-          (1) تم التسليم
-        </Link>
-      </div>
-
-      {/* ======= Order Card ======= */}
-      <div className="cards-wrapper">
-        {orders.map((order, index) => (
-          <div key={index} className="order-mobile-card">
-
-            <img src={order.img} alt="" className="order-mobile-img" />
-
-            <div className="order-mobile-content">
-
-              <h3 className="order-mobile-title">{order.title}</h3>
-
-              <p className="order-mobile-desc">{order.desc}</p>
-
-              <div className="order-bottom-row">
-                 <span className="order-badge">x{order.qty}</span>
-                <span className="order-type">طعام</span>
-                <span className="order-price">{order.price} ر.س</span>
-              </div>
-
-            </div>
+              <button
+                className={`cright-tab cright-btn3 ${
+                  location.pathname === "/seller/sellercanceledorders" ? "" : ""
+                }`}
+                onClick={() => navigate("/seller/sellercanceledorders")}
+              >
+                الطلبات الملغية
+              </button>
 
           </div>
-        ))}
-      </div>
+        </div>
 
+        {/* ====== الجزء الشمال (الكروت) ====== */}
+        <div className="col-lg-9 col-12 mt-5 pt-2 ">
+
+          <div className="corders-wrapper">
+            {orders.map((order) => (
+              <div 
+                key={order.id}
+                className="shippedorder-card completedorder"
+                onClick={() => goToDetails(order.id)}
+                style={{ cursor: "pointer" }}
+              >
+                <div className='left-side text-left'>
+                  <div className="complstatus-tab">المكتملة</div>
+                  <p className="order-price-left">{order.price}</p>
+                </div>
+
+                <div className="order-content">
+                  <div className="image-side">
+                    <img src={order.img} alt="product" className="order-img" />
+
+                    <div className="text-side">
+                      <h4 className="product-title">{order.title}</h4>
+                      <p className="product-desc">{order.desc}</p>
+
+                      <p className="categorycanceled">
+                        <span className="qty">x{order.qty}</span>
+                        <span className="type">{order.category}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+        </div>
+
+      </div>
     </div>
   );
 }

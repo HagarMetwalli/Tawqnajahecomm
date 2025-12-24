@@ -53,6 +53,7 @@ import ProductsSection from './component/ProductsSection/ProductsSection';
 import CategoryFilter from './component/CategoryFilter/CategoryFilter';
 import CategoryPage from './component/CategoryPage/CategoryPage';
 import Shopping from './component/Shopping/Shopping';
+import ConfirmOrdersDetails from './component/ConfirmOrdersDetails/ConfirmOrdersDetails';
 import Orders from './component/Orders/Orders';
 import PaymentPage from './component/PaymentPage/PaymentPage';
 import EyeSupport from './component/EyeSupport/EyeSupport';
@@ -85,7 +86,6 @@ import SellerRelatedActivites from './component/RelatedActivites/RelatedActivite
 import SellerSidebarFilters from './component/SidebarFilters/SidebarFilters';
 import SellerProductList from './component/ProductList/ProductList';
 import SellerProductCard from './component/ProductCard/ProductCard';
-import SellerMyStore from './component/MyStore/MyStore';
 import SellerNewOrders from './component/SellerNewOrders/SellerNewOrders';
 import SellerNewOrders2 from './component/SellerNewOrders2/SellerNewOrders2';
 import SellerNewordersDetails from './component/SellerNewordersDetails/SellerNewordersDetails';
@@ -128,7 +128,16 @@ import SellersDetails from './component/SellersDetails/SellersDetails';
 import AllOffers from './component/AllOffers/AllOffers';
 import AllProductsByCategory from './component/AllProductsByCategory/AllProductsByCategory';
 import Privacy from './component/Privacy/Privacy';
-
+import ScrollTop from './component/ScrollTop/ScrollTop'
+import ConfirmOrderDetails from './component/ConfirmOrdersDetails/ConfirmOrdersDetails';
+import ShippedOrderDetails from './component/ShippedOrdersDetails/ShippedOrdersDetails';
+import SellerConfirmdOrdersDetails from './component/SellerConfirmedOrdersDetails/SellerConfirmedOrdersDetails';
+import SellerShippedOrderDetails from './component/SellerShippedOrdersDetails/SellerShippedOrdersDetails';
+import SellerDiscountsDetails from './component/SellerDiscountsDetails/SellerDiscountsDetails';
+import WinterjacketDetails from './component/WinterjacketDetails/WinterjacketDetails';
+import SellerBurgerOffer from './component/SellerBurgerOffer/SellerBurgerOffer';
+import SellerMobileOffer from './component/SellerMobileOffer/SellerMobileOffer';
+import SellerMyStore from './component/SellerMyStore/SellerMyStore';
 
 const router = createBrowserRouter([
   {
@@ -150,7 +159,7 @@ const router = createBrowserRouter([
 { path: 'forgetpassword', element: <ForgetPassword /> },
 { path: 'resetpassword', element: <ResetPassword /> },
 { path: 'register', element: <Register /> },
-{ path: 'accounttype', element: <AccountType /> },
+{ path: '/accounttype', element: <AccountType /> },
 { path: 'admin', element: <Admin /> },
 { path: 'services', element: <Services /> },
 { path: 'relatedproducts', element: <RelatedProducts /> },
@@ -158,8 +167,7 @@ const router = createBrowserRouter([
 { path: 'sidebarfilters', element: <SidebarFilters /> },
 { path: 'productlist', element: <ProductList /> },
 { path: 'productcard', element: <ProductCard /> },
-{ path: 'product/:id', element: <ProductDetails /> },
-{ path: 'product/:id', element: <ProductDetails /> },    // ← مصححة
+{ path: 'sellerproductdetails/:id', element: <ProductDetails /> },
 { path: 'canceledorders', element: <CanceledOrders /> },
 { path: 'mystore', element: <MyStore /> },
 { path: 'neworders', element: <NewOrders /> },
@@ -170,8 +178,10 @@ const router = createBrowserRouter([
 { path: 'advertisementdetails', element: <AddverisementDetails /> },
 { path: 'myorders', element: <MyOrders /> },
 { path: 'confirmedorders', element: <ConfirmedOrders /> },
+{path:'confirmordersdetails',element:<ConfirmOrderDetails/>},
 { path: 'orderdetails', element: <OrderDetails /> },
 { path: 'shippedorders', element: <ShippedOrders /> },
+{path:'shippedordersdetails',element:<ShippedOrderDetails/>},
 { path: 'ordersdetails2', element: <OrdersDetails2 /> },
 { path: 'myemptydeiveredorders', element: <MyemptydeiveredOrders /> },
 { path: 'mydeliveredorders', element: <MydeliveredOrders /> },
@@ -214,7 +224,8 @@ const router = createBrowserRouter([
 {path:"offerstawqnajah",element:<Offerstawqnajah/>},
 {path:"successpartners",element:<SuccessPartners/>},
 {path:'sellers',element:<Sellers/>},
-{path:'/sellers/:id',element:<SellersDetails/>},
+{ path:'sellersdetails/:id', element:<SellersDetails/> },
+{path:'scrolltop',element:<ScrollTop/>},
 {path:'alloffers',element:<AllOffers/>},
 {path:'/products/:category',element:<AllProductsByCategory/>},
 {path:'privacy',element:<Privacy/>}
@@ -246,8 +257,7 @@ const router = createBrowserRouter([
       { path: '/seller/sellerproductcard', element: <SellerProductCard /> },
       { path: '/seller/sellerproductdetails', element: <SellerProductDetails /> },
       { path: '/seller/sellercanceledorders', element: <SellerCanceledOrders /> },
-      { path: '/seller/sellermystore', element: <SellerMyStore /> },
-      { path: 'sellerneworders', element: <SellerNewOrders /> },
+      { path: '/seller/sellerneworders', element: <SellerNewOrders /> },
       { path: '/seller/sellercanceledordersdetails', element: <SellerCanceledOrdersDetails /> },
       { path: '/seller/selleraddadvertisement', element: <SellerAddAdvertisement /> },
       { path: '/seller/sellerfinancialreports', element: <SellerFinancialReports /> },
@@ -266,19 +276,33 @@ const router = createBrowserRouter([
       { path: '/seller/sellerlogoutconfirm', element: <SellerLogoutConfirm /> },
       { path: '/seller/sellercontractpage', element: <SellerContractPage /> },
       { path: '/seller/sellersecondcontract', element: <SellerSecondContract /> },
+      {path:'/seller/sellerconfirmedordersdetails', element:<SellerConfirmdOrdersDetails/>},
       { path: '/seller/sellerbankaccount', element: <SellerBankAccount /> },
       { path:'/seller/selleremptyadvertisement',element:<SellerEmptyAdvertisement/> },
       { path:'/seller/sellerchoosesupport',element:<SellerChooseSupport/> },
-
-      { path:'/seller/sellerproduct/:id', element:<SellerProductDetails /> },
+     {path:'/seller/sellershippedordersdetails',element:<SellerShippedOrderDetails/>},
+      { path:'sellerproduct/:id', element:<SellerProductDetails /> },
       { path:'/seller/sellermaddisupport', element:<SellerMaddiSupport /> },
       { path:'/seller/selleraynisupport', element:<SellerAyniSupport /> },
+      {path:'/seller/sellermystore',element:<SellerMyStore/>},
+   {
+       path: "sellerrelatedproductsdetails/:id",
+       element: <SellerRelatedProducts/>
+     },
 
+     {path:'/seller/sellerdiscountsdetails',element:<SellerDiscountsDetails/>},
       { path:'/seller/sellermyorddetails',element:<SellerMyOrdDetails/> },
       { path:'/seller/sellerfinancialdashboard',element:<SellerFinancialDashboard/> },
       { path:'/seller/sellerproductsSection',element:<SellerProductsSection/> },
       { path: '/seller/sellermorerelated', element: <SellerMoreRelated /> },
       { path:'/seller/sellerabouttawq',element:<SellerAbouttawq/> },
+      {path:'seller/winterjacketdetails',element:<WinterjacketDetails/>},
+      {path:'seller/sellerburgeroffer',element:<SellerBurgerOffer/>},
+      {path:'seller/sellermobileoffer',element:<SellerMobileOffer/>},
+      {path:'seller/sellerdiscountsdetails',element:<SellerDiscountsDetails/>},
+{ path: "/seller/sellerburgeroffer", element: <SellerBurgerOffer /> },
+{ path: "/seller/winterjacketdetails", element: <WinterjacketDetails /> },
+{ path: "/seller/sellermobileoffer", element: <SellerMobileOffer /> },
     ],
     },
 ]);

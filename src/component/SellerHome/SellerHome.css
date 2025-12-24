@@ -1,9 +1,15 @@
-/* ===== Banner Container ===== */
+/* ===== Banner + Services — reduced fonts & narrower text box =====
+   Breakpoints:
+   - Mobile: up to 767px
+   - Tablet / Laptop: 768px — 1023px
+   - Larger / Desktop: 1024px and up
+*/
+
 .home-banner {
   position: relative;
   width: 100%;
-  height: 75vh;
-  /* border-radius: 0 0 28px 28px; */
+    height: 53vh !important;
+
   overflow: hidden;
   margin-bottom: 30px;
   box-shadow: 0 6px 20px rgba(10, 42, 87, 0.1);
@@ -41,21 +47,35 @@
 .banner-text {
   position: absolute;
   z-index: 3;
-    bottom: 30%;
+  bottom: 30%;
   right: 50%;
   transform: translateX(50%);
   text-align: center;
   color: #fff;
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  /* make the text block a bit narrower for better readability */
+  width: min(84%, 680px);
+  max-width: 680px;
 }
 
+/* default sizes for larger screens */
 .banner-text h1 {
-  font-size: 36px;
+  font-size: 34px; /* slightly reduced */
   margin-bottom: 10px;
+  line-height: 1.05;
 }
 
 .banner-text p {
-  font-size: 20px;
+  font-size: 18px; /* slightly reduced */
   margin: 5px 0;
+}
+
+.banner-text h4 {
+  font-size: 17px;
+  font-weight: 400;
+  color: #eaeaea;
 }
 
 /* ========================================= */
@@ -68,76 +88,218 @@
 }
 
 /* من اليمين */
-.text-anim.right {
-  transform: translateX(40px);
-}
-
-.home-banner.animate .right {
-  opacity: 1;
-  transform: translateX(0);
-}
+.text-anim.right { transform: translateX(40px); }
+.home-banner.animate .right { opacity: 1; transform: translateX(0); }
 
 /* من اليسار */
-.text-anim.left {
-  transform: translateX(-40px);
-  transition-delay: 0.25s;
-}
-
-.home-banner.animate .left {
-  opacity: 1;
-  transform: translateX(0);
-}
+.text-anim.left { transform: translateX(-40px); transition-delay: 0.25s; }
+.home-banner.animate .left { opacity: 1; transform: translateX(0); }
 
 /* من الأسفل */
-.text-anim.bottom {
-  transform: translateY(40px);
-  transition-delay: 0.45s;
-}
-
-.home-banner.animate .bottom {
-  opacity: 1;
-  transform: translateY(0);
-}
+.text-anim.bottom { transform: translateY(40px); transition-delay: 0.45s; }
+.home-banner.animate .bottom { opacity: 1; transform: translateY(0); }
 
 /* Page spacing */
-.home-section {
-  padding: 0 20px;
-}
+.home-section { padding: 0 20px; }
+
 /* ===== MAIN TITLE ===== */
 .main-title {
-  font-size: 42px;
+  font-size: 40px; /* small reduction */
   font-weight: bold;
-  color: #ffffff; /* اللون الأبيض */
+  color: #ffffff;
   margin-bottom: 12px;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* ===== SUB TITLE ===== */
 .sub-title {
-  font-size: 22px;
+  font-size: 20px; /* small reduction */
   font-weight: 500;
-  color: #ffb36b; /* لون مختلف (برتقالي ذهبي) */
+  color: #ffb36b;
   margin-bottom: 10px;
 }
+/* Header offset for fixed header — place at the END of your main CSS (index.css or SellerHome.css) */
+:root {
+  --site-header-height: 72px; /* <-- set this to your header height (px) */
+  --section-gap: 12px;        /* small extra gap below header */
+}
 
-/* ===== THIRD LINE ===== */
-.banner-text h4 {
-  font-size: 18px;
-  font-weight: 400;
-  color: #eaeaea;
+/* Apply offset to the page wrapper */
+.mystorepage {
+  padding-top: calc(var(--site-header-height) + var(--section-gap));
+  box-sizing: border-box;
 }
-@media (max-width: 480px) {
-  .banner-text h1{
-   font-size: 25px;
+
+/* Optional: consistent small inner spacing for related/services sections */
+.services-section{
+    padding-top: 123px;
+  padding-bottom: 50px;
+}
+.sellerrelated-section {
+    padding-top: 39px;
+  padding-bottom: 50px;
+}
+.home-section{
+    padding-top: 250px;
+
+}
+
+/* Normalize section spacing and header offset (place at END of main CSS) */
+:root{
+  --site-header-height: 72px; /* set to your header height (px) measured in DevTools) */
+  --header-gap: 8px;          /* small extra gap under header */
+  --section-vert: 24px;       /* default vertical spacing between sections */
+  --section-vert-mobile: 14px;/* mobile spacing */
+}
+
+/* offset page content under fixed header */
+.mystorepage {
+  padding-top: calc(var(--site-header-height) + var(--header-gap));
+  box-sizing: border-box;
+}
+
+/* Reset/override any large manual paddings/margins you previously added */
+.home-section {
+   margin-bottom: 10px; 
+    padding-top: 0px;
+
+}
+
+.sellerrelated-section,
+/* .related-section, */
+.services-section,
+.home-section {
+  margin-top: 0;
+  /* margin-bottom: 20px; */
+  /* padding-top: var(--section-vert); */
+  /* padding-bottom: var(--section-vert); */
+  box-sizing: border-box;
+}
+
+/* Keep the services container padding small (already reduced) */
+.services-section { padding-left: 0; padding-right: 0; }
+
+/* Reduce any accidental big header padding inside section headings */
+.related-header h3,
+.sellerrelated-header h3,
+.section-title {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* Tighter spacing for smaller screens */
+@media (max-width: 767px) {
+  .sellerrelated-section,
+  .related-section,
+  .services-section,
+  .home-section {
+    padding-top: var(--section-vert-mobile);
+    padding-bottom: var(--section-vert-mobile);
   }
-   .banner-text{
-    bottom:3%
+
+  /* if the header is fixed and smaller on mobile, slightly reduce offset */
+  .mystorepage {
+    padding-top: calc(var(--site-header-height) * 0.85 + 6px);
   }
 }
-@media (min-width: 481px) and (max-width: 768px) {
-  .banner-text{
-    position: absolute;
-    bottom:21%
+
+/* DEBUG helper (temporary) — uncomment only to force the change if rules are still overridden */
+/*
+body .sellerrelated-section,
+body .related-section,
+body .services-section,
+body .home-section {
+  padding-top: var(--section-vert) !important;
+  padding-bottom: var(--section-vert) !important;
+  margin-top: 0 !important;
+}
+*/
+/* ===========================
+   Responsive: requested breakpoints
+   - Mobile: up to 767px
+   - Tablet / Laptop: 768px — 1023px
+   - Larger / Desktop: 1024px+
+   =========================== */
+
+/* Mobile: up to 767px */
+@media (max-width: 767px) {
+  .home-banner { height: 33vh; }
+
+  .banner-text {
+        bottom: 28%;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 0 12px;
+
+    /* narrower box and smaller base font for mobile */
+    width: min(90%, 420px);
+    max-width: 420px;
+    font-size: 13px;
   }
-      /* bottom: 21%; */
+
+  .banner-text h1 {
+    font-size: 20px; /* reduced */
+    line-height: 1.03;
+    margin-bottom: 8px;
+  }
+
+  .banner-text p {
+    font-size: 13px;
+    margin: 4px 0;
+  }
+
+  .banner-text h4 {
+    font-size: 12px;
+  }
+
+  /* services section compact spacing on mobile */
+  .services-section {
+    padding: 6px 8px;
+  }
+  .home-banner{
+    margin-bottom: 0;
+  }
+}
+
+/* Tablet / Laptop: 768px — 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .home-banner {         height: 40vh;
+ }
+
+  .banner-text {
+    bottom: 32%;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 0 16px;
+    width: min(86%, 560px);
+    max-width: 560px;
+  }
+
+  .banner-text h1 { font-size: 28px; }
+  .banner-text p  { font-size: 16px; }
+
+  .services-section {
+    padding: 8px 12px;
+  }
+}
+
+/* Larger / Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  .home-banner { height: 44vh; }
+
+  .banner-text {
+    bottom: 30%;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 0 20px;
+    width: min(84%, 680px);
+    max-width: 680px;
+  }
+
+  .banner-text h1 { font-size: 34px; }
+  .banner-text p  { font-size: 18px; }
+
+  .services-section {
+    padding: 12px 16px;
+  }
 }

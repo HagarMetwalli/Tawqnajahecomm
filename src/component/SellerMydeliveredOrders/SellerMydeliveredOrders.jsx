@@ -1,54 +1,59 @@
 import React from "react";
 import "../SellerMydeliveredOrders/SellerMydeliveredOrders.css";
-import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import wintershirt from "../../assets/winter-shirt.jpg";
+import { Link } from "react-router-dom"; // For navigation
+import wintershirt from "../../assets/winter-shirt.jpg"; // Sample image
 
 export default function SellerMyDeliveredOrders() {
+  const orders = [
+    {
+      id: 1,
+      title: "تيشيرت شتوي",
+      desc: "تيشيرت شتوي ذات عرض خاص",
+      price: "1500",
+      img: wintershirt,
+    },
+  ];
+
   return (
-    <div className="delivered-wrapper container pt-0">
-
-      {/* اليمين - Tabs */}
-    <div className="orders-page container pt-0">
-
-      {/* ===== Tabs ===== */}
-      <div className="tabs-row">
+    <div className="orders-page">
+      {/* ===== Sidebar (Tabs) ===== */}
+      <aside className="tabs-column">
         <Link to="/seller/sellerconfirmedorders" className="tab">
-          (1) المؤكدة
+          المؤكدة (1)
         </Link>
 
-        <Link to="/seller/sellershippedorders" className="tab ">
-          (1) المشحونة
+        <Link to="/seller/sellershippedorders" className="tab">
+          المشحونة (1)
         </Link>
-   <Link to="/seller/sellershippedorders" className="active tab ">
-           (1) تم التسليم
+
+        <Link to="/seller/sellermydeliveredorders" className="tab active">
+          المكتملة (1)
         </Link>
-        
-      </div>
+      </aside>
 
-      {/* الشمال - الكارت */}
-      <div className="completed-box">
+      {/* ===== Main Content ===== */}
+      <div className="delivered-wrapper container">
+        <div className="completed-box">
+          <div className="completed-statusdelivered">تم التسليم</div>
 
-        {/* تم التسليم */}
-        <div className="completed-statusdelivered">تم التسليم</div>
+          {orders.map((order) => (
+            <div key={order.id} className="completed-card">
+              <div className="completed-contentdelivered">
+                <img src={order.img} alt="" className="completed-img" />
 
-        {/* الكارد */}
-        <Card className="completed-card">
-          <div className="completed-contentdelivered">
+                <div className="completed-text-wrapper">
+                  <h5 className="completed-title">{order.title}</h5>
+                  <p className="completed-desc">{order.desc}</p>
 
-            <img src={wintershirt} className="completed-img" />
-
-            <div className="completed-text-wrapper">
-              <h5 className="completed-title">تيشيرت شتوي</h5>
-              <p className="completed-desc">تيشيرت شتوي ذات عرض خاص</p>
-              <p className="completed-price">1500 ر.س</p>
+                  <div className="price-center">
+                    <p className="mydeliverorder-price">{order.price} ر.س</p>
+                  </div>
+                </div>
+              </div>
             </div>
-
-          </div>
-        </Card>
-</div>
+          ))}
+        </div>
       </div>
-
     </div>
   );
 }

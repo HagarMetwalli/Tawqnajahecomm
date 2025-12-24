@@ -46,7 +46,6 @@ export default function SellerRegister() {
   const handleSubmit = () => {
     if (!validate()) return;
 
-    // ❌ بدون API — هنمشي عادي للـ Login
     console.log("Registration successful (simulation only)");
 
     navigate("/seller/sellerlogin");
@@ -59,7 +58,7 @@ export default function SellerRegister() {
 
           {/* صورة الشمال */}
           <div className="image col-12 col-md-6 p-0">
-            <img src={registerbg} alt="Register" className="w-100 h-100 login-image" />
+            <img src={registerbg} alt="Register" className=" login-image" style={{width:"84%"}} />
           </div>
 
           {/* الفورم */}

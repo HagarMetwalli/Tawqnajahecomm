@@ -1,17 +1,15 @@
 import SellerRelatedProducts from "../SellerRelatedProducts/SellerRelatedProducts";
 
 import banner from "../../assets/banner.avif";
-import '../MoreRelated/MoreRelated.css';
+import '../SellerMoreRelated/SellerMoreRelated.css';
 
 export default function SellerMoreRelated() {
   return (
     <>
 
-<div className="morerelated">
+<div className="sellermorerelated mb-5">
       <SellerRelatedProducts />
-
 </div>
-
       
     </>
   );

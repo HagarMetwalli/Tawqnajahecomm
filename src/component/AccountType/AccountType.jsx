@@ -15,18 +15,20 @@ export default function AccountType() {
 
   return (
     <div className="registeration account-type">
-      <div className="container-fluid">
+      <div className="container-fluid ">
         <div className="row">
 
-          {/* الصورة */}
           <div className="image account col-12 col-md-6 p-0">
-            <img src={registerbg} alt="img" className="w-100 h-100" />
+<img
+  src={registerbg}
+  alt="img"
+  style={{ width: "68%" }}
+/>
           </div>
 
-          {/* الفورم */}
-          <div className="form col-12 col-md-6 d-flex flex-column text-end">
+          <div className="form col-12 col-md-6 d-flex flex-column text-end pt-5 pb-0 mb-0 mt-5 " style={{    paddingLeft:"18px"}}>
 
-            <div className="mb-4 text-center">
+            <div className=" text-center pt-5">
               <img src={logo} alt="logo" />
             </div>
 

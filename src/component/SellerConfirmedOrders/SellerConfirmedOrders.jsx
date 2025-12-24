@@ -1,58 +1,93 @@
 import React from "react";
 import "../SellerConfirmedOrders/SellerConfirmedOrders.css";
-import { Link } from "react-router-dom";
-import bfriday from "../../assets/b-friday.jpg";
+import { useNavigate, useLocation } from "react-router-dom";
+import wintershirt from "../../assets/winter-shirt.jpg";
 
 export default function SellerConfirmedOrders() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const orders = [
     {
       id: 1,
-      title: "تخفيضات الجمعة السوداء",
-      desc: "عروض مذهلة على المنتجات المختارة.",
-      price: "199.98",
-      qty: 2,
-      img: bfriday,
+      title: "جاكيت شتوي",
+      desc: "جاكيت أنيق بتخفيض خاص.",
+      price: "149.99",
+      qty: 1,
+      img: wintershirt,
     },
   ];
-
+ const goToDetails = (id) => {
+    navigate(`/seller/sellerconfirmedordersdetails`);
+  };
   return (
-    <div className="orders-page container  ">
+    <div className="orders-page mt-5 pt-5 mb-0  mobileorders">
+      <div className="container mt-5 mb-0">
+        <div className="row">
 
-      {/* ===== Tabs ===== */}
-      <div className="tabs-row ">
-        <button className="tab active ">(1) المؤكدة</button>
-        <Link to="/seller/sellershippedorders" className="tab ">(1) المشحونة</Link>
-        <Link to="/seller/sellermydeliveredorders" className="tab">(1) تم التسليم</Link>
-      </div>
+          {/* التابات */}
+          <div className="col-lg-3 d-lg-flex justify-content-start tabssection">
+            <div className="orders-right-tabs">
 
-      {/* ======= Order Card ======= */}
-    <div className="cards-wrapper">
-  {orders.map((order, index) => (
-    <Link
-      to={`/seller/sellerordersdetails`}
-      key={index}
-      className="order-mobile-card"
-      style={{ textDecoration: "none" }}
-    >
-      {/* الصورة يمين */}
-      <img src={order.img} alt="" className="order-mobile-img" />
+              <button
+                className={`cright-tab cright-btn ${
+                  location.pathname === "/seller/sellerconfirmedorders" ? "active" : ""
+                }`}
+                onClick={() => navigate("/seller/sellerconfirmedordersdetails")}
+              >
+                الطلبات الحالية
+              </button>
 
-      {/* المحتوى */}
-      <div className="order-mobile-content">
-        <h3 className="order-mobile-title">{order.title}</h3>
-        <p className="order-mobile-desc">{order.desc}</p>
+              <button
+                className={`cright-tab cright-btn2 ${
+                  location.pathname === "/seller/sellershippedorders" ? "active" : ""
+                }`}
+                onClick={() => navigate("/seller/sellershippedorders")}
+              >
+                الطلبات المكتملة
+              </button>
 
-        <div className="order-bottom-row">
-          <span className="order-badge">x{order.qty}</span>
-          <span className="order-type">عروض</span>
-          <span className="order-price">{order.price} ر.س</span>
+              <button
+                className={`cright-tab cright-btn3 ${
+                  location.pathname === "/seller/sellercanceledorders" ? "active" : ""
+                }`}
+                onClick={() => navigate("/seller/sellercanceledorders")}
+              >
+                الطلبات الملغية
+              </button>
+
+            </div>
+          </div>
+
+          {/* الكروت */}
+          <div className="col-lg-9 col-12 justify-content-start">
+            <div className="cards-wrapper mt-5">
+              {orders.map((order, i) => (
+               <div
+  key={i}
+  className="corder-mobile-card"
+  onClick={() => goToDetails(order.id)}
+  style={{ cursor: "pointer" }}
+>
+
+                  <img src={order.img} alt="" className="corder-mobile-img" />
+                  <div className="order-mobile-content">
+                    <h3 className="corder-mobile-title">{order.title}</h3>
+                    <p className="corder-mobile-desc">{order.desc}</p>
+
+                    <div className="order-bottom-row">
+                      <span className="order-badge">x{order.qty}</span>
+                      <span className="corder-type">ملابس</span>
+                      <span className="confirmorder-price">{order.price} ر.س</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
-    </Link>
-  ))}
-</div>
-
-
     </div>
   );
 }

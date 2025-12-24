@@ -1,67 +1,78 @@
+/* mobile-first sellers.css (replace existing) */
+* { box-sizing: border-box; }
+
 .sellers-page {
-  padding: 180px 20px;
-  background: #f6f6f6;
   direction: rtl;
   text-align: center;
+  background: #f6f6f6;
+  padding-top: 90px;
+  padding-bottom: 80px;
+
 }
 
 .sellers-title {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 40px;
+  font-weight: 700;
   color: #1d3a77;
+  padding-bottom: 40px;
 }
 
 .sellers-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* auto-fit adapts columns */
+  gap: 20px;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+  /* padding: 0 10px; */
 }
 
 .seller-card {
   background: #fff;
-  padding: 25px 15px;
-  border-radius: 18px;
+  padding: clamp(12px, 2.2vw, 25px);
+  border-radius: 14px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform .25s ease, box-shadow .25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 140px;
 }
 
-.seller-card:hover {
-  transform: translateY(-6px);
-}
+.seller-card:hover { transform: translateY(-6px); box-shadow: 0 8px 24px rgba(0,0,0,0.10); }
 
 .seller-card img {
-  width: 90px;
-  height: 90px;
+  width: clamp(56px, 12vw, 90px);
+  height: clamp(56px, 12vw, 90px);
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
 }
 
-.seller-card h4 {
-  font-size: 17px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
+.seller-card h4 { font-size: clamp(14px, 2.2vw, 17px); font-weight: 700; margin-bottom: 6px; color:#111; }
+.seller-card p { font-size: clamp(16px, 3vw, 21px); color:#000; font-weight:500; margin:0; }
 
-.seller-card p {
-  font-size: 21px;
-  color: #000;
-  font-weight: 500;
-}
+/* Tablet specific tweaks (768–1023) */
+@media (max-width:767px)  {
+  /* .sellers-page{
+        padding-top: 56%;
 
-/* ريسبونسيف */
-@media (max-width: 992px) {
-  .sellers-grid {
-    grid-template-columns: repeat(2, 1fr);
+  } */
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sellers-page{
+    padding-top: 22%;
   }
+  .sellers-grid { gap: 22px; max-width: 1000px; }
+  .seller-card { border-radius: 16px; min-height: 180px; }
 }
 
-@media (max-width: 576px) {
-  .sellers-grid {
-    grid-template-columns: 1fr;
-  }
+/* Desktop (>=1024) */
+@media (min-width: 1024px) {
+  .sellers-page {
+     /* padding-top: 180px;  */
+     padding-bottom: 180px; }
+  .sellers-grid { grid-template-columns: repeat(4, 1fr); gap: 25px; }
+  .seller-card { min-height: 220px; border-radius: 18px; padding: 25px 15px; }
 }

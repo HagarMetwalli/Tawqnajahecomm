@@ -30,7 +30,7 @@ export default function AccountType() {
 
           {/* Image */}
           <div className="image account col-12 col-md-6 p-0">
-            <img src={registerbg} alt="img" className="w-100 h-100" />
+            <img src={registerbg} alt="img" className=" h-100" />
           </div>
 
           {/* Form */}

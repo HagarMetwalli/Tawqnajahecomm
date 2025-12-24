@@ -1,9 +1,11 @@
+/* About section — responsive for mobile / tablet / desktop */
 .tawqabout-wrapper {
-  padding: 80px 0;
+  padding: 90px 0;
   background: #fafafa;
   direction: rtl;
 }
 
+/* Title */
 .about-title {
   text-align: center;
   font-size: 32px;
@@ -12,6 +14,7 @@
   margin-bottom: 40px;
 }
 
+/* Card */
 .about-card {
   background: white;
   max-width: 800px;
@@ -22,11 +25,10 @@
 }
 
 .about-card h2 {
-    font-size: 22px;
-    color: #3e3c4c;
-    margin-top: 25px;
-    margin-bottom: 10px;
-
+  font-size: 22px;
+  color: #3e3c4c;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 .about-card p {
@@ -45,8 +47,97 @@
   font-size: 16px;
   margin-bottom: 8px;
 }
-@media screen and (max-width: 767px){
-      .tawqabout-wrapper {
-        margin-top: 72%;
-    }
+
+/* ===========================
+   MOBILE: up to 768px
+   =========================== */
+@media (max-width: 768px) {
+  .tawqabout-wrapper {
+    /* smaller vertical spacing and horizontal padding for phones */
+    padding: 56px 12px;
+  }
+
+  .about-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .about-card {
+    max-width: 100%;
+    margin: 0 12px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  }
+
+  .about-card h2 {
+    font-size: 18px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  .about-card p,
+  .about-card li {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* ===========================
+   TABLET: 769px — 1023px
+   =========================== */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .tawqabout-wrapper {
+    /* a bit more vertical breathing room on tablets */
+    padding: 72px 20px;
+  }
+
+  .about-title {
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
+
+  .about-card {
+    max-width: 760px;
+    padding: 28px;
+    border-radius: 14px;
+  }
+
+  .about-card h2 {
+    font-size: 20px;
+  }
+
+  .about-card p,
+  .about-card li {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+/* ===========================
+   DESKTOP: 1024px and up
+   =========================== */
+@media (min-width: 1024px) {
+
+
+  .about-title {
+    font-size: clamp(28px, 2.2vw, 36px);
+    margin-bottom: 40px;
+  }
+
+  .about-card {
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 16px;
+  }
+
+  .about-card h2 {
+    font-size: 24px;
+  }
+
+  .about-card p,
+  .about-card li {
+    font-size: 16px;
+    line-height: 1.8;
+  }
 }

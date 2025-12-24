@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import lock from "../../assets/lock-icon.png";
 import shopbtn from "../../assets/shop-arrow.png";
 import avatar from "../../assets/rateproduct.png";
 import "./Home.css";
-import offerbanner from "../../assets/offers-banner.jpg";
-
+import customerbanner from "../../assets/customerbanner.jpg";
+import electronicsbanner from "../../assets/electronicsbanner.jpg";
+import gamesbanner from "../../assets/gamesbanner.jpg";
+import furniturebanner from "../../assets/furniturebanner.jpg";
+import marketbanner from "../../assets/marketbanner.jpg";
+import kitchenbanner from "../../assets/kitchenbanner.jpg";
 import Categories from "../Categories/Categories";
 import ProductsSection from "../ProductsSection/ProductsSection";
 import Offerstawqnajah from "../Offerstawqnajah/Offerstawqnajah";
@@ -15,6 +20,7 @@ import CategoryDetails from "../CategoryDetails/CategoryDetails";
 import CategoryPage from "../CategoryPage/CategoryPage";
 
 export default function Home() {
+   const navigate = useNavigate(); 
   const [animate, setAnimate] = useState(false);
   const [current, setCurrent] = useState(0);
 
@@ -22,32 +28,32 @@ export default function Home() {
     {
       title: "أحدث صيحات الموضة",
       desc: "استمتعي بتجربة تسوق عصرية بأفضل الأسعار",
-      imgClass: "slide1",
+      imgSrc: customerbanner,
     },
     {
       title: "إلكترونيات بأحدث التقنيات",
       desc: "موبايلات – لابتوبات – أجهزة ذكية",
-      imgClass: "slide2",
+      imgSrc: electronicsbanner,
     },
     {
       title: "قسم الألعاب",
       desc: "أقوى الألعاب والإكسسوارات بأفضل سعر",
-      imgClass: "slide3",
+      imgSrc: gamesbanner,
     },
     {
       title: "قسم الأثاث",
       desc: "أثاث عصري يناسب كل الأذواق",
-      imgClass: "slide4",
+      imgSrc: furniturebanner,
     },
     {
       title: "قسم السوبر ماركت",
       desc: "كل احتياجات البيت في مكان واحد",
-      imgClass: "slide5",
+      imgSrc: marketbanner,
     },
     {
       title: "قسم المطبخ",
       desc: "أدوات مطبخ عملية وعصرية",
-      imgClass: "slide6",
+      imgSrc: kitchenbanner,
     },
   ];
 
@@ -55,47 +61,48 @@ export default function Home() {
     setAnimate(true);
   }, []);
 
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000); // Auto slide every 5 seconds
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
   return (
-    <div className="hero-wrapper">
+    <div className="hero-wrapper pt-5 mt-4">
       <div className={`hero-container ${animate ? "animate" : ""}`}>
-        {/* صورة السلايد */}
-        <div className={`hero-left ${slides[current].imgClass}`}></div>
+        <div className="hero-left">
+          {slides.map((slide, index) => (
+            <img
+              key={index}
+              src={slide.imgSrc}
+              alt=""
+              className={`slide-image ${index === current ? 'fade-in' : 'fade-out'}`}
+            />
+          ))}
+        </div>
 
-        {/* المحتوى */}
-        <div className="hero-right px-3">
+        <div className="hero-right">
           <span className="hero-tag">
-            <img className="lock" src={lock} alt="" />
-            <p className="web-text mb-0">الموقع الأفضل للتسوق الإلكتروني</p>
+            <img className="lock" src={lock} alt="آمن" />
+            <p className="web-text mb-0">أفضل موقع للتسوق الإلكتروني</p>
           </span>
 
           <h1 className="hero-heading">{slides[current].title}</h1>
           <p className="web-order">{slides[current].desc}</p>
 
           <div className="products-info">
-            <button className="customerbtn tn-nav-app-btn d-flex fle-row justify-content-center align-items-center">
-              <i className="fa-solid fa-arrow-right ms-2 ms-md-0"></i>
-              <p className="btn-text">تسوق الآن</p>
-            </button>
-            <button
-              className="customerbtn tn-nav-app-btn "
-              onClick={() => window.open("#", "_blank")}
-            >
-              تحميل التطبيق
-            </button>
+        <button
+  className="customerbtn tn-nav-app-btn d-flex justify-content-center align-items-center"
+  onClick={() => navigate("/marketing")}
+>
+  <p className="btn-text mb-0">تسوق الآن</p>
+  <i className="fa-solid fa-arrow-left ms-2"></i>
+</button>
 
-            <span className="products-link">
-              <a className="fw-bold text-decoration-none text-black">
-                شاهد جميع المنتجات
-              </a>
-            </span>
+            <Link to="/offerstawqnajah" className="btn-text">
+  شاهد جميع المنتجات
+</Link>
           </div>
 
           {/* التقييم */}
@@ -106,30 +113,17 @@ export default function Home() {
               <img src={avatar} alt="" className="img-2" />
               <img src={avatar} alt="" className="img-3" />
             </div>
-
             <div className="rate-box-text">
               <span className="ratemaintext">+ 4.9 تقييم</span>
               <p className="rate-sub mb-0">ثقة أكثر من 2000 عميل</p>
             </div>
           </div>
         </div>
-
-        {/* الأسهم */}
-        <button className="slide-arrow right" onClick={nextSlide}>
-          ›
-        </button>
-        <button className="slide-arrow left" onClick={prevSlide}>
-          ‹
-        </button>
       </div>
 
       <Categories />
 
-      <div className="offers-banner">
-        <img src={offerbanner} alt="" />
-      </div>
-
-      <ProductsSection />
+       <ProductsSection /> 
       {/* <Offerstawqnajah />  */}
       {/* <OffersTawq/> */}
       <SuccessPartners />

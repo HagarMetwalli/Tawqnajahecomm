@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
-import "./AddAdvertisement.css";
+import "../AddAdvertisement/AddAdvertisement.css";
 
 export default function AddAdvertisement() {
 
@@ -23,10 +23,10 @@ export default function AddAdvertisement() {
   };
 
   return (
-    <div className="add-ad-page container">
+    <div className="add-ad-page container mt-5 pt-4 mb-5 pb-5">
 
       {/* العنوان */}
-      <h2 className="page-title mb-4">
+      <h2 className="page-title mb-4 ">
         إضافة إعلان <span>/ الرئيسية</span>
       </h2>
 

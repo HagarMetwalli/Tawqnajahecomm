@@ -57,10 +57,10 @@ export default function SellerProductsSection() {
 
   return (
     <>
-      <div className="products-wrapper">
+      <div className="products-wrapper ">
 
         {/* ==== GRID ==== */}
-        <div className="customer-products-grid container mb-5 ">
+        <div className="customer-products-grid container mb-5 mt-5">
           {products.map((p) => (
             <Link
               to={`/seller/sellerproduct/${p.id}`}   // ✅ الرابط الصحيح

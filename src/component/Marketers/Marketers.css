@@ -1,61 +1,183 @@
+/* MARKETERS — cleaned & responsive */
 .marketers-page {
   background: #f5f5f7;
   direction: rtl;
-  margin-top: 10%;
+  padding-top: 11%;
+  padding-bottom: 40px;
 }
 
+/* card */
 .marketers-card {
   background: #fff;
   border-radius: 16px;
   padding: 30px;
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
+/* titles & text */
 .marketers-title {
   font-weight: bold;
   margin-bottom: 10px;
 }
-
 .marketers-desc {
-    color: #534b4b;
-    font-size: 15px;
-    font-weight: bold;
+  color: #534b4b;
+  font-size: 15px;
+  font-weight: bold;
 }
 .marketsection-title {
   margin-top: 25px;
   font-weight: bold;
   color: #1d3a77;
 }
-
 .terms-list {
-    padding-right: 20px;
-    font-size: 17px;
-    color: #444;
+  padding-right: 20px;
+  font-size: 17px;
+  color: #444;
 }
-
 .confirm-box {
   margin-top: 15px;
   font-size: 14px;
 }
-
 .marketersave-btn {
   background: #1d3a77;
   border: none;
   padding: 10px 30px;
   border-radius: 10px;
+  color: #fff;
 }
-
 input.form-control {
   border-radius: 12px;
   height: 50px;
   background: #f9f9f9;
+  box-sizing: border-box;
 }
 
-/* ✅ Responsive */
+/* ===========================
+   MOBILE: up to 768px
+   =========================== */
 @media (max-width: 768px) {
+ 
+
   .marketers-card {
-    margin-top: 14%;
+    margin: 16px;
+    padding: 18px;
   }
-  
+
+  .marketers-desc {
+    font-size: 14px;
+  }
+
+  .marketsection-title { font-size: 18px; margin-top: 18px; }
+
+  .terms-list { font-size: 15px; padding-right: 12px; }
+
+  input.form-control { height: 44px; }
+  .marketersave-btn { padding: 10px 20px; }
+}
+
+/* ===========================
+   TABLET: 769px — 1023px
+   =========================== */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .marketers-page {
+    padding-top: 72px;
+    padding-bottom: 40px;
+  }
+
+  .marketers-card {
+    max-width: 900px;
+    padding: 24px;
+    margin: 12px auto;
+  }
+
+  .marketers-desc { font-size: 15px; }
+  .terms-list { font-size: 16px; padding-right: 16px; }
+  input.form-control { height: 48px; }
+}
+@media (max-width: 767px) {
+  /* Page container */
+  .marketers-page {
+    padding-top: 10%; /* Maintain proportional top spacing */
+    padding-bottom: 40px; /* Consistent bottom padding */
+    margin: 0 16px; /* Side margin for small screens */
+  }
+
+  /* Card adjustments */
+  .marketers-card {
+    background: #fff;
+    border-radius: 12px; /* Slightly smaller radius for smaller screens */
+    padding: 16px; /* Compact padding */
+    margin: 12px auto; /* Space between cards & center */
+    box-sizing: border-box;
+    width: 100%; /* Full width on mobile */
+  }
+
+  /* Title and text adjustments */
+  .marketers-title {
+    font-size: 16px; /* Adjust title size */
+    font-weight: bold;
+    margin-bottom: 8px; /* Compact title margin */
+    text-align: right; /* Align text to RTL direction */
+  }
+
+  .marketers-desc {
+    color: #534b4b;
+    font-size: 14px; /* Smaller font for mobile */
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: justify; /* Fit description within narrow screens */
+  }
+
+  .marketsection-title {
+    font-size: 16px; /* Adjust section title size */
+    margin-top: 18px;
+    font-weight: bold;
+    color: #1d3a77;
+    text-align: right;
+  }
+
+  .terms-list {
+    font-size: 14px; /* Compact text size */
+    padding-right: 12px; /* Reduced padding */
+    text-align: right;
+    margin-bottom: 10px; /* Space between list items */
+  }
+
+  /* Form elements */
+  input.form-control {
+    border-radius: 10px; /* Smaller input radius */
+    height: 44px; /* Adjust input height */
+    background: #f9f9f9;
+    padding: 0 14px; /* Compact input padding */
+    width: 100%; /* Full width on mobile */
+  }
+
+  /* Save button */
+  .marketersave-btn {
+    background: #1d3a77;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 14px; /* Adjust font size */
+    width: 100%; /* Full width button for mobile */
+    max-width: 200px; /* Limit button width */
+    margin: 12px auto; /* Space around the button */
+    text-align: center;
+  }
+}
+/* ===========================
+   DESKTOP: 1024px and up
+   =========================== */
+@media (min-width: 1024px) {
+
+
+  .marketers-card {
+    padding: 30px;
+    margin-top: 0;
+  }
+
+  .marketers-desc { font-size: 15px; }
+  .terms-list { font-size: 17px; }
 }

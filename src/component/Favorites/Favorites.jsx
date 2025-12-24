@@ -5,13 +5,13 @@ import carticon from '../../assets/cartsvg.svg'
 
 export default function Favorites() {
   return (
-    <div className="p-table mb-5">
-      <div className="container mt-5">
+    <div className="p-table mt-5  mb-5">
+      <div className="container mt-5 ">
 
-        <div className="table-wrapper">
+        <div className="table-wrapper  pt-5">
 
           {/* HEADER OUTSIDE THE TABLE */}
-          <div className="table-header">
+          <div className="table-header mt-5 ">
             <span>المنتجات (2)</span>
             <span>السعر</span>
             <span>التاريخ</span>

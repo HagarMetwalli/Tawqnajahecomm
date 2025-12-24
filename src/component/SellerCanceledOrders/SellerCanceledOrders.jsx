@@ -1,11 +1,12 @@
 import React from 'react'
-import '../CanceledOrders/CanceledOrders.css'
+import '../SellerCanceledOrders/SellerCanceledOrders.css'
 import img from "../../assets/winter-shirt.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
-export default function CanceledOrders() {
+export default function SellerCanceledOrders() {
 
-  const navigate = useNavigate(); // <<< مهم
+  const navigate = useNavigate(); 
+  const location = useLocation();
 
   const orders = [
     {
@@ -24,46 +25,83 @@ export default function CanceledOrders() {
   };
 
   return (
-    <div className="container neworders-page mt-5 mb-5 pb-5">
+    <div className="container neworders-page mt-5 pt-5 mb-5 pb-5">
 
-      <h1 className="canceled-heading mt-5 pt-5 mb-3">
-        الطلبات الملغاة/<span className="main">الرئيسية</span>
-      </h1>
+      <div className="row">
 
-      <div className="orders-wrapper">
-        {orders.map((order) => (
-          <div 
-            key={order.id} 
-            className="order-card canceledorder"
-            onClick={() => goToDetails(order.id)}  // <<< هنا الانتقال
-            style={{ cursor: "pointer" }} 
-          >
+        {/* ====== الجزء اليمين (التابات) ====== */}
+        <div className="col-lg-3  d-lg-block  mb-5 ">
+          <div className="orders-right-tabs pt-5">
 
-            <div className='left-side text-left'>
-              <div className="status-tab">الملغية</div>
-              <p className="order-price-left">{order.price}</p>
-            </div>
+            <button
+                className={`cright-tab cright-btn ${
+                  location.pathname === "/seller/sellerconfirmedorders" ? "active" : ""
+                }`}
+                onClick={() => navigate("/seller/sellerconfirmedorders")}
+              >
+                الطلبات الحالية
+              </button>
 
-            <div className="order-content">
-              <div className="image-side">
-                <img src={order.img} alt="product" />
-                <div className="text-side">
-                  <h4 className="product-title">{order.title}</h4>
-                  <p className="product-desc">{order.desc}</p>
+              <button
+                className={`cright-tab cright-btn2 ${
+                  location.pathname === "/seller/sellershippedorders" ? "" : ""
+                }`}
+                onClick={() => navigate("/seller/sellershippedorders")}
+              >
+                الطلبات المكتملة
+              </button>
 
-                  <p className="categorycanceled">
-                    <span className="qty">x{order.qty}</span>
-                    <span className="type">{order.category}</span>
-                  </p>
-
-                </div>
-              </div>
-            </div>
+              <button
+                className={`cright-tab cright-btn3 ${
+                  location.pathname === "/seller/sellercanceledorders" ? "active" : ""
+                }`}
+                onClick={() => navigate("/seller/sellercanceledorders")}
+              >
+                الطلبات الملغية
+              </button>
 
           </div>
-        ))}
-      </div>
+        </div>
 
+        {/* ====== الجزء الشمال (الكروت) ====== */}
+        <div className="col-lg-9 col-12 mt-5 pt-2">
+
+          <div className="corders-wrapper ">
+            {orders.map((order) => (
+              <div 
+                key={order.id}
+                className="order-card completedorder"
+                onClick={() => goToDetails(order.id)}
+                style={{ cursor: "pointer" }}
+              >
+                <div className='left-side text-left pt-3'>
+                  <div className="canceledstatus-tab text-white fw-bold">الملغية</div>
+                  <p className="cancelorder-price-left">{order.price}</p>
+                </div>
+
+                <div className="order-content ">
+                  <div className="image-side">
+                    <img src={order.img} alt="product" className="order-img" />
+
+                    <div className="text-side">
+                      <h4 className="product-title pt-5">{order.title}</h4>
+                      <p className="product-desc">{order.desc}</p>
+
+                      <p className="categorycanceled">
+                        <span className="qty">x{order.qty}</span>
+                        <span className="type">{order.category}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+        </div>
+
+      </div>
     </div>
   );
 }

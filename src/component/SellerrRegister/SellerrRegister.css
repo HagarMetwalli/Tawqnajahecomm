@@ -9,14 +9,17 @@ body {
   overflow-x: hidden;
 }
 
-.registeration .form {
+ .registeration .form {
   width: 50%;
   max-width: 100%;
   text-align: right;
-  padding: 5%;
-  margin: 5% auto;
+  /* padding: 5%; */
+  margin: auto;
+} 
+.registeration .image img{
+width: 92%;
+object-fit: contain;
 }
-
 .form label {
   font-size: 20px;
   font-weight: bold;

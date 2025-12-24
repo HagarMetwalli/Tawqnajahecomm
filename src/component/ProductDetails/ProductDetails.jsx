@@ -82,7 +82,7 @@ export default function ProductDetails() {
   };
 
   return (
-    <div className="product-page pt-2 container">
+    <div className="product-page pt-2 container mt-5">
 
       <h1 className="product-heading">
         تفاصيل المنتج / <span className="comm">ذات صلة</span>

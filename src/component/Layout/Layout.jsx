@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import ScrollTop from "../ScrollTop/ScrollTop";
 import UpperNav from "../Uppernav/Uppernav";
 
 export default function Layout() {
@@ -9,6 +10,7 @@ export default function Layout() {
   // ✅ صفحات الفورم فقط
   const authRoutes = [
     "/login",
+    
     "/customer/register",
     "/forgetpassword",
     "/resetpassword",
@@ -22,6 +24,8 @@ export default function Layout() {
 
   return (
     <>
+          <ScrollTop />
+
       {!hideLayout && <UpperNav />}
       {!hideLayout && <Navbar />}
 

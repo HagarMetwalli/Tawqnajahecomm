@@ -77,10 +77,10 @@ background-color: rgb(155, 144, 144);
 /* .footer-ph{
   direction: ltr;
 } */
-.footer-phone-row {
+/* .footer-phone-row {
   display: flex;
   align-items: center;
-}
+} */
 
 .footer-phone-text {
   direction: ltr;

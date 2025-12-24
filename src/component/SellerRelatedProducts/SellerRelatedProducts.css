@@ -1,59 +1,78 @@
+/* =====================================
+   Seller Related Products — FINAL FIXED
+   ===================================== */
 
-.related-section {
-  direction: rtl;
-  /* margin: 0 20px;      */
-  margin-right: 20px;
-  margin-left: 20px;
-  margin-bottom: 60px;
-  margin-top:10%
-  
+
+.mystorepage {
+
+  padding-top: 8%;
+  margin: 5px;
 }
 
+/* ---------- Main Section ---------- */
+.sellerrelated-section {
+  max-width: 1200px;
+     direction: rtl;
+  margin-top: 80px !important;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* ---------- Header ---------- */
 .related-header {
-    display: flex;
+display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2%;
-    flex-wrap: wrap;
-    padding-right: 1%;
-
-
+    margin-bottom: 32px;
+    width: 100%;
+    direction: rtl;             
 }
 
-.related-header h3 {
-  font-size: 28px;
+.related-title {
+  font-size: 22px;
   font-weight: 700;
-  margin-bottom: 10px;
-      padding-right: 2%;
-
+  color: #0A2A57;
+  margin: 0;
 }
 
-.more-btn {
-  border: none;
-  background: none;
-  color: #2643a4;
+.related-view-btn {
+  padding: 8px 18px;
+  background: #ffffff;
+  border: 1px solid #CBD5E1;
+  border-radius: 25px;
+  font-size: 14px;
+  color: #0A2A57;
+  text-decoration: none;
+  transition: 0.3s;
   font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 10px;
 }
 
-/* grid */
+.related-view-btn:hover {
+  background: #0A2A57;
+  color: #ffffff;
+  border-color: #0A2A57;
+  transform: translateY(-2px);
+}
+
+/* ---------- Cards Grid ---------- */
 .related-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-    width: 94%;
-    margin-right: 2%;  
+display: grid
+;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 93%;
+
 }
 
+/* ---------- Card ---------- */
 .related-card {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   overflow: hidden;
+  text-decoration: none;
+  color: #000;
   transition: 0.2s;
-    text-decoration: none;
-color:#000
 }
 
 .related-card:hover {
@@ -69,94 +88,82 @@ color:#000
 .related-card h4 {
   margin: 12px;
   font-size: 18px;
+  font-weight: 700;
+  color: #0A2A57;
 }
 
 .desc {
-    margin: 0 12px;
-    color: #000;
-    font-size: 16px;
-    font-weight: 400;
-
+  margin: 0 12px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
 }
 
 .price {
-  margin: 15px 12px;
-  color: #e63946;
+  margin: 12px;
+  font-size: 15px;
   font-weight: 700;
-  font-size: 16px;
-}
-.related-view-btn {
-  display: inline-block;
-  padding: 8px 22px;
-  background: #fff;
-  border: 1px solid #CBD5E1;   /* رمادي فاتح */
-  border-radius: 25px;
-  font-size: 14px;
-  color: #0A2A57;              /* الأزرق الأساسي */
-  text-decoration: none;
-  transition: 0.3s;
-    font-size: 24px;
-    font-weight: 400;
-      margin-left: 5%;
+  color: #E63946;
 }
 
-.related-view-btn:hover {
-  background: #0A2A57;
-  color: #fff;
-  border-color: #0A2A57;
-  transform: translateY(-2px);
-}
-
-/* --- Responsive --- */
-
-/* Tablets */
-@media (max-width: 1024px) {
+/* ---------- Tablet ---------- */
+@media (max-width: 1023px) {
   .related-cards {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 18px;
+  }
+
+  .related-card img {
+    height: 200px;
+  }
+
+  .related-title {
+    font-size: 20px;
   }
 }
 
-/* Small tablets / large phones */
-@media (max-width: 768px) {
-  .related-section {
-    margin: 90px 30px 20px;
+/* ---------- Small Tablets / Large Phones ---------- */
+@media (max-width: 767px) {
+  .sellerrelated-section {
+    margin: 24px auto;
   }
+
   .related-cards {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 14px;
   }
-  .related-header h3 {
-    font-size: 24px;
-    padding-top: 25px;
-  }
-  .more-btn {
-    font-size: 14px;
-  }
-}
 
-/* Mobile phones */
-@media (max-width: 480px) {
-  .related-section {
-        margin-top: 90%;
-  }
-  .related-cards {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
   .related-card img {
     height: 180px;
   }
-  .related-card h4 {
-    font-size: 16px;
+
+  .related-title {
+    font-size: 18px;
   }
-  .desc {
+
+  .related-view-btn {
     font-size: 13px;
+    padding: 7px 14px;
   }
-  .price {
-    font-size: 15px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  .related-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
-  .related-view-btn{
-    margin-bottom: 20px;
+
+  .related-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .related-card img {
+    height: 170px;
+  }
+
+  .related-title {
+    font-size: 17px;
   }
 }

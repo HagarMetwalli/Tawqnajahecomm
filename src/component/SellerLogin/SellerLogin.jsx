@@ -61,12 +61,12 @@ export default function SellerLogin() {
 
 
   return (
-    <div className="login-wrapper">
-      <div className="login-container ontainer-fluid">
+    <div className="login-wrapper ">
+      <div className="login-container ">
         <div className="row">
 
           <div className="login-image col-md-6 p-0">
-            <img src={loginbg} alt="login" className=" w-100 h-100" />
+            <img src={loginbg} alt="login" className="h-100 p-0" />
           </div>
 
           <div className="login-form col-12 col-md-6 d-flex flex-column ">

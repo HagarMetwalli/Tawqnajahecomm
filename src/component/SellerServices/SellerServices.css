@@ -1,95 +1,144 @@
-.services-section .container{
-      max-width: 93%;
-    margin: auto;
-    padding: 0 20px;
-    direction: rtl;
-    font-size: 30px;
-    font-weight: bold;
+/* Services — responsive: desktop 4 cols, tablet 2 cols, mobile 1 col
+   Reduced font-sizes and reduced top padding/margins for tighter layout
+   Breakpoints:
+   - Mobile: up to 767px (1 column)
+   - Tablet / Laptop: 768px — 1023px (2 columns)
+   - Desktop / Larger: 1024px and up (4 columns)
+*/
 
+/* Container */
+.services-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  direction: rtl;
+  box-sizing: border-box;
 }
+
+/* Section wrapper */
 .services-section {
   direction: rtl;
-  padding: 50px 0;
-  margin-bottom: 60px;   
+  padding: 0px 0;        /* reduced from 50px */
+  margin-bottom: 40px;    /* slightly smaller */
 }
 
-/* عنوان */
+/* Title */
 .section-title {
- font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    text-align: right;
+  font-size: 26px;        /* reduced from 30px */
+  font-weight: 700;
+  margin-bottom: 24px;    /* reduced from 40px */
+  text-align: right;
 }
 
+/* Grid row: use CSS Grid for consistent columns */
 .services-row {
-    display: flex;
-    justify-content: flex-start;
-    gap: 38px;
-    flex-wrap: wrap;
-    /* width: 95%; */
-    padding-top: 1%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* desktop: 4 columns */
+  gap: 32px; /* reduced gap for a tighter layout */
+  align-items: start;
+  width: 100%;
+  padding-top: 1%;
+  box-sizing: border-box;
 }
 
+/* Card */
 .service-card {
-    width: 330px;
+  width: 100%;
+  max-width: 330px;       /* card width limit */
+  margin: 0 auto;         /* centers card inside grid cell */
   background: #F3F4F6;
-  padding: 35px 20px;
-  border-radius: 20px;
+  padding: 10px 16px;     /* reduced padding */
+  border-radius: 16px;    /* slightly smaller radius */
   text-align: center;
   border: 1px solid #ddd;
   transition: 0.3s;
   text-decoration: none;
+  box-sizing: border-box;
 }
-.service-card i{
-      /* height: 50px; */
-    font-size: 32px;
 
-}
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
+/* Icon */
 .service-icon {
-  font-size: 45px;
+  font-size: 40px;        /* reduced from 45px */
   color: #0A2A57;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
-.service-card h3 {
-    font-size: 27px;
-    margin-bottom: 12px;
-    text-decoration: none;
-    color:#212529
+.service-card i {
+  font-size: 28px;        /* reduced */
+}
 
+/* Heading and text */
+.service-card h3 {
+  font-size: 22px;        /* reduced from 27px */
+  margin-bottom: 10px;
+  color: #212529;
 }
 
 .view-btn {
-background: #fff;
-    border: 1px solid #ccc;
-    padding: 8px 22px;
-    border-radius: 25px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-top: 3%;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 13px;        /* slightly smaller */
+  cursor: pointer;
+  margin-top: 12px;
 }
-/* موبايل */
-@media (max-width: 576px) {
+.section-block {
+  max-width: 1200px;
+  margin: 80px auto;   /* 👈 المسافة الموحدة */
+  padding: 0 16px;
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+/* ===== Responsive rules ===== */
+
+/* Tablet / Laptop: 768px — 1023px -> 2 columns */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .services-section { padding: 22px 0; }
+  .section-title { font-size: 22px; margin-bottom: 20px; }
   .services-row {
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
   }
+  .service-card { max-width: 420px; padding: 20px; }
+  .service-icon { font-size: 38px; }
+  .service-card h3 { font-size: 20px; }
+  .view-btn { font-size: 13px; padding: 7px 18px; }
+}
 
+/* Mobile: up to 767px -> 1 column */
+@media (max-width: 767px) {
+  .services-section { padding: 16px 0; }
+  .section-title { font-size: 20px; margin-bottom: 16px; }
+  .services-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
   .service-card {
-  
-        width: 78%;
-    background: #F3F4F6;
-    padding: 35px 20px;
-    border-radius: 20px;
-    text-align: center;
-    border: 1px solid #ddd;
-    transition: 0.3s;
-    text-decoration: none;
-    margin: auto;
+    max-width: 100%;
+    width: 92%;
+    padding: 18px 14px;
+    margin: 0 auto;
   }
+  .service-icon { font-size: 34px; margin-bottom: 10px; }
+  .service-card h3 { font-size: 18px; }
+  .service-card p { font-size: 13px; }
+  .view-btn { display: block; width: fit-content; margin: 10px auto 0; padding: 8px 16px; font-size: 13px; }
+}
 
+/* Large screens: keep 4 columns but allow slightly larger card max-width */
+@media (min-width: 1440px) {
+  .services-row {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px;
+  }
+  .service-card { max-width: 360px; padding: 26px 18px; }
+  .section-title { font-size: 28px; }
+  .service-card h3 { font-size: 24px; }
 }

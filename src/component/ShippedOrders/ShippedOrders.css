@@ -1,280 +1,223 @@
-/* ===========================
-   shippeded Orders Page Style
-   =========================== */
+/* Shipped orders responsive stylesheet
+   Breakpoints requested:
+   - Mobile: max-width: 767px
+   - Tablet: min-width: 768px and max-width: 1024px
+   - Desktop: min-width: 1025px and up
+   This file adjusts spacing, sizes and layout for those breakpoints.
+*/
 
+/* ---------- Base / desktop-first defaults ---------- */
 .shipped-container {
   direction: rtl;
-  margin-bottom: 12%;
-      margin-top: 12%; 
+  margin: 40px 0; /* safer fixed spacing instead of large percentages */
 }
 
 .shippeded-wrapper {
-    display: flex;
-    margin-top: 17% !important;
-    direction: rtl;
-    margin-bottom: 8%;
+  display: flex;
+  gap: 24px;
+  direction: rtl;
+  margin: 24px 0;
+  align-items: flex-start;
 }
 
-/* اليمين */
+/* Right column (tabs/navigation) */
 .shippedorders-tabsnew {
-  width: 250px;
+  width: 260px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* الشمال (الكروت) */
+/* Left column (orders list) */
 .shippedorders-list {
   flex: 1;
-      margin-right: 4%;
+  margin-right: 8px;
 }
 
-.card{
-border-bottom: 1px solid #000;
-    border-radius: 0;
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
-}
-.shipped-heading{
-    font-size: 20px;
-}
-.shipped-text{
-    font-size: 20px;
-    font-weight: 400;
-    color: #9E9E9E;
-}
-.shipped-price{
-    font-size: 18px;
-    color:#F38B1B;
-    font-weight: bold;
-}
-.badge{
-    background-color: #1D3A77;
-    font-size: 18px;
-    font-weight: 400;
-}
-/* كل كارت طلب */
-/* .order-cardshippeded {
-  border-radius: 12px !important;
-  background: #fff !important;
-  border: 1px solid #eeeeee !important;
-  transition: 0.3s ease-in-out;
-  padding: 20px !important;
+/* Simple card override */
+.card {
+  border-bottom: 1px solid #e6e6e6;
+  border-radius: 0;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  padding: 20px;
+  background: transparent;
 }
 
-.order-cardshippeded:hover {
-  transform: scale(1.01);
-} */
+/* Headings & text */
+.shipped-heading { font-size: 20px; }
+.shipped-text { font-size: 16px; color: #9E9E9E; font-weight: 400; }
+.shipped-price { font-size: 18px; color: #F38B1B; font-weight: 700; }
+.badge { background-color: #1D3A77; color: #fff; font-size: 16px; padding: 6px 10px; border-radius: 6px; }
 
-/* الصورة */
-.order-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 8px;
-  object-fit: cover;
-}
+/* Order card / item */
+.order-img { width: 90px; height: 90px; border-radius: 12px; object-fit: cover; }
+.product-title { font-size: 18px; margin: 0; font-weight: 700; }
+.product-desc { margin: 0; font-size: 14px; color: #777; }
+.price { color: #ff8c00; font-size: 18px; font-weight: 700; }
 
-/* اسم المنتج */
-.product-title {
-  font-size: 20px;
-  margin: 0;
-  font-weight: 700;
-}
-
-/* الوصف */
-.product-desc {
-  margin: 0;
-  font-size: 14px;
-  color: #777;
-}
-
-/* السعر */
-.price {
-  color: #ff8c00;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-/* رقم الطلب */
+/* Order id badge */
 .order-id {
-  background: #123a8a !important;
-  padding: 8px 14px !important;
+  background: #123a8a;
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Completed order summary box */
+.completedorder {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  position: relative;
+  min-height: 100px; /* adaptive */
+}
+
+/* Status tab */
+.complstatus-tab {
+  background: #1D3A77;
+  color: #fff;
+  width: 160px;
+  padding: 12px;
   font-size: 16px;
-  border-radius: 8px !important;
-  height: fit-content;
-}
-.completedorder{
- background: #fff;
-    padding: 0px 20px 125px 0px;
-    border-radius: 12px;
-    /* margin-bottom: 20px; */
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
-    position: relative;
-    height: 19vh;
-
-}
-.complstatus-tab{
-    background: #1D3A77;
-    color: #fff;
-    width: 21%;
-    padding: 18px 12px;
-    font-size: 18px;
-    font-weight: bold;
-    border-top-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    text-align: center;
-    float: left;
-}
-.image-side {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  font-weight: 700;
+  border-top-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  text-align: center;
 }
 
-.image-side img {
-  width: 90px;
-  height: 90px;
-  border-radius: 12px;
-  object-fit: cover;
-}
+/* Image container */
+.image-side { display: flex; align-items: center; gap: 16px; }
 
+/* Utility */
+.shippedorders-tabsnew .tab { cursor: pointer; padding: 10px 12px; border-radius: 8px; background: transparent; }
 
-.order-img {
-  width: 90px;
-  height: 90px;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-/* ================================
-================================ */
-
-/* التابلت وما دون - 992px */
-@media (max-width: 992px) {
-
-  .shippeded-wrapper {
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 8% !important;
-    margin-bottom: 5%;
+/* ---------- Mobile: max-width 767px ---------- */
+@media (max-width: 767px) {
+  .shipped-container {
+    margin: 16px 0;
   }
 
-  /* التبويبات */
+  /* stack everything vertically */
+  .shippeded-wrapper {
+    flex-direction: column;
+    gap: 14px;
+    margin: 12px 0;
+  }
+
+  /* tabs become horizontal scrollable or stacked */
   .shippedorders-tabsnew {
-   width: 100% !important;
+    width: 100%;
     flex-direction: row;
     overflow-x: auto;
     gap: 10px;
-    margin-bottom: 15px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .shippedorders-tabsnew .tab {
-    flex: 1 0 auto;
-    font-size: 18px;
-    padding: 12px;
+    flex: 0 0 auto;
+    font-size: 14px;
+    padding: 10px 14px;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid #eee;
   }
 
-  /* قائمة الكروت */
+  /* orders list full width */
   .shippedorders-list {
     width: 100%;
     margin-right: 0;
   }
 
-  /* الكارت */
-  .card {
-    padding: 15px !important;
-  }
+  /* smaller card padding */
+  .card { padding: 12px; }
 
-  .order-img {
-    width: 60px;
-    height: 60px;
-  }
+  /* smaller images and text */
+  .order-img { width: 56px; height: 56px; border-radius: 8px; }
+  .product-title { font-size: 16px; }
+  .product-desc { font-size: 12px; }
+  .price { font-size: 16px; }
+  .shipped-heading { font-size: 16px; }
+  .shipped-text, .shipped-price, .badge { font-size: 14px; }
+  .order-id { font-size: 12px; padding: 6px 8px; }
 
-  .shipped-heading {
-    font-size: 18px;
-  }
-
-  .shipped-text {
-    font-size: 16px;
-  }
-
-  .shipped-price {
-    font-size: 16px;
-  }
-
-  .badge {
-    font-size: 16px;
-  }
-
-  .product-title {
-    font-size: 18px;
-  }
-
-  .product-desc {
-    font-size: 12px;
-  }
-
-  .price {
-    font-size: 18px;
-  }
-
-  .order-id {
-    font-size: 14px;
-    padding: 6px 10px !important;
-  }
-}
-
-/* الموبايل - 576px */
-@media (max-width: 576px) {
-
-  .shippedorders-tabsnew {
-    flex-direction: column;
-  }
-
-  .card {
-    padding: 10px !important;
-  }
-
-  .order-img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .product-title {
-    font-size: 16px;
-  }
-
-  .product-desc {
-    font-size: 11px;
-  }
-
-  .shipped-heading {
-    font-size: 16px;
-  }
-
-  .shipped-text,
-  .shipped-price,
-  .badge {
-    font-size: 14px;
-  }
-
-  .price {
-    font-size: 16px;
-  }
-
-  .order-id {
-    font-size: 12px;
-    padding: 5px 8px !important;
-  }
-}
-  @media screen and (max-width:767px){
-    .orders-right-tabs .shipped-btn{
-      margin-top:30%
-    }
-    .complstatus-tab {
-    background: #1D3A77;
-    color: #fff;
+  /* status tab becomes full width for clarity */
+  .complstatus-tab {
     width: 100%;
-    }
+    padding: 12px 10px;
+    font-size: 16px;
+    border-radius: 8px;
   }
+
+  .completedorder { min-height: 211px; padding-bottom: 23px; }
+}
+
+/* ---------- Tablet: 768px — 1024px ---------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .shipped-container {
+    margin: 20px 0;
+  }
+
+  /* allow two-column-ish feel: tabs above or narrow sidebar */
+  .shippeded-wrapper {
+    flex-direction: row;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  /* tabs become horizontal row on top of list if needed */
+  .shippedorders-tabsnew {
+    width: 220px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .shippedorders-tabsnew .tab {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  /* images slightly smaller */
+  .order-img { width: 76px; height: 76px; }
+  .product-title { font-size: 17px; }
+  .product-desc { font-size: 13px; }
+  .price { font-size: 17px; }
+  .shipped-heading { font-size: 18px; }
+  .shipped-text, .shipped-price, .badge { font-size: 15px; }
+  .order-id { font-size: 13px; padding: 7px 10px; }
+
+  .complstatus-tab { width: 36%; padding: 14px; font-size: 16px; }
+  .completedorder { min-height: 110px; }
+}
+
+/* ---------- Desktop: 1025px and up ---------- */
+@media (min-width: 1025px) {
+  .shipped-container { margin: 48px 0; }
+  .shippeded-wrapper { gap: 28px; align-items: flex-start; }
+
+  .shippedorders-tabsnew { width: 260px; flex-direction: column; gap: 16px; }
+  .shippedorders-tabsnew .tab { font-size: 16px; padding: 12px; }
+
+  .order-img { width: 90px; height: 90px; }
+  .product-title { font-size: 18px; }
+  .product-desc { font-size: 14px; }
+  .price { font-size: 18px; }
+  .shipped-heading { font-size: 20px; }
+  .shipped-text, .shipped-price, .badge { font-size: 16px; }
+  .order-id { font-size: 14px; padding: 8px 14px; }
+
+  .complstatus-tab { width: 21%; padding: 18px 12px; font-size: 18px; }
+  .completedorder { min-height: 120px; }
+}
+
+/* ---------- Small tweaks ---------- */
+/* ensure horizontal tab strip doesn't show ugly scrollbar in some browsers */
+.shippedorders-tabsnew::-webkit-scrollbar { height: 6px; }
+.shippedorders-tabsnew::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.08); border-radius: 6px; }
+
+/* End of shipped orders responsive styles */

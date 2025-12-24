@@ -6,10 +6,10 @@ import delivered from '../../assets/delivered.png';
 
 export default function SellerOrderDetails() {
   return (
-    <div className="container orderdetails-page newordersdetails1 mt-5 pt-5">
+    <div className="container orderdetails-page newordersdetails1 pb-5 mt-5 pt-5">
 
       {/* عنوان الصفحة */}
-      <h1 className="page-titleneworders pt-5 mt-5 pb-3">
+      <h1 className="page-titleneworders mt-5 pt-5  pb-3">
         تفاصيل الطلب / <span className="newordersdetails">الطلبات الجديدة</span>
       </h1>
 

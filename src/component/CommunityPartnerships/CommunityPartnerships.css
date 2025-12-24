@@ -1,7 +1,17 @@
 /* ====== WRAPPER عام ====== */
-label{
-    font-size: 18px;
-    font-weight: bold;
+label {
+  font-size: 18px;
+  font-weight: bold;
+}
+.community-page{
+  padding-top: 135px;
+  background-color: #fbfbfb;
+}
+.community-header{
+  padding-top: 0px;
+}
+.community-title{
+  padding-top: 3%;
 }
 .community-wrapper {
   width: 100%;
@@ -12,15 +22,13 @@ label{
 
 /* كارت الفورم */
 .community-card {
-        padding-right: 37px;
-    width: 94%;
-
-    padding-bottom: 10%;
+  padding-right: 37px;
+  width: 94%;
+  padding-bottom: 40px; /* replace huge percentage with fixed spacing */
   max-width: 1200px;
   margin: 0 auto;
   background: #fff;
   border-radius: 16px;
-  /* padding: 30px 25px; */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
@@ -58,7 +66,6 @@ label{
   font-size: 14px;
   outline: none;
   background: #fafafa;
-
 }
 
 .form-col input:focus,
@@ -83,13 +90,12 @@ label{
 
 /* الراديو */
 .radio-group {
-display: flex;
-    flex-wrap: wrap;
-    gap: 15px 30px;
-    margin-top: 4px;
-    margin-bottom: 10px;
-    justify-content: space-between;
-
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 30px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  justify-content: space-between;
 }
 
 .radio-group label {
@@ -98,10 +104,11 @@ display: flex;
   align-items: center;
   gap: 6px;
 }
-/* ✅ مجموعة الراديو على سطر واحد فقط */
+
+/* مجموعة الراديو على سطر واحد فقط (use carefully) */
 .radio-group.custom-radio {
   display: flex;
-  flex-wrap: nowrap;   /* ❌ يمنع النزول لسطر جديد */
+  flex-wrap: nowrap; /* prevents wrapping */
   gap: 25px;
   align-items: center;
 }
@@ -111,7 +118,7 @@ display: flex;
   display: flex;
   align-items: center;
   gap: 6px;
-  white-space: nowrap; /* ✅ يمنع تكسر الكلام */
+  white-space: nowrap;
   font-size: 15px;
   cursor: pointer;
 }
@@ -138,6 +145,10 @@ display: flex;
   display: flex;
   justify-content: flex-end;
   gap: 15px;
+};
+.sellers-page{
+          padding-top: 92px;
+
 }
 
 .btn-cancel,
@@ -160,23 +171,25 @@ display: flex;
   background: #1d3a77;
   color: #fff;
 }
-form{
-        direction: rtl;
-            width: 95%;
-    margin: auto;
 
-}
-.form-label{
-        font-size: 19px;
-
+form {
+  direction: rtl;
+  width: 95%;
+  margin: auto;
 }
 
-.inputs,.keyphone-ar {
-        background-color: #9e9e9e14;
-    border: 1px solid #E9E9E9;
-    border-radius: 12px;
+.form-label {
+  font-size: 19px;
 }
-/* ✅ توحيد ارتفاع كل المدخلات */
+
+.inputs,
+.keyphone-ar {
+  background-color: #9e9e9e14;
+  border: 1px solid #E9E9E9;
+  border-radius: 12px;
+}
+
+/* توحيد ارتفاع كل المدخلات */
 .inputs,
 .keyphone-ar,
 .form-select,
@@ -189,43 +202,50 @@ form{
   border: 1px solid #E9E9E9;
 }
 
-/* ✅ التكسيت ايريا أكبر شوية */
+/* التكسيت اريا أكبر شوية */
 textarea.form-control {
-  height: 20%;
+  height: auto;
   min-height: 110px;
 }
-.community-form{
-        padding-bottom: 10%;
 
+.community-form {
+  padding-bottom: 40px; /* avoid percent-based height */
 }
-.keyphone-ar{
-    height: 75%;
-    /* width: 50%; */
+
+/* keyphone-ar: remove percent height to avoid layout issues */
+.keyphone-ar {
+  height: auto;
 }
-.setting-btn{
 
-    color: #fff;
-    background-color: #1d3a77;
-    font-weight: bold;
-    padding: 11px;
-    border-radius: 12px;
-
+/* buttons and icons */
+.setting-btn {
+  color: #fff;
+  background-color: #1d3a77;
+  font-weight: bold;
+  padding: 11px;
+  border-radius: 12px;
 }
-.comm-icon{
-     font-size: 15px;
-    background: #ff580ed6;
-    color: #fff;
-    padding: 10px 8px 24px 8px;
-    height: 15px;
-    width: 3%;
-    border-radius: 50%;
-    position: absolute;
-    left: 83%;
-    top: 59%;
 
-
-
+/* comm-icon: make pixel-based and RTL-friendly (use 'right' for rtl) */
+.comm-icon {
+  font-size: 15px;
+  background: #ff580ed6;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  position: absolute;
+  top: 18px;
+  right: 18px; /* use right for rtl alignment */
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 2;
 }
+
+/* radio styles */
 .custom-radio {
   display: flex;
   gap: 25px;
@@ -234,7 +254,7 @@ textarea.form-control {
 
 .custom-radio .radio-item {
   display: flex;
-  flex-direction: row-reverse;   /* ✅ يقلب مكان الدائرة مع الكلمة */
+  flex-direction: row-reverse;
   align-items: center;
   gap: 6px;
   font-size: 15px;
@@ -243,76 +263,231 @@ textarea.form-control {
 
 .custom-radio .radio-item input {
   margin: 0;
-}
-.custom-radio .radio-item input {
   width: 20px;
   height: 20px;
-  accent-color: #1d3a77; /* لون السيركل */
-  cursor: pointer;
-}
-.community-avatar{
-    width: 130px;
-}
-@media (min-width: 992px) {
-
+  accent-color: #1d3a77;
 }
 
-/* .cancel-btn{
-    
-} */
+/* avatar */
+.community-avatar {
+  width: 130px;
+}
+
 /* ====== RESPONSIVE ====== */
 
-/* تابلت و موبايل: العمودين يبقوا تحت بعض */
-@media (max-width: 992px) {
-  .community-card {
-    padding: 20px 15px;
-  }
+/* ===========================
+   MOBILE / SMALL TABLET: up to 768px
+   (stacked, full-width controls)
+   =========================== */
+ @media (max-width: 767px) {
 
-  .community-form-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+ }  
 
-  .form-actions {
-    flex-direction: row-reverse;
-    justify-content: center;
-  }
-
-  .btn-cancel,
-  .btn-save {
-    width: 45%;
-  }
-    .community-wrapper .row {
-    column-gap: 60px;
-  }
-}
-
-/* موبايل صغير جدًا */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .community-wrapper {
-    padding: 20px 10px;
-  }
-
-  .community-card {
     padding: 18px 12px;
   }
+  .community-page { 
+    padding-top: 0px;
+            padding-bottom: 73px;
+   } /* phones */
 
-  .radio-group {
+  .community-card {
+    width: 100%;
+    max-width: 100%;
+    padding:0px 16px 20px 16px;
+    margin: 0;
+    /* padding-right: 16px;
+    padding-bottom: 20px; */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    border-radius: 12px;
+  }
+
+  /* collapse grid to single column */
+  .community-form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .form-col {
+    gap: 12px;
+  }
+
+  .inputs,
+  .keyphone-ar,
+  .form-select,
+  .form-control {
+    width: 100% !important;
+    height: 48px !important;
+    padding: 10px 12px !important;
+    font-size: 15px !important;
+  }
+
+  textarea.form-control {
+    min-height: 120px;
+  }
+
+  .radio-group,
+  .custom-radio {
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
 
   .phone-box {
     flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
+  .phone-box select { min-width: 84px; }
+
+  .community-avatar {
+    width: 100px;
+    height: auto;
+    margin-bottom: 8px;
   }
 
-  .btn-cancel,
-  .btn-save {
-    width: 100%;
+  .comm-icon {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
   }
 
   .form-actions {
+    margin-top: 18px;
+    justify-content: stretch;
     flex-direction: column-reverse;
-    align-items: stretch;
+    gap: 12px;
+  }
+  .btn-cancel,
+  .btn-save {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 12px !important;
+    font-size: 16px !important;
+  }
+
+  .setting-btn {
+    width: 100%;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .community-card,
+  .community-wrapper,
+  .form-col {
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+}
+
+/* ===========================
+   TABLET: 769px — 1023px
+   (tightened spacing, two-column)
+   =========================== */
+@media (min-width: 769px) and (max-width: 1023px) {
+  /* Page container adjustments */
+  .marketers-page {
+    padding-top: 15%; /* Moderate top spacing for tablets */
+    padding-bottom: 40px; /* Consistent padding */
+    margin: 0 auto; /* Center alignment for the page layout */
+    max-width: 95%; /* Box adjustment for tablet screens */
+  }
+
+  /* Card adjustments */
+  .marketers-card {
+    max-width: 900px; /* Limit card width for tablets */
+    padding: 24px; /* Balanced padding inside cards */
+    margin: 12px auto; /* Center card placement */
+    border-radius: 16px; /* Moderate corner radius */
+    box-sizing: border-box;
+  }
+
+  /* Title and text adjustments */
+  .marketers-title {
+    font-size: 20px; /* Slightly larger font size for titles */
+    font-weight: bold;
+    margin-bottom: 12px; /* Increased spacing */
+    text-align: right; /* Keep RTL alignment */
+  }
+
+  .marketers-desc {
+    font-size: 15px; /* Adjust font size for scalability */
+    color: #534b4b;
+    font-weight: 500; /* Lightweight description for readability */
+    text-align: justify; /* Text wrapping */
+    margin-bottom: 15px;
+  }
+
+  .marketsection-title {
+    margin-top: 20px;
+    font-size: 18px; /* Increased section title font size */
+    font-weight: bold;
+    color: #1d3a77;
+    text-align: right;
+  }
+
+  .terms-list {
+    font-size: 16px; /* Moderate font scaling for tablets */
+    padding-right: 20px; /* Balanced padding */
+    text-align: right;
+  }
+
+  /* Form adjustments */
+  input.form-control {
+    height: 48px; /* Slightly taller inputs for tablets */
+    border-radius: 12px; /* Matching moderate design aesthetics */
+    padding: 0 16px; /* Balanced padding */
+    background: #f9f9f9;
+    font-size: 14px; /* Better readability */
+    width: 100%; /* Full-width inputs */
+  }
+
+  /* Save button adjustments */
+  .marketersave-btn {
+    padding: 12px 40px; /* Larger button padding */
+    font-size: 16px; /* Moderate font scaling for tablets */
+    border-radius: 12px; /* Consistent corner radius */
+    display: inline-block;
+    align-self: center; /* Center button alignment */
+  }
+}
+
+/* ===========================
+   DESKTOP: 1024px and up
+   (default / larger spacing)
+   =========================== */
+@media (min-width: 1024px) {
+  .community-wrapper {
+    padding: 30px 20px;
+  }
+
+  .community-card {
+    padding-right: 37px;
+    padding-bottom: 40px;
+    width: 94%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .community-form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 40px;
+  }
+
+  .community-avatar {
+    width: 130px;
+  }
+
+  .inputs,
+  .keyphone-ar,
+  .form-select,
+  .form-control {
+    height: 52px;
+  }
+
+  .form-actions {
+    justify-content: flex-end;
   }
 }

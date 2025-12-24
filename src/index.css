@@ -8,12 +8,127 @@ body {
   margin: 0;
 
   font-family: "Tajawal", sans-serif;
+    /* padding-top: 130px;  */
+
 }
 
 /* ################################################## */
 /* ================= MOBILE (0–480px) ================= */
 
 /* BLOCK 1 – erste Version (deine neuen Werte) */
+/* Equal vertical spacing + header offset
+   Place at the END of your main CSS (index.css or App.css) */
+
+/* Set these to match your site */
+:root{
+  --site-header-height: 80px;  /* set to your header height in px (e.g. 64px, 72px) */
+  --section-gap: 12px;         /* small gap under the header */
+  --section-vert-gap: 32px;    /* equal vertical space between sections (change as needed) */
+}
+
+/* If your header is fixed/sticky: apply offset to the page wrapper.
+   Ensure the page wrapper element has className="mystorepage" (see note below). */
+.mystorepage {
+  padding-top: calc(var(--site-header-height) + var(--section-gap));
+  box-sizing: border-box;
+}
+
+/* Apply consistent vertical spacing to major sections */
+.home-section,
+.services-section,
+.customer-categories-section,
+.customer-products-grid {
+  margin-top: var(--section-vert-gap);
+  margin-bottom: var(--section-vert-gap);
+  box-sizing: border-box;
+}
+
+/* If you prefer the spacing to come from padding instead of margin */
+.home-section > .container,
+.services-section > .container {
+  padding-top: calc(var(--section-vert-gap) / 2);
+  padding-bottom: calc(var(--section-vert-gap) / 2);
+}
+
+/* Tweak for smaller screens */
+@media (max-width: 767px) {
+  :root { --section-vert-gap: 18px; } /* smaller gap on mobile */
+  .mystorepage { padding-top: calc(var(--site-header-height) * 0.9 + 6px); }
+}
+
+/* ===== Debug fallback (temporary) =====
+   If after pasting nothing changes, uncomment the rules below to force them and verify.
+   If these work, remove !important and keep the non-debug rules above.
+*/
+/*
+.mystorepage,
+[class*="mystorepage"],
+.home-section,
+.services-section,
+.related-section {
+  padding-top: calc(var(--site-header-height) + var(--section-gap)) !important;
+  margin-top: 0 !important;
+}
+*/
+/* Equal vertical spacing + header offset
+   Place at the END of your main CSS (index.css or App.css) */
+
+/* Set these to match your site */
+:root{
+  --site-header-height: 80px;  /* set to your header height in px (e.g. 64px, 72px) */
+  --section-gap: 12px;         /* small gap under the header */
+  --section-vert-gap: 32px;    /* equal vertical space between sections (change as needed) */
+}
+
+/* If your header is fixed/sticky: apply offset to the page wrapper.
+   Ensure the page wrapper element has className="mystorepage" (see note below). */
+.mystorepage {
+  padding-top: calc(var(--site-header-height) + var(--section-gap));
+  box-sizing: border-box;
+}
+
+/* Apply consistent vertical spacing to major sections */
+.home-section,
+.services-section,
+.customer-categories-section,
+.customer-products-grid {
+  margin-top: var(--section-vert-gap);
+  margin-bottom: var(--section-vert-gap);
+  box-sizing: border-box;
+}
+
+/* If you prefer the spacing to come from padding instead of margin */
+/* .home-section > .container,
+.services-section > .container,
+.related-section > .container {
+  padding-top: calc(var(--section-vert-gap) / 2);
+  padding-bottom: calc(var(--section-vert-gap) / 2);
+} */
+
+/* Tweak for smaller screens */
+@media (max-width: 767px) {
+  :root { --section-vert-gap: 18px; } /* smaller gap on mobile */
+  .mystorepage { padding-top: calc(var(--site-header-height) * 0.9 + 6px); }
+}
+
+/* ===== Debug fallback (temporary) =====
+   If after pasting nothing changes, uncomment the rules below to force them and verify.
+   If these work, remove !important and keep the non-debug rules above.
+*/
+/*
+.mystorepage,
+[class*="mystorepage"],
+.home-section,
+.services-section,
+.related-section {
+  padding-top: calc(var(--site-header-height) + var(--section-gap)) !important;
+  margin-top: 0 !important;
+}
+*/
+
+.sellerrelated-section{
+  margin-top: 15%;
+}
 @media (max-width: 480px) {
   .tn-nav-main {
     /* top: 0 !important; */
@@ -46,7 +161,7 @@ body {
   } */
 
   .profile-wrapper {
-    margin-top: 340px !important;
+        margin-top: 97px !important;
   }
   /* dein bestehender Code */
   .customer-products-grid {
@@ -55,7 +170,7 @@ body {
 
   .neworderspage,
   .orderdetails-page {
-    margin: 342px 0 !important;
+    margin: 32px 0 !important;
   }
 
   .tn-nav-main {
@@ -112,7 +227,7 @@ body {
 
   /* .customer-products-grid{ margin-top: 100px !important;} */
   .products-wrapper {
-    margin-top: 100px !important;
+    margin-top: 23px !important;
   }
 }
 

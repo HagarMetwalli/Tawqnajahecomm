@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import SellerNavbar from "../SellerNavbar/SellerNavbar";
 import UpperNav from "../Uppernav/Uppernav";
 import Footer from "../Footer/Footer";
+import ScrollTop from "../ScrollTop/ScrollTop"
 
 export default function SellerLayout() {
   const location = useLocation();
@@ -22,6 +23,7 @@ export default function SellerLayout() {
 
   return (
     <>
+    <ScrollTop/>
       {!hideLayout && <UpperNav />}
       {!hideLayout && <SellerNavbar />}
 

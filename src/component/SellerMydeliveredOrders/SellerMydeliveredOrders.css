@@ -1,304 +1,204 @@
-/* ===========================
-   shippeded Orders Page Style
-   =========================== */
-
-.shipped-container {
+/* ===== Page ===== */
+.orders-page {
   direction: rtl;
-  margin-bottom: 12%;
-      /* margin-top: 12%;  */
+  min-height: 100vh;
+  padding: 10px 0;
+}
+.delivered-wrapper{
+    display: flex;
+    margin-top: 10% !important;
+    margin-bottom: 10%;
+}
+/* ===== Layout ===== */
+.orders-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+      margin-top: 13%;
+
 }
 
-.delivered-wrapper {
-     display: flex;
-    margin-top: 1% !important;
-    direction: rtl;
-    margin-bottom: 8%;
-}
-
-/* اليمين */
-.shippedorders-tabsnew {
-  width: 250px;
+/* ===== Tabs ===== */
+.tabs-column {
+  width: 220px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* الشمال (الكروت) */
-.shippedorders-list {
-  flex: 1;
-      margin-right: 4%;
+.tab {
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: #111;
+  text-decoration: none;
 }
 
-.card{
-border-bottom: 1px solid #000;
-    border-radius: 0;
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
+.tab.active {
+  background: #1d3a77;
+  color: #fff;
 }
-.shipped-heading{
+
+/* ===== Orders Content ===== */
+.orders-content {
+  flex: 1;
+      direction: ltr;
+
+}
+
+/* ===== Order Row ===== */
+.order-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Left */
+.order-id {
+  background: #ff5a00;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Middle */
+.price-center {
+  display: flex;
+  justify-content: center; /* ✅ توسيط أفقي */
+  width: 100%;
+}
+
+.mydeliverorder-price {
+  color: #ff8c00;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+  text-align: center;
+}
+
+
+/* Right */
+.order-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.order-info h4 {
+    text-align: right;
     font-size: 20px;
-}
-.shipped-text{
-    font-size: 20px;
-    font-weight: 400;
-    color: #9E9E9E;
-}
-.shipped-price{
-    font-size: 18px;
-    color:#F38B1B;
     font-weight: bold;
 }
-.badge{
-    background-color: #1D3A77;
-    font-size: 18px;
-    font-weight: 400;
-}
-/* كل كارت طلب */
-/* .order-cardshippeded {
-  border-radius: 12px !important;
-  background: #fff !important;
-  border: 1px solid #eeeeee !important;
-  transition: 0.3s ease-in-out;
-  padding: 20px !important;
+
+.order-info p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #9e9e9e;
 }
 
-.order-cardshippeded:hover {
-  transform: scale(1.01);
-} */
-
-/* الصورة */
-.order-img {
-  width: 80px;
-  height: 80px;
+.order-info img {
+  width: 55px;
+  height: 55px;
   border-radius: 8px;
   object-fit: cover;
 }
-
-/* اسم المنتج */
-.product-title {
-  font-size: 20px;
-  margin: 0;
-  font-weight: 700;
-}
-
-/* الوصف */
-.product-desc {
-  margin: 0;
-  font-size: 14px;
-  color: #777;
-}
-
-/* السعر */
-.price {
-  color: #ff8c00;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-/* رقم الطلب */
-.order-id {
-  background: #123a8a !important;
-  padding: 8px 14px !important;
-  font-size: 16px;
-  border-radius: 8px !important;
-  height: fit-content;
-}
-/* ==== الكارد اللي على الشمال ==== */
-.completed-box {
-  flex: 1;
-  margin-right: 30px;
-  position: relative
-}
-
-/* تم التسليم */
-.completed-statusdelivered {
-  background: #123A8A;
-  color: white;
-  padding: 15px 25px;
-  width: 19%;
-  font-weight: 700;
-  font-size: 18px;
-  border-top-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  /* margin-bottom: -5px; */
-  text-align: center;
-  z-index: 10;
-  position: absolute;
-      left: -1px;
-}
-
-/* الكارد */
-.completed-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 28px 20px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-  border: none !important;
-}
-
-/* المحتوى */
-.completed-contentdelivered {
+/* ===== Sidebar Tabs ===== */
+.tabs-column {
+  position: fixed; /* Makes the tabs-sidebar fixed */
+  top: 0;
+  right: 0; /* Adjust for RTL layout (sidebar appears on the right) */
+  height: 100vh; /* Full viewport height */
+  width: 250px; /* Fixed width for the sidebar */
+  background-color: #f7f7f7; /* Set background for the sidebar */
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column; /* Arranges the tabs vertically */
+  gap: 15px;
+  padding: 30px 20px; /* Additional padding for spacing on edges */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for separation */
+  z-index: 1000; /* Ensures it stays above other elements */
 }
 
-/* الصورة */
-.completed-img {
-  width: 90px;
-  height: 90px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-/* النصوص */
-.completed-text-wrapper {
-  text-align: right;
-}
-
-.completed-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-}
-
-.completed-desc {
-  color: #9E9E9E;
-  margin: 5px 0;
+/* Adjust active and default state of the tabs */
+.tab {
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
   font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: #111;
+  text-decoration: none;
 }
 
-.completed-price {
-  color: #F38B1B;
-  font-weight: 700;
-  font-size: 18px;
-  margin: 0;
+.tab.active {
+  background: #1d3a77; /* Active background color */
+  color: #fff;
 }
 
+/* Spacing for the main layout to account for the fixed sidebar */
+.delivered-wrapper {
+  margin-right: 270px; /* Pushes the page content to fit the sidebar */
+  display: flex;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 
-/* الشاشات المتوسطة - 992px */
-@media (max-width: 992px) {
+.orders-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-top: 13%;
+}
+
+/* Responsive Design for the Sidebar */
+@media (max-width: 768px) {
+  .tabs-column {
+    position: static; /* Remove fixed positioning for small screens */
+    flex-direction: row; /* Changes to a top navigation bar on smaller devices */
+    width: 100%;
+    height: auto; /* Collapse height */
+    box-shadow: none; /* Hide shadow on smaller screens */
+  }
+
+  .tab {
+    flex: 1; /* Ensures all tabs take equal space as a row */
+  }
 
   .delivered-wrapper {
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 8% !important;
-    margin-bottom: 5%;
-    align-items: center;
-  }
-
-  /* التبويبات */
-  .shippedorders-tabsnew {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .shippedorders-tabsnew .tab {
-    flex: 1 1 calc(50% - 10px); /* نفس confirmed */
-    font-size: 18px;
-    padding: 15px;
-    text-align: center;
-  }
-
-  /* الكروت */
-  .shippedorders-list {
-    width: 100% !important;
-    margin-right: 0 !important;
-  }
-
-  .order-img,
-  .completed-img {
-    width: 70px;
-    height: 70px;
-  }
-
-  .shipped-heading,
-  .shipped-text,
-  .completed-title {
-    font-size: 18px;
-  }
-
-  .product-desc,
-  .completed-desc {
-    font-size: 13px;
-  }
-
-  .price,
-  .shipped-price,
-  .completed-price {
-    font-size: 18px;
-  }
-
-  .order-id {
-    font-size: 14px;
-    padding: 6px 10px !important;
-  }
-
-  /* كارد تم التسليم */
-  .completed-card {
-    padding: 18px;
-    margin-top: 40px;
-  }
-
-  .completed-statusdelivered {
-    width: 100%;
-    font-size: 16px;
-    padding: 10px 15px;
-  
+    margin-right: 0; /* Remove extra spacing when sidebar becomes top navigation */
   }
 }
-
-/* الشاشات الصغيرة - 576px */
-@media (max-width: 576px) {
-
-  .shippedorders-tabsnew {
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .orders-layout {
     flex-direction: column;
-    gap: 12px;
   }
 
-  .shippedorders-tabsnew .tab {
-    flex: 1 1 100%;
+  .tabs-column {
+    flex-direction: row;
+    width: 100%;
   }
 
-  .order-img,
-  .completed-img {
-    width: 55px;
-    height: 55px;
+  .tab {
+    flex: 1;
   }
 
-  .product-title,
-  .completed-title {
-    font-size: 16px;
+  .order-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
-  .product-desc,
-  .completed-desc {
-    font-size: 12px;
-  }
-
-  .shipped-text,
-  .shipped-price,
-  .badge,
-  .completed-price {
-    font-size: 14px;
-  }
-
-  .price {
-    font-size: 16px;
-  }
-
-  .order-id {
-    font-size: 12px;
-  }
-
-  .completed-card {
-    padding: 15px;
+  .order-info {
+    width: 100%;
+    justify-content: space-between;
   }
 }

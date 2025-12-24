@@ -15,6 +15,8 @@ export default function SellerHome() {
   return (
     <>
       {/* ===== Banner Section ===== */}
+        <div className="mystorepage">
+
       <div className={`home-banner ${animate ? "animate" : ""}`}>
         <img src={banner} alt="banner" className="banner-img" />
 
@@ -35,13 +37,14 @@ export default function SellerHome() {
       </div>
 
       {/* ===== Services Section ===== */}
-      <div className="home-section">
+      <div className="home-section mt-0">
         <SellerServices />
       </div>
 
       {/* ===== Related Products Section ===== */}
-      <div className="home-section">
+      <div className="home-section mb-5 pb-5">
         <SellerRelatedProducts />
+      </div>
       </div>
     </>
   );

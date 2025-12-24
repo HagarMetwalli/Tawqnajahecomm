@@ -17,7 +17,7 @@ export default function Related() {
   ];
 
   return (
-    <div className="related-section ">
+    <div className="related-section mt-5 mb-5 pb-5 ">
       <div className="related-header">
         <h3>ذات صلة</h3>
         {/* <button className="more-btn">رؤية المزيد</button> */}

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function SellerServices() {
   return (
-    <div className="services-section">
+    <div className="services-section section-block pt-3 mt-5">
       <h2 className="section-title container pb-3">خدماتنا</h2>
 
       <div className="services-row">

@@ -20,7 +20,7 @@ export default function SellerNavbar() {
   const toggleMenu = () => setMenuOpen(prev => !prev);
 
   const sidebarLinks = [
-    { icon: <FiUser />, text: "معلومات الحساب", path: "/seller/sellercontractpage" },
+    { icon: <FiUser />, text: "معلومات الحساب", path: "/seller/sellerprofileaccount" },
     { icon: <CiCreditCard1 />, text: "الحساب البنكي", path: "/seller/sellerbankaccount" },
     // { icon: <MdLanguage />, text: "اللغة", path: "/seller/sellerlanguage" },
     // { icon: <FaHeadset />, text: "دعم التطبيق", path: "/seller/sellersupport" },
@@ -37,7 +37,7 @@ export default function SellerNavbar() {
 
           {/* الأزرار جنب بعض */}
           <div className="tn-buttons-box">
-            <button className="tn-nav-app-btn" onClick={() => setSidebarOpen(true)}>
+            <button className="tn-nav-app-btn" >
               تحميل التطبيق
             </button>
 
@@ -48,10 +48,25 @@ export default function SellerNavbar() {
 
           {/* Links */}
           <Nav className={`tn-nav-linkss ${menuOpen ? "open" : ""}`}>
-            <NavLink to="/seller/sellerhome" className="tn-nav-link">الرئيسية</NavLink>
-            <NavLink to="/seller/sellermystore" className="tn-nav-link">متجري</NavLink>
-            <NavLink to="/seller/sellerconfirmedorders" className="tn-nav-link">طلباتي</NavLink>
-                                <NavLink to="/seller/sellerabouttawq" className="tn-nav-link">قالوا عن طوق نجاة</NavLink>
+<NavLink
+  to="/seller/sellerhome"
+  className="tn-nav-link"
+  onClick={() => setMenuOpen(false)}
+>
+  الرئيسية
+</NavLink>         <NavLink to="/seller/sellermystore"
+  className="tn-nav-link"
+  onClick={() => setMenuOpen(false)}
+>
+  متجري
+</NavLink>
+
+<NavLink to="/seller/sellerconfirmedorders"
+  className="tn-nav-link"
+  onClick={() => setMenuOpen(false)}
+>
+  طلباتي
+</NavLink>
 
           </Nav>
 

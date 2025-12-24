@@ -1,21 +1,22 @@
 .neworders-page {
   direction: rtl;
- margin-top: 50%;
-       padding-top: 50%;
-
+  margin-top: 50%;
+  padding-top: 50%;
 }
-.neworderspage{
-      padding-top: 50%;
 
+.neworderspage {
+  padding-top: 50%;
 }
+
+
 /* العنوان */
 .heading {
   font-size: 28px;
   font-weight: 700;
   color: #1d3a77;
   text-align: right;
-  padding-right: 40px;        
-  margin-bottom: 15px;        
+  padding-right: 40px;
+  margin-bottom: 15px;
 }
 
 .heading .main {
@@ -23,38 +24,37 @@
 }
 
 /* Wrapper */
-
 .orders-wrapper {
   width: 100%;
-    /* margin: 25px 41px; */
-    margin-top: 10%;
-
+  margin-top: 4%;
 }
 
 .order-cardnorders {
-     background: #fff;
-    padding: 4px 20px 47px 0px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
-    position: relative;
-    margin-top: 4%;
-    height: 19vh;
-
+  background: #fff;
+  padding: 4px 20px 47px 0px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+  position: relative;
+  margin-top: 4%;
+  height: 22vh;
 }
 
-.order-price-left {
+.neworder-price-left {
   position: absolute;
   left: 20px;
-  bottom: 8px;
+  bottom: 20px;
   color: #F38B1B;
   font-size: 18px;
   font-weight: 700;
 }
 
-.order-content {
+.neworder-content {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  position: absolute;
+  top: 2%;
 }
 
 .image-side {
@@ -68,17 +68,15 @@
   height: 90px;
   object-fit: cover;
   border-radius: 8px;
-      margin-top: 12%;
-
+  margin-top: 12%;
 }
 
 .text-sideneworder {
-     text-align: right;
-    line-height: 33px;
-    padding-top: 11%;
-
+  text-align: right;
+  line-height: 33px;
+  padding-top: 11%;
 }
-.text-side
+
 .product-title {
   font-size: 20px;
   font-weight: 700;
@@ -106,15 +104,88 @@
 }
 
 .typenorders {
-
-      color: #000;
-    font-size: 18px;
-    margin-right: 8px;
-    font-weight: 400;
-
+  color: #000;
+  font-size: 18px;
+  margin-right: 8px;
+  font-weight: 400;
 }
 
 .order-card-link {
   text-decoration: none !important;
   color: inherit !important;
+}
+
+/* Responsive styles for mobile devices */
+@media only screen and (max-width: 767px) {
+  .heading {
+    font-size: 20px;
+    padding-right: 20px;
+  }
+
+  .orders-wrapper {
+    margin-top: 10px;
+  }
+
+  .order-cardnorders {
+    padding: 10px;
+    height: auto;
+    margin-bottom: 15px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .neworder-price-left {
+    font-size: 16px;
+  }
+
+  .neworder-content {
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    top: 0;
+  }
+
+  .image-side {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .image-side img {
+    width: 70px;
+    height: 70px;
+    margin-top: 0;
+  }
+
+  .text-sideneworder {
+    padding-top: 0;
+    line-height: 1.5;
+    width: 100%;
+  }
+
+  .product-title {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .product-descnorders {
+    font-size: 14px;
+  }
+
+  .category {
+    font-size: 14px;
+  }
+
+  .qty {
+    font-size: 12px;
+    padding: 2px 8px;
+  }
+
+  .typenorders {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .neworder-content{
+    top:-29% 
+  }
 }

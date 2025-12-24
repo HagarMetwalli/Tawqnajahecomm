@@ -41,15 +41,15 @@ export default function Sellers() {
   ];
 
   return (
-    <div className="sellers-page ">
-      <h2 className="sellers-title">جميع التجار</h2>
+    <div className="sellers-page mt-5 mb-5">
+      <h2 className="sellers-title pt-4 mt-5 ">جميع التجار</h2>
 
-      <div className="sellers-grid">
+      <div className="sellers-grid mb-5 pb-5 ">
         {sellers.map((seller) => (
           <div
             key={seller.id}
             className="seller-card"
-            onClick={() => navigate(`/sellers/${seller.id}`)}
+            onClick={() => navigate(`/sellersdetails/${seller.id}`)}
           >
             <img src={seller.img} alt={seller.name} />
             <h4>{seller.name}</h4>

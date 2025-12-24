@@ -7,7 +7,7 @@ import marketingimg from "../../assets/m-img.png";
 
 import survimg from "../../assets/surv-img.png"; 
 import logoutimg from "../../assets/logout-img.png"; 
-
+import { Link } from "react-router-dom";
 
 
 export default function SellerMarketing() {
@@ -15,29 +15,44 @@ export default function SellerMarketing() {
     <div className="marketing-wrapper container mt-5">
 
       {/* اليمين — القائمة */}
-      <div className="marketing-sidebar mt-5" >
+ <div className="marketing-sidebar mt-5">
 
-        <button className="side-btn">
-         <img src={profileimg} /> حسابي الشخصي 
-        </button>
+  <button className="side-btn">
+    <Link to="/seller/sellerprofileaccount" className="text-dark text-decoration-none">
+      <img src={profileimg} alt="Profile" />
+      حسابي الشخصي
+    </Link>
+  </button>
 
-        <button className="side-btn">
-         <img src={accountimg}/> الحساب البنكي 
-        </button>
+  <button className="side-btn">
+    <Link to="/seller/sellerbankaccount" className="text-dark text-decoration-none">
+      <img src={accountimg} alt="Bank Account" />
+      الحساب البنكي
+    </Link>
+  </button>
 
-        <button className="side-btn active">
-        <img src={marketingimg}/>  التسويق 
-        </button>
+  <button className="side-btn active">
+    <Link to="/seller/sellermarketing" className="text-white text-decoration-none">
+      <img src={marketingimg} alt="Marketing" />
+      التسويق
+    </Link>
+  </button>
 
-        <button className="side-btn">
-        <img src={survimg}/>  التقييم والعقود 
-        </button>
+  <button className="side-btn">
+    <Link to="/seller/sellercontractpage" className="text-dark text-decoration-none">
+      <img src={survimg} alt="Contracts" />
+      التقييم والعقود
+    </Link>
+  </button>
 
-        <button className="side-btn logout">
-         <img src={logoutimg}/> تسجيل الخروج 
-        </button>
+  <button className="side-btn logout">
+    <Link to="/seller/sellerlogoutconfirm" className="text-white text-decoration-none">
+      <img src={logoutimg} alt="Logout" />
+      تسجيل الخروج
+    </Link>
+  </button>
 
-      </div>
+</div>
 
       {/* الشمال — المحتوى */}
       <div className="marketing-contentt mt-5">

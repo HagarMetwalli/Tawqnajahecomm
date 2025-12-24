@@ -1,6 +1,6 @@
 .category-page {
     min-height: 70vh;
-    padding-top: 160px;   
+    padding-top: 19px;
     padding-bottom: 40px; 
     direction: rtl;
 }
@@ -71,8 +71,9 @@
   color: #1d3a77;
   margin-bottom: 10px;
 }
-
-/* النص اللي فوق السلايدر */
+.breadcrumb-title{
+  font-size: 31px;
+}
 .price-range-text {
   font-size: 16px;
   color: #1d3a77;
@@ -121,6 +122,8 @@ border-left: 1px solid #E5E5E5;
 .category-page .breadcrumb{
     direction: rtl;
         padding-right: 18px;
+            font-size: 35px;
+
 
 }
 .category-page .results{
@@ -233,12 +236,13 @@ font-weight: bold;
 .shopping-cards{
   border:1px solid #E9E9E9
 }
+
 /* ===================== MOBILE & TABLET FIX ===================== */
 @media (max-width: 768px) {
 
-  .category-page {
+  /* .category-page {
         padding-top: 95%;
-  }
+  } */
 
   .category-page .row {
     flex-direction: column;
@@ -250,6 +254,24 @@ font-weight: bold;
     border-left: none;
     margin-bottom: 25px;
     padding: 15px;
+    display: none; /* Hide by default on mobile */
+  }
+
+  .filter-column.show {
+    display: block; /* Show when toggle is clicked */
+  }
+
+  /* Toggle button */
+  .filter-toggle-btn {
+    display: block;
+    background: #1D3A77;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
   }
 
   /* ✅ نشيل الخط العمودي في الموبايل */
@@ -286,41 +308,41 @@ font-weight: bold;
 
 
 /* ===================== SMALL MOBILE (IPHONE SE & MINI) ===================== */
+
+
+
 @media (max-width: 576px) {
-.footer-phone-row {
-    display: block;
-}
-  .category-page .customer-products-grid {
+  .customer-products-grid {
     grid-template-columns: 1fr;
   }
 
-  .category-page .heading-title,
-  .category-page .main-title,
-  .cat-title {
-    font-size: 20px;
-  }
-
-  .results {
-    font-size: 16px;
-  }
-
-  .cat h3 {
-    font-size: 20px;
-  }
-
-  .category-page .tag {
-    font-size: 14px;
-    padding: 5px 18px;
-  }
-
   .load-more-btn {
-    width: 90%;
+    width: 100%;
     padding: 12px 0;
   }
-  .filter-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .category-page .row {
+    gap: 15px; /* Adjust spacing */
+    flex-wrap: nowrap; /* Ensure grid and filter stay side-by-side */
+  }
+
+  .filter-column {
+    width: 20%; 
+    padding: 10px; 
+    max-height: 100vh; 
+    overflow-y: auto; 
+    border-left: 1px solid #E5E5E5; 
+  }
+
+  .customer-products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px; 
+    margin: 0; 
+  }
+
+  .customer-products-grid .customer-product-card {
+    width: 100%; 
+  }
 }

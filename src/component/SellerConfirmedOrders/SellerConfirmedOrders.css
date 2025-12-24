@@ -1,119 +1,318 @@
+/* Cleaned ConfirmedOrders CSS
+   - Desktop rules preserved
+   - Single consolidated mobile block (max-width: 767px)
+   - Remove any accidental JS/JSX from this file before pasting
+*/
+
+/* الميل العام للصفحة */
 .orders-page {
- direction: rtl;
+  padding-top: 100px; /* علشان الهيدر */
+}
+.orders-page .container {
+  max-width: 80%;
+  margin: auto;
+  padding: 0 27px;
+  direction: rtl;
 }
 
-/* ========== Tabs ========== */
-.tabs-row {
+.orders-right-tabs {
   display: flex;
-  gap: 10px;
-    margin-top: 20%;
-
-  margin-bottom: 25px;
-  /* padding-top: 15%; */
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 260px;
+  margin-top: 48px;
+  padding: 2px;
 }
 
-.tab {
-  padding: 10px 22px;
-  border-radius: 30px;
+/* شكل كل زر */
+.cright-tab {
   background: #fff;
-  color: #1D3A77;
-  font-size: 16px;
-  font-weight: 500;
-  border: 1px solid #dcdcdc;
+  border: 1px solid #E9E9E9;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: bold;
   cursor: pointer;
-  text-decoration: none;
+  transition: 0.2s;
+  text-align: right;
+  color: #000;
 }
 
-.tab.active {
+.cright-tab.active {
+  font-weight: bold;
   background: #1D3A77;
   color: #fff;
+  border-color: #1D3A77;
+  font-size: 24px;
+  padding: 18px 22px;
+  text-align: right;
 }
 
-/* ========== Order Card ========== */
-.order-mobile-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    padding: 24px 18px;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
-    border: 1px solid #eaeaea;
-    margin-bottom: 8%;
+.corder-mobile-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 18px 18px 16px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E9E9E9;
+  margin-bottom: 25px;
 }
 
-/* ========== Image ========== */
-.order-mobile-img {
+.corder-mobile-img {
   width: 95px;
   height: 95px;
   border-radius: 12px;
   object-fit: cover;
 }
 
-/* ========== Text Section ========== */
 .order-mobile-content {
   flex: 1;
   padding-right: 15px;
 }
 
-.order-mobile-title {
+.corder-mobile-title {
   font-size: 20px;
   font-weight: bold;
-  margin: 0;
 }
 
-.order-mobile-desc {
-     font-size: 20px;
-    color: #9E9E9E;
-    margin: 5px 0 15px;
-    font-weight: 400;
+.corder-mobile-desc {
+  font-size: 20px;
+  color: #9E9E9E;
+  margin-bottom: 12px;
+  font-weight: 400;
 }
 
-/* ========== Bottom Row ========== */
 .order-bottom-row {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 
-.order-type {
-font-weight: 500;
-    font-size: 17px;
-    color: #555;
-}
 .order-badge {
-background: #9e9e9e8c;
-    padding: 5px 12px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #000;
-
+  background: #ededed;
+  padding: 5px 12px;
+  border-radius: 10px;
+  font-weight: 600;
 }
 
-.order-price {
-  margin-right: auto;
-  color: #E55F1A;
-  font-size: 17px;
+.corder-type {
+  font-size: 18px;
+  color: #000;
+  font-weight: 400;
+}
+
+.confirmorder-price {
+   margin-right: auto;
+  color: #F38B1B;
+  font-size: 18px;
   font-weight: bold;
 }
-@media (max-width: 480px) {
-  .order-mobile-card {
-    margin-top: 100%;
+  
+/* Consolidated mobile rules */
+
+  /* Page spacing & container */
+
+
+  @media (max-width: 768px) {
+  
+    .order-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 8px 15px 5px;
+    }
+  .mobileorders{
+    padding-top: 118px !important;
   }
-  .order-mobile-img {
+  .orders-page .container {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 12px !important;
+    direction: rtl;
+  }
 
-    margin-top: 81%;
-}
-/* .cards-wrapper{
-margin-top: 79%;
-    margin-bottom: 20%;
-} */
+  /* Force bootstrap columns to stack full width on mobile */
+  .col-lg-3, .col-lg-9, .col-12,
+  [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
 
+  /* Show tabs and make them horizontal/scrollable */
+  .tabssection {
+    display: block !important;
+    margin-bottom: 12px !important;
+            margin-top: 8%;
+  }
+  .orders-right-tabs {
+    /* display: flex !important;
+    flex-direction: row !important;
+    gap: 10px !important; */
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 0px 4px !important;
+    margin-top: 0px !important;
+    box-sizing: border-box !important;
+  }
+  .orders-right-tabs::-webkit-scrollbar { height: 6px; }
+  .orders-right-tabs::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 6px; }
+
+  /* Compact tab style for mobile */
+  .cright-tab {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    font-size: 16px !important;
+    padding: 10px 14px !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+  }
+  .cright-tab.active {
+    padding: 10px 14px !important;
+    font-size: 16px !important;
+  }
+
+  /* Cards area spacing */
+  .cards-wrapper {
+    margin-top: 6px !important;
+  }
+
+  /* Order card: compact row (thumbnail left + details right) */
+  .corder-mobile-card {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    align-items: center !important;
+    padding: 12px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06) !important;
+    border: 1px solid #E9E9E9 !important;
+    background: #fff !important;
+    width: 100% !important;
+    height: auto !important;
+    text-align: left !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Thumbnail */
+  .corder-mobile-img {
+    flex: 0 0 92px !important;
+    width: 92px !important;
+    height: 92px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    margin-top: 0 !important;
+  }
+
+  /* Content area */
+  .order-mobile-content {
+    flex: 1 1 auto !important;
+    min-width: 0 !important; /* prevents overflow from long text */
+    padding-right: 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+
+  .corder-mobile-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+  }
+  .corder-mobile-desc {
+    font-size: 13px !important;
+    color: #9E9E9E !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+    max-height: 3.2em !important;
+    overflow: hidden !important;
+
+  }
+
+  /* Bottom row: align and wrap as needed */
+  .order-bottom-row {
+    display: flex !important;
+    gap: 8px !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+  }
+  .order-badge {
+    padding: 4px 10px !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+  }
+  .corder-type {
+    font-size: 14px !important;
+  }
+  .order-price {
+    margin-right: auto !important;
+    color: #F38B1B !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+  }
+    .order-price-left {
+        font-size: 16px;
+        position: absolute;
+        top: 75%;
+    }
+
+  /* Hide any toggle button rules if present */
+  .tabs-toggle-btn {
+    display: none !important;
+  }
+
+  /* Reduce inner padding for generic boxes to fit mobile */
+  .box, .card, .orders-card {
+    padding: 10px !important;
+  }
 }
-@media screen and(max-width:767px) {
-  .orders-page {
-    padding-top: 81%;
+/* Increase font sizes on tablet and desktop for ConfirmedOrders */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* tablet */
+  .cright-tab {
+    font-size: 20px !important;        /* larger, readable tab labels */
+    min-height: 48px !important;       /* comfortable tap target */
+    padding: 12px 18px !important;
+  }
+
+  .corder-mobile-title {
+    font-size: 20px !important;
+  }
+
+  .corder-mobile-desc {
+    font-size: 15px !important;
+  }
+
+  .order-price {
+    font-size: 18px !important;
+  }
 }
 
+@media (min-width: 1024px) {
+  /* desktop / large screens */
+  .cright-tab {
+    font-size: 22px !important;        /* desktop tabs a bit larger */
+    padding: 14px 20px !important;
+    min-height: 52px !important;
+  }
+
+  .corder-mobile-title {
+    font-size: 22px !important;
+  }
+
+  .corder-mobile-desc {
+    font-size: 16px !important;
+  }
+
+  .order-price {
+    font-size: 20px !important;
+  }
 }
+
+/* Optional: fluid tabs so size scales smoothly across widths */
