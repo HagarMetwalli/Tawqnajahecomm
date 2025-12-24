@@ -2,18 +2,27 @@
 /* Clean, defensive, responsive CSS for product cards and categories */
 
 /* Reset box sizing */
-* { box-sizing: border-box; }
+* { 
+  box-sizing: border-box; 
+
+padding: 0;
+margin:0
+}
 
 body {
   color: #000;
 }
+.row{
+  padding-top: 0;
 
+}
 .products-wrapper {
-  padding-bottom: 40px;
+  padding-bottom: 30px;
+  padding-top: 1%;
 }
 
 /* Header */
-.customer-products-header {
+.ccustomer-products-header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

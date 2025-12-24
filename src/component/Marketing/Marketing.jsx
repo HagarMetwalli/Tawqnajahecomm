@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 
 export default function Marketing() {
   return (
-    <div className="mmarketing-page mt-3 mb-5">
-      <div className="container">
-        <div className="row">
+    <div className="mmarketing-page mt-5 mb-5">
+      <div className="container mt-5 mb-5 pb-5">
+        <div className="row mb-5 pb-5">
 
           {/* ====== SIDEBAR ====== */}
           <div className="m-marketing-sidebar mt-3 mb-5 col-md-6">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ProfileAccount.css";
+import "../ProfileAccount/ProfileAccount.css";
 import { Link } from "react-router-dom";
 
 // ==== Images ====
@@ -25,12 +25,12 @@ export default function ProfileAccount() {
   ];
 
   return (
-    <div className="profile-wrapper container" style={{ marginTop: "120px" }}>
+    <div className="cprofile-wrapper container  accordion-collapse mt-5 pt-5 mb-5 pb-5 ">
 
       {/* ===== SIDEBAR ===== */}
-      <div className="profilemarketing-sidebar acc-profile">
+      <div className="cprofilemarketing-sidebar acc-profile mt-5 pt-5 mb-5">
 
-        <Link to="/profileaccount" className="side-btn active text-white fw-bold">
+        <Link to="/profileaccount" className="side-btn active text-white fw-bold mt-5 ">
           <img className="px-3" src={profilepicture} alt="" />
           حسابي الشخصي
         </Link>
@@ -58,9 +58,9 @@ export default function ProfileAccount() {
       </div>
 
       {/* ===== MAIN PROFILE CONTENT ===== */}
-      <div className="profile-content">
+      <div className="profile-content mt-5 pt-5 mb-5">
 
-        <div className="profile-avatar-wrapper">
+        <div className="profile-avatar-wrapper mt-4">
           <div className="avatar-circle">
             <img src={avatarImg} className="profile-avatar" alt="avatar" />
             <button className="avatar-edit-btn">
@@ -72,23 +72,23 @@ export default function ProfileAccount() {
         <form className="profile-form">
 
           <div className="form-group">
-            <label className="fw-bolder mb-2">اسم المحل / البائع</label>
+            <label className="fw-bolder mb-2 pb-3">اسم المحل / البائع</label>
             <input className="form-input" placeholder="ادخل اسم المستخدم" />
           </div>
 
           <div className="form-group">
-            <label className="fw-bolder mb-2">البريد الإلكتروني</label>
+            <label className="fw-bolder mb-2 pb-3">البريد الإلكتروني</label>
             <input className="form-input" placeholder="email@example.com" />
           </div>
 
           <div className="form-group">
-            <label className="fw-bolder mb-2">العنوان</label>
+            <label className="fw-bolder mb-2 pb-3">العنوان</label>
             <input className="form-input" placeholder="الرياض، السعودية" />
           </div>
 
           {/* Phone */}
         <div className="form-group">
-  <label className="fw-bolder mb-2">رقم الهاتف</label>
+  <label className="fw-bolder mb-2 pb-3">رقم الهاتف</label>
 
   <div className="profilephone-box">
 

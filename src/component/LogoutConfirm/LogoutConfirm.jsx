@@ -1,5 +1,5 @@
 import React from "react";
-import "./LogoutConfirm.css";
+import "../LogoutConfirm/LogoutConfirm.css";
 
 import profilepicture from "../../assets/profileicon.png";
 import accountimg from "../../assets/account-img.png";
@@ -10,9 +10,10 @@ import myadvertisements from "../../assets/myadvertisements.png";
 import addadvertisements from "../../assets/addadvertisements.png";
 import logoutimg from "../../assets/logout-img.png";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function LogoutConfirm() {
+  const navigate = useNavigate();
   return (
     <div className="logout-wrapper container" style={{ marginTop: "180px" }}>
 
@@ -51,9 +52,12 @@ export default function LogoutConfirm() {
       <div className="logout-content">
         <h2 className="logout-title">هل تريد تسجيل الخروج ؟</h2>
 
-        <button className="logout-main-btn">
-          تسجيل الخروج
-        </button>
+   <button
+      className="logout-main-btn"
+      onClick={() => navigate("/accounttype")}
+    >
+      تسجيل الخروج
+    </button>
       </div>
 
     </div>

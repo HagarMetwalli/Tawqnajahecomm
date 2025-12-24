@@ -26,9 +26,9 @@ export default function SellerNewOrders() {
   ];
 
   return (
-    <div className="container neworders-page neworderspage  "  >
+    <div className="container neworders-page neworderspage  mt-5 pt-5"  >
 
-      <h1 className="heading pt-5 mt-3 pe-5">
+      <h1 className="heading pt-5 mt-5 pe-5">
         الطلبات الجديدة / <span className="main">الرئيسية</span>
       </h1>
 

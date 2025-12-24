@@ -1,6 +1,4 @@
-/* =====================
-   الصفحة الأساسية
-===================== */
+
 .neworders-page {
   direction: rtl;
   padding: 0 15px;
@@ -26,12 +24,12 @@ background: #fff;
     margin-bottom: 20px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
     position: relative;
-    height: 38vh;
+    height: 21vh;
 }
 
 .cancelorder-price-left {
   position: absolute;
-  left: 20px;
+  left: 20px; 
   bottom: 6%;
   color: #F38B1B;
   font-weight: 700;

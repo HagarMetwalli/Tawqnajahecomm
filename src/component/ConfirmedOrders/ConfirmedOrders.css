@@ -1,12 +1,10 @@
 
-.orders-page {
-  padding-top: 180px; /* علشان الهيدر */
-}
-.orders-page .container {
+
+.confirmorders-page .container {
   max-width: 80%;
   margin: auto;
   padding: 0 27px;
-  direction: rtl;
+  direction: rtl; 
 }
 
 .orders-right-tabs {
@@ -111,7 +109,7 @@
   .mobileorders{
     padding-top: 118px !important;
   }
-  .orders-page .container {
+  .confirmorders-page .container {
     max-width: 100% !important;
     margin: 0 auto !important;
     padding: 0 12px !important;

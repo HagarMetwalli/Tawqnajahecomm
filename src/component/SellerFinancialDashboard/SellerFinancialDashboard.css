@@ -2,7 +2,7 @@
 .fin-page {
   min-height: 100vh;
   background: #f5f6fa;
-  padding: 120px 16px 40px; /* علشان الـ navbar الثابتة */
+  padding: 67px 16px 40px;
   direction: rtl;
   font-family: "Tajawal", system-ui, sans-serif;
 }
@@ -23,6 +23,8 @@
 
 .fin-breadcrumb-main {
   cursor: pointer;
+      font-size: 27px;
+
 }
 
 .fin-breadcrumb-sep {

@@ -17,19 +17,21 @@ export default function ConfirmedOrders() {
       img: wintershirt,
     },
   ];
-
+ const goToDetails = (id) => {
+    navigate(`/confirmordersdetails`);
+  };
   return (
-    <div className="orders-page mt-2 mb-5 mobileorders">
-      <div className="container">
+    <div className="confirmorders-page mt-5 pt-5 pb-5  mobileorders">
+      <div className="container mt-5 pt-4 mb-5 pb-5 ">
         <div className="row">
 
           {/* ===== التابات ===== */}
-          <div className="col-lg-3 d-lg-flex justify-content-start tabssection">
-            <div className="orders-right-tabs">
+          <div className="col-lg-3 d-lg-flex justify-content-start tabssection mb-5 pb-5">
+            <div className="orders-right-tabs ">
 
               <button
                 className={`cright-tab cright-btn3 ${
-                  location.pathname === "/confirmedorders" ? "" : ""
+                  location.pathname === "/confirmedorders" ? "active" : ""
                 }`}
                 onClick={() => navigate("/confirmedorders")}
               >
@@ -61,7 +63,9 @@ export default function ConfirmedOrders() {
           <div className="col-lg-9 col-12 justify-content-start">
             <div className="cards-wrapper mt-5">
               {orders.map((order) => (
-                <div key={order.id} className="corder-mobile-card">
+                <div key={order.id} className="corder-mobile-card"
+                onClick={() => goToDetails(order.id)}
+  style={{ cursor: "pointer" }}>
                   <img
                     src={order.img}
                     alt={order.title}

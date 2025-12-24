@@ -149,7 +149,10 @@ overflow: hidden;
   background-color: #255acb;
 }
 
+.login-image img{
+      width: 70% !important;
 
+}
 @media (max-width: 768px) {
   .login-wrapper .login-form {
     width: 100%;        

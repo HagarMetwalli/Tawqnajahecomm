@@ -4,12 +4,12 @@ import communityAvatar from "../../assets/communitypart.jpg"; // صورة الب
 
 export default function CommunityPartnerships() {
   return (
-    <div className="community-page   pb-5">
+    <div className="community-page mt-2 pb-5 mb-5">
       <Container fluid>
-        <div className="community-card shadow-sm  mb-5">
+        <div className="community-card shadow-sm   mb-5">
           {/* ===== العنوان + صورة البروفايل تحت كلمة الشراكات ===== */}
           <header className="community-header text-end mt-3  ">
-            <h4 className="fw-bold mb-3 mt-5 pt-5 pb-3" >
+            <h4 className="community-title fw-bold mb-3 mt-5  pb-3" >
               إضافة شراكة مجتمعية / <span className="text-muted">الشركات</span>
             </h4>
 

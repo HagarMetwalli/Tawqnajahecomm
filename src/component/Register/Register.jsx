@@ -58,10 +58,10 @@ export default function Register() {
         <div className="row">
 
           <div className="image col-12 col-md-6 p-0">
-            <img src={registerbg} alt="Register" className="w-100 h-100 login-image" />
+            <img src={registerbg} alt="Register" className="  login-image" style={{width:"88%"}} />
           </div>
 
-          <div className="form col-12 col-md-6 d-flex flex-column text-end">
+          <div className="form col-12 col-md-6 d-flex flex-column text-end pt-1">
 
             <div className="mb-4 text-center">
               <img src={logo} alt="logo" />

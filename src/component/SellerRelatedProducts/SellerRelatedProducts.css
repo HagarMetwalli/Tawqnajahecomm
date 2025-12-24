@@ -2,13 +2,10 @@
    Seller Related Products — FINAL FIXED
    ===================================== */
 
-/* ---------- Variables ---------- */
 
-/* ---------- Wrapper page (لو مستخدمة mystorepage) ---------- */
 .mystorepage {
-  /* padding-top: calc(var(--site-header-height) + var(--section-gap)); */
-  /* box-sizing: border-box; */
-  padding-top: 10%;
+
+  padding-top: 8%;
   margin: 5px;
 }
 

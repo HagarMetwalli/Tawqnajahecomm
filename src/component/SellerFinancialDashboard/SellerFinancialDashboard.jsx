@@ -51,8 +51,8 @@ const options = {
 
 export default function SellerFinancialDashboard() {
   return (
-    <div className="fin-page mt-5 ">
-      <div className="fin-container mt-5">
+    <div className="fin-page  ">
+      <div className="fin-container ">
 
         {/* ===== Breadcrumb ===== */}
         <div className="fin-breadcrumb">

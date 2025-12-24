@@ -21,17 +21,17 @@ export default function SellerCanceledOrders() {
   ];
 
   const goToDetails = (id) => {
-    navigate(`/canceledordersdetails`);
+    navigate(`/seller/sellercanceledordersdetails`);
   };
 
   return (
-    <div className="container neworders-page mt-5 mb-5 pb-5">
+    <div className="container neworders-page mt-5 pt-5 mb-5 pb-5">
 
       <div className="row">
 
         {/* ====== الجزء اليمين (التابات) ====== */}
-        <div className="col-lg-3  d-lg-block pt-5 ">
-          <div className="orders-right-tabs">
+        <div className="col-lg-3  d-lg-block  mb-5 ">
+          <div className="orders-right-tabs pt-5">
 
             <button
                 className={`cright-tab cright-btn ${
@@ -64,9 +64,9 @@ export default function SellerCanceledOrders() {
         </div>
 
         {/* ====== الجزء الشمال (الكروت) ====== */}
-        <div className="col-lg-9 col-12 mt-5">
+        <div className="col-lg-9 col-12 mt-5 pt-2">
 
-          <div className="corders-wrapper">
+          <div className="corders-wrapper ">
             {orders.map((order) => (
               <div 
                 key={order.id}
@@ -74,17 +74,17 @@ export default function SellerCanceledOrders() {
                 onClick={() => goToDetails(order.id)}
                 style={{ cursor: "pointer" }}
               >
-                <div className='left-side text-left'>
+                <div className='left-side text-left pt-3'>
                   <div className="canceledstatus-tab text-white fw-bold">الملغية</div>
                   <p className="cancelorder-price-left">{order.price}</p>
                 </div>
 
-                <div className="order-content">
+                <div className="order-content ">
                   <div className="image-side">
                     <img src={order.img} alt="product" className="order-img" />
 
                     <div className="text-side">
-                      <h4 className="product-title">{order.title}</h4>
+                      <h4 className="product-title pt-5">{order.title}</h4>
                       <p className="product-desc">{order.desc}</p>
 
                       <p className="categorycanceled">

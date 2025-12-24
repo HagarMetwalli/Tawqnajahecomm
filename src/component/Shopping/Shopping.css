@@ -71,8 +71,9 @@
   color: #1d3a77;
   margin-bottom: 10px;
 }
-
-/* النص اللي فوق السلايدر */
+.breadcrumb-title{
+  font-size: 31px;
+}
 .price-range-text {
   font-size: 16px;
   color: #1d3a77;
@@ -328,20 +329,20 @@ font-weight: bold;
   }
 
   .filter-column {
-    width: 20%; /* Adjust width for compact alignment */
-    padding: 10px; /* Reduce padding */
-    max-height: 100vh; /* Prevent excessive height */
-    overflow-y: auto; /* Make filter scrollable */
-    border-left: 1px solid #E5E5E5; /* Keep divider */
+    width: 20%; 
+    padding: 10px; 
+    max-height: 100vh; 
+    overflow-y: auto; 
+    border-left: 1px solid #E5E5E5; 
   }
 
   .customer-products-grid {
-    grid-template-columns: repeat(4, 1fr); /* Fit 4 products per row */
-    gap: 15px; /* Compact space between products */
-    margin: 0; /* Remove top margin */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px; 
+    margin: 0; 
   }
 
   .customer-products-grid .customer-product-card {
-    width: 100%; /* Ensure cards fit properly */
+    width: 100%; 
   }
 }

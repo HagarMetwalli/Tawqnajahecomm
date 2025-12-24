@@ -25,11 +25,11 @@ export default function CanceledOrders() {
   };
 
   return (
-    <div className="container neworders-page  mb-5 pb-5">
+    <div className="container neworders-page mt-5 pt-5  mb-5 pb-5">
 
-      <div className="row">
+      <div className="row mb-5">
 
-        <div className="col-lg-3  d-lg-block pt-5 ">
+        <div className="col-lg-3 d-lg-block pt-5 mt-2 mb-5 pb-5 ">
           <div className="orders-right-tabs">
 
             <button
@@ -63,13 +63,13 @@ export default function CanceledOrders() {
         </div>
 
         {/* ====== الجزء الشمال (الكروت) ====== */}
-        <div className="col-lg-9 col-12 mt-5">
+        <div className="col-lg-9 col-12 mt-5 pt-3">
 
           <div className="corders-wrapper">
             {orders.map((order) => (
               <div 
                 key={order.id}
-                className="canceledorder-card completedorder"
+                className="canceledorder-card  "
                 onClick={() => goToDetails(order.id)}
                 style={{ cursor: "pointer" }}
               >
@@ -82,9 +82,9 @@ export default function CanceledOrders() {
                   <div className="image-side">
                     <img src={order.img} alt="product" className="order-img" />
 
-                    <div className="text-side">
-                      <h4 className="product-title">{order.title}</h4>
-                      <p className="product-desc">{order.desc}</p>
+                    <div className="text-side ">
+                      <h4 className="product-title pt-5 pb-1">{order.title}</h4>
+                      <p className="product-desc mb-0 pb-2">{order.desc}</p>
 
                       <p className="categorycanceled">
                         <span className="qty">x{order.qty}</span>

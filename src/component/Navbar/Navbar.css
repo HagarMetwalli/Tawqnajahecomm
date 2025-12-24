@@ -1,30 +1,34 @@
 /* ================= MAIN NAVBAR ================== */
 
-.tn-nav-main {
-  background: #1d3a77;
-  padding: 14px 20px;
-  width: 100%;
-  position: fixed;
-  top: 81px;
-  left: 0;
-  z-index: 9999;
-  height: 75px;
+.buyertn-nav-main {
+    background: #1d3a77;
+    padding: 0 20px;
+    width: 100%;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    z-index: 10001;
+    height: 68px;
   display: flex;
   align-items: center;
+  box-shadow: 0 6px 18px rgba(2, 16, 43, 0.18);
 }
 
-.tn-nav-wrapper {
+.buyertn-nav-wrapper {
   width: 100%;
   max-width: 1200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
+  margin: 0 auto;
 }
 
 .tn-buttons-box {
   display: flex;
   align-items: center;
   gap: 10px;
+  height: 100%;
 }
 
 .tn-nav-app-btn {
@@ -38,15 +42,34 @@
   cursor: pointer;
 }
 
-.tn-nav-logout-small {
-  background: #ed3a3a;
-  color: #fff;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
+.tn-nav-download-app {
+      background: linear-gradient(90deg, #000000, #91b4ff);
+    color: #fff;
+    border: none;
+    height: 31px;
+    padding: 0 18px;
+    margin-top: 10px;
+    border-radius: 30px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    width: auto;
+    min-width: 170px;
+    text-decoration: none;
+    display: flex
+;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    text-align: right;
+    white-space: nowrap;
+    line-height: normal;
+    align-self: center;
+    box-sizing: border-box;
+}
+
+.tn-nav-download-app i {
+  transform: scaleX(-1);
 }
 
 /* =============== LINKS =============== */
@@ -54,8 +77,11 @@
 .tn-nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   direction: rtl;
+  flex-wrap: nowrap;
+  /* add a bit more space above links only */
+  margin-top: 6px;
 }
 
 .tn-nav-link {
@@ -64,16 +90,91 @@
   font-weight: 600;
   text-decoration: none;
   position: relative;
+  opacity: 0.92;
+  padding: 6px 2px;
+  transition: opacity 0.2s ease;
+}
+
+/* Some bootstrap/nav styles add their own active underline/border (often looks orange-ish).
+   We explicitly disable those so only our white ::after underline remains. */
+.tn-nav-links .tn-nav-link.active,
+.tn-nav-links .tn-nav-link:focus,
+.tn-nav-links .tn-nav-link:active {
+  border-bottom: 0 !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+.tn-nav-link:hover {
+  opacity: 1;
+  background: transparent;
 }
 
 .tn-nav-link.active::after {
   content: "";
   position: absolute;
-  bottom: -14px;
+  bottom: -16px;
   left: 0;
   width: 100%;
-  height: 2.5px;
-  background: #fff;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .buyertn-nav-main {
+    padding: 0 14px;
+    height: 70px;
+  }
+
+  .tn-nav-links {
+    margin-top: 6px;
+  }
+
+  .tn-nav-download-app {
+    min-width: 150px;
+  min-width: 128px;
+    height: 30px;
+    padding: 0 10px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-size: 10.5px;
+    line-height: normal;
+    
+  }
+}
+
+/* Extra small phones: reduce top spacing and button size so it doesn't look "too padded" */
+@media (max-width: 360px) {
+  .buyertn-nav-main {
+    height: 62px;
+  }
+
+  .tn-nav-download-app {
+    min-width: 128px;
+    height: 38px;
+    /* user request: padding on phones = 0 (vertical) */
+    padding: 0 10px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-size: 12.5px;
+  }
+}
+
+/* Smallest common phones (e.g. 320px wide) */
+@media (max-width: 320px) {
+  .buyertn-nav-main {
+    height: 60px;
+  }
+
+  .tn-nav-download-app {
+    min-width: 120px;
+    height: 32px;
+    padding: 0 8px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-size: 12px;
+  }
 }
 
 /* =============== HAMBURGER =============== */
@@ -84,55 +185,151 @@
   color: #fff;
   background: none;
   border: none;
+  cursor: pointer;
+}
+
+.tn-nav-hamburger-hidden {
+  display: none !important;
 }
 
 /* ================= MOBILE FIX ================= */
 
-@media (max-width: 480px) {
-  /* .tn-nav-main {
-    padding: 8px 12px;
-    height: 60px;
-    top: 80px;
-  } */
-
-  .tn-buttons-box {
-    gap: 6px;
-  }
-
-  .tn-nav-app-btn,
-  .tn-nav-logout-small {
-    font-size: 12px;
-    padding: 6px 10px;
-    border-radius: 18px;
-  }
-
-  .tn-nav-hamburger {
-    display: block;
-    font-size: 24px;
+@media (max-width: 1200px) {
+  .buyertn-nav-main {
+        top: 65px;
   }
 
   .tn-nav-links {
     display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
+  }
+
+  .tn-nav-hamburger {
+    display: block;
+  }
+
+  /* On phones/tablets, show the download action at the bottom (sidebar button)
+     and hide the top download button to avoid crowding. */
+  .tn-buttons-box {
+    display: none;
+  }
+
+
+
+  .tn-mobile-wrapper {
+    display: block;
+    position: fixed;
+    top: 85px;
     right: 0;
-    background: #10397a;
-    flex-direction: column;
-  }
-
-  .tn-nav-links.open {
-    display: flex;
-  }
-
-  .tn-nav-link {
-    padding: 12px;
-    text-align: center;
+    z-index: 10001;
   }
 
   .tn-nav-sidebar {
     width: 260px;
   }
+}
+
+/* ================= MOBILE MENU ================= */
+
+.tn-mobile-wrapper {
+  display: none;
+}
+
+.tn-mobile-menu {
+  position: fixed;
+  top: 85px;
+  right: -280px;
+  width: 280px;
+  height: calc(100vh - 85px);
+  background: #fff;
+  border-left: 1px solid #eee;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 10002;
+  overflow-y: auto;
+}
+
+.tn-mobile-menu.open {
+  right: 0;
+}
+
+.tn-mobile-search {
+  margin-bottom: 10px;
+}
+
+.tn-mobile-search .search-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.tn-mobile-search input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  background: #fafafa;
+  outline: none;
+}
+
+.tn-search-icon {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  color: #999;
+  font-size: 14px;
+}
+
+.tn-mobile-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tn-mobile-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: right;
+  background: transparent;
+  border: none;
+  padding: 12px 10px;
+  color: #0c317a;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.tn-mobile-item:hover {
+  background: #f8f9fa;
+}
+
+.tn-mobile-item i {
+  font-size: 18px;
+}
+
+/* download app specific style */
+.tn-mobile-download {
+  color: #007bff; /* blue */
+  font-weight: 700;
+}
+
+/* logout specific style */
+.tn-mobile-logout {
+  color: #e74c3c; /* red */
+  font-weight: 700;
+  border: none;
+  background: transparent;
+}
+
+.tn-mobile-logout:hover {
+  color: darkred;
+}
+
+.tn-mobile-logout svg {
+  color: #e74c3c;
 }
 
 /* ================= SIDEBAR ================= */
@@ -144,9 +341,11 @@
   opacity: 0;
   pointer-events: none;
   transition: 0.3s;
+  z-index: 10000;
 }
 
-.tn-nav-overlay.show {
+.tn-nav-overlay.show,
+.tn-nav-overlay.open {
   opacity: 1;
   pointer-events: auto;
 }
@@ -176,7 +375,6 @@
 
 .tn-nav-sidebar-links li {
   padding: 14px 0;
-  border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -189,13 +387,45 @@
   font-size: 18px;
 }
 
+.tn-nav-sidebar-item .fa-shopping-cart {
+  font-size: 24px;
+  color: #FF580E;
+}
+
 .tn-nav-logout-btn {
   width: 100%;
-  background: #ed3a3a;
+  background: #FF580E;
   color: #fff;
   padding: 12px;
   border-radius: 10px;
   margin-top: 25px;
+}
+
+.tn-nav-download-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #000000, #91b4ff);
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  text-align: right;
+}
+
+.tn-nav-download-btn i {
+  font-size: 18px;
+}
+
+.tn-nav-logout-btn svg {
+  font-size: 24px;
+  color: #FF580E;
 }
 .tn-nav-logout-icon {
   background: none;
@@ -216,7 +446,7 @@
 .tn-nav-logout-icon:hover {
   color: darkred;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .tn-nav-logout-icon svg {
     font-size: 26px;
   }

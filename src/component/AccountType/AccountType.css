@@ -1,3 +1,14 @@
+ .registeration .account-type .container{
+    max-width: 80%;
+    margin: 0px auto;
+    padding: 0 20px;
+    direction: ltr;
+
+} 
+.account-type .image img{
+  width: 68%;
+  object-fit: contain;
+}
 .shopping-image{
     background-color: #1D3A77;
                    width:47%;

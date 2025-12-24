@@ -19,10 +19,10 @@
     color: #9E9E9E;
     font-weight: 400;
 }
-.product-image-box {
+.bproduct-image-box {
     width: 51%;
     max-width: 520px;
-    height: 420px;
+    height: 40vh;
     position: relative;
     overflow: hidden;
     border-radius: 20px;
@@ -31,8 +31,6 @@
 }
 
 
-
-/* معلومات المنتج */
 .product-info {
   width: 42%;
   text-align: right;
@@ -65,10 +63,9 @@
 }
 
 .product-desc2 {
-  font-size: 14px;
-  line-height: 30px;
-  color: #555;
-   max-width: 350px;
+ font-size: 20px;
+    line-height: 30px;
+    color: #1b0707;
 }
 .slide-btn {
   position: absolute;

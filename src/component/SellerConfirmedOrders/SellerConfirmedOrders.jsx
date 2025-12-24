@@ -17,10 +17,12 @@ export default function SellerConfirmedOrders() {
       img: wintershirt,
     },
   ];
-
+ const goToDetails = (id) => {
+    navigate(`/seller/sellerconfirmedordersdetails`);
+  };
   return (
-    <div className="orders-page mt-2 mb-5 mobileorders">
-      <div className="container">
+    <div className="orders-page mt-5 pt-5 mb-0  mobileorders">
+      <div className="container mt-5 mb-0">
         <div className="row">
 
           {/* التابات */}
@@ -31,7 +33,7 @@ export default function SellerConfirmedOrders() {
                 className={`cright-tab cright-btn ${
                   location.pathname === "/seller/sellerconfirmedorders" ? "active" : ""
                 }`}
-                onClick={() => navigate("/seller/sellerconfirmedorders")}
+                onClick={() => navigate("/seller/sellerconfirmedordersdetails")}
               >
                 الطلبات الحالية
               </button>
@@ -61,7 +63,13 @@ export default function SellerConfirmedOrders() {
           <div className="col-lg-9 col-12 justify-content-start">
             <div className="cards-wrapper mt-5">
               {orders.map((order, i) => (
-                <div key={i} className="corder-mobile-card">
+               <div
+  key={i}
+  className="corder-mobile-card"
+  onClick={() => goToDetails(order.id)}
+  style={{ cursor: "pointer" }}
+>
+
                   <img src={order.img} alt="" className="corder-mobile-img" />
                   <div className="order-mobile-content">
                     <h3 className="corder-mobile-title">{order.title}</h3>

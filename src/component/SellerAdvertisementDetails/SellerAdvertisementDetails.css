@@ -19,10 +19,11 @@
     color: #9E9E9E;
     font-weight: 400;
 }
-.product-image-box {
+.bproduct-image-box {
     width: 51%;
     max-width: 520px;
-    height: 420px;
+       max-width: 520px;
+    height: 40vh;
     position: relative;
     overflow: hidden;
     border-radius: 20px;
@@ -65,9 +66,9 @@
 }
 
 .product-desc2 {
-  font-size: 14px;
-  line-height: 30px;
-  color: #555;
+font-size: 18px;
+    line-height: 30px;
+    color: #171616;
    max-width: 350px;
 }
 .slide-btn {

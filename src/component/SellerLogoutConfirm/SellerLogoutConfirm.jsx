@@ -7,9 +7,10 @@ import accountimg from "../../assets/account-img.png";
 import marketingimg from "../../assets/m2.png";
 import survimg from "../../assets/surv-img.png";
 import logoutimg from "../../assets/logout-img.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SellerLogoutConfirm() {
+  const navigate = useNavigate();
   return (
     <div className="logout-wrapper container">
 
@@ -57,9 +58,12 @@ export default function SellerLogoutConfirm() {
       <div className="logout-content">
         <h2 className="logout-title">هل تريد تسجيل الخروج ؟</h2>
 
-        <button className="logout-main-btn">
-          تسجيل الخروج
-        </button>
+      <button
+      className="logout-main-btn"
+      onClick={() => navigate("/accounttype")}
+    >
+      تسجيل الخروج
+    </button>
       </div>
     </div>
   );

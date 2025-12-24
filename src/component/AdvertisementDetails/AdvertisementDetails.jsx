@@ -33,17 +33,17 @@ export default function AddverisementDetails() {
   };
 
   return (
-    <div className="product-page  pt-1 container c">
+    <div className="product-page mb-5 pb-5 mt-5 pt-5 container c">
 
       {/* العنوان */}
-      <h1 className="product-heading ">
+      <h1 className="product-heading mt-5 pt-5  ">
         تفاصيل الاعلان / <span className="comm ">ذات صلة</span>
       </h1>
 
       <div className="product-wrapper col-md-6">
 
         {/* السلايدر */}
-        <div className="product-image-box">
+        <div className="bproduct-image-box ">
 
           <img
             src={images[currentIndex]}
@@ -87,7 +87,7 @@ export default function AddverisementDetails() {
 
       {/* التبويبات */}
     
-<div className="action mt-3 mb-3 d-flex justify-content-center">
+<div className="action mt-3  d-flex justify-content-center">
     <div className="installement ">
         <img src={installement} className="image" />
         <h4 className="text1 text-white">شحن دولي وداخلي</h4>

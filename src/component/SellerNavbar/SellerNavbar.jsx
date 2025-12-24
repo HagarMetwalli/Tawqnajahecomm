@@ -37,7 +37,7 @@ export default function SellerNavbar() {
 
           {/* الأزرار جنب بعض */}
           <div className="tn-buttons-box">
-            <button className="tn-nav-app-btn" onClick={() => setSidebarOpen(true)}>
+            <button className="tn-nav-app-btn" >
               تحميل التطبيق
             </button>
 

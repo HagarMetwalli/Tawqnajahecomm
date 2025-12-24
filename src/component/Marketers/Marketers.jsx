@@ -3,9 +3,9 @@ import "./Marketers.css";
 
 export default function Marketers() {
   return (
-    <div className="marketers-page  ">
+    <div className="marketers-page  pb-5 ">
       <Container>
-        <div className="marketers-card shadow-sm pt-5 ">
+        <div className="marketers-card shadow-sm pb-5 mb-5 pt-5 mt-5">
 
           <h3 className="marketers-title ">
             🧾 نموذج تسجيل المسوّقين المعتمدين

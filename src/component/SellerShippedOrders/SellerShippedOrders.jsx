@@ -21,17 +21,17 @@ export default function SellerShippedOrders() {
   ];
 
   const goToDetails = (id) => {
-    navigate(`/canceledordersdetails`);
+    navigate(`/seller/sellershippedordersdetails`);
   };
 
   return (
-    <div className="container neworders-page mt-5 mb-5 pb-5">
+    <div className="container neworders-page mt-5 pt-5 mb-5 pb-5">
 
       <div className="row">
 
         {/* ====== الجزء اليمين (التابات) ====== */}
-        <div className="col-lg-3  d-lg-block ">
-          <div className="orders-right-tabs">
+        <div className="col-lg-3  d-lg-block pt-5 ">
+          <div className="orders-right-tabs ">
             
            <button
                 className={`cright-tab cright-btn ${
@@ -64,7 +64,7 @@ export default function SellerShippedOrders() {
         </div>
 
         {/* ====== الجزء الشمال (الكروت) ====== */}
-        <div className="col-lg-9 col-12 mt-5">
+        <div className="col-lg-9 col-12 mt-5 pt-2 ">
 
           <div className="corders-wrapper">
             {orders.map((order) => (
