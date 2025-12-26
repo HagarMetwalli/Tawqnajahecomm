@@ -3,6 +3,7 @@ import "./Login.css";
 import logo from "../../assets/logo.png";
 import loginbg from "../../assets/sidelogo.png";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -12,7 +13,8 @@ export default function Login() {
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
+  
     let temp = {};
 
     // === VALIDATE EMAIL ===
@@ -31,16 +33,26 @@ export default function Login() {
     } else if (password.length < 6) {
       temp.password = "كلمة المرور يجب أن تكون 6 أحرف على الأقل";
     }
-    // شرط أقوى لو حابة (اختياري)
-    // else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/.test(password)) {
-    //   temp.password = "يجب أن تحتوي كلمة المرور على حرف كبير وحرف صغير ورقم";
-    // }
+
 
     setErrors(temp);
 
     if (Object.keys(temp).length === 0) {
       localStorage.setItem("isLoggedIn", "true");
+    }
+    try {
+      const response = await axios.post(
+        "https://toknagah.viking-iceland.online/api/user/auth/login",
+         {email,
+          password
+
+        }
+       
+      );
+      console.log(response.data);
       navigate("/home");
+    } catch (error) {
+      console.log(error,"error");
     }
   };
 

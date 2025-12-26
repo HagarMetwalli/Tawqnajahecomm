@@ -43,7 +43,7 @@ export default function AccountType() {
                 className={`account-box ${selected === "buyer" ? "active" : ""}`}
                 onClick={() => {
                   setSelected("buyer");
-                  navigate("/customer/register");
+                  navigate("/register");
                 }}
               >
                 <img
