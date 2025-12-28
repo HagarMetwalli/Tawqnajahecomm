@@ -61,9 +61,8 @@ import FinancialSupport from './component/FinancialSupport/FinancialSupport';
 import EyeSuccess from './component/EyeSuccess/EyeSuccess';
 import FinancialSuccess from './component/FinancialSuccess/FinancialSuccess';
 import Favorites from './component/Favorites/Favorites';
-import CustomerRegister from './component/Register/Register'
 import CategoryDetails from './component/CategoryDetails/CategoryDetails';
- import OffersTawq from './component/OffersTawq/OffersTawq';
+//  import OfferTawq from './component/OfferTawq/OfferTawq';
 import FSuccess from './component/FSuccess/FSuccess';
 import ProductsElectronics  from './component/ProductsElectronics/ProductsElectronics';
 import ProductsFurniture from './component/ProductsFurniture/ProductsFurniture';
@@ -74,7 +73,7 @@ import Abouttawq from './component/Abouttawq/Abouttawq';
 import SellerLogin from './component/SellerLogin/SellerLogin';
 import SellerLayout from './component/SellerLayout/SellerLayout';
 import SellerHome from './component/SellerHome/SellerHome';
-import Sellerregister from './component/SellerrRegister/SellerrRegister';
+import SellerRegister from './component/SellerrRegister/SellerrRegister';
 import SellerChangePassword from './component/SellerChangePassword/SellerChangePassword';
 import SellerResetPassword from './component/SellerResetPassword/SellerResetPassword';
 import SellerForgetPassword from './component/SellerForgetPassword/SellerForgetPassword';
@@ -212,10 +211,10 @@ const router = createBrowserRouter([
 { path: 'morerelated', element: <MoreRelated /> },
 { path: 'favorites', element: <Favorites /> },
 {path:'categorydetails',element:<CategoryDetails/>},
- {path:'offerstawq',element:<OffersTawq/>},
-{ path:"/customer/register", element:<CustomerRegister />} ,
+//  {path:'offertawq',element:<OfferTawq/>},
+// { path:"register", element:<Register />} ,
 {path:'productselectronis',element:<ProductsElectronics/>},
-{path:'productsfurnature',element:<ProductsFurniture/>},
+{path:'productsfurniture',element:<ProductsFurniture/>},
 {path:'productskitchen',element:<ProductsKitchen/>},
 {path:'fsuccess',element:<FSuccess/>},
 {path:'categoriesslider',element:<CategoriesSlider/>},
@@ -246,7 +245,7 @@ const router = createBrowserRouter([
       { path: '/seller/sellerchangepassword', element: <SellerChangePassword /> },
       { path: '/seller/sellerforgetpassword', element: <SellerForgetPassword /> },
       { path: '/seller/sellerresetpassword', element: <SellerResetPassword /> },
-      { path: '/seller/sellerregister', element: <Sellerregister /> },
+      { path: '/seller/sellerregister', element: <SellerRegister /> },
       { path: '/seller/selleraccounttype', element: <SellerAccountType /> },
       { path: '/seller/sellerselleradmin', element: <SellerAdmin /> },
       { path: '/seller/sellerservices', element: <SellerServices /> },

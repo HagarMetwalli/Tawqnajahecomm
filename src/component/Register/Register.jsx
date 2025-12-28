@@ -4,6 +4,7 @@ import "./Register.css";
 import registerbg from "../../assets/register-bg.png";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -11,12 +12,14 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
-  const [code, setCode] = useState("+966");
+  const [code, setCode] = useState("");
   const [phone, setPhone] = useState("");
   const [statusCode, setStatusCode] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
+const [loading, setLoading] = useState(false);
+const [apiError, setApiError] = useState("");
 
   const validate = () => {
     let temp = {};
@@ -42,16 +45,51 @@ export default function Register() {
     return Object.keys(temp).length === 0;
   };
 
-  const handleSubmit = () => {
-    if (!validate()) return;
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!validate()) return;
 
-    // حفظ بيانات المستخدم
-    localStorage.setItem("registeredEmail", email);
-    localStorage.setItem("registeredPassword", password);
+  setLoading(true);
+  setApiError("");
 
+  try {
+    // const formData = new FormData();
+    // formData.append("type", "customer");
+    // formData.append("name", username);
+    // formData.append("email", email);
+    // formData.append("country", country);
+    // formData.append("code_phone", code.replace("+", ""));
+    // formData.append("phone", phone + Math.floor(Math.random() * 1000));
+    // formData.append("password", password);
+    // formData.append("password_confirmation", password);
+
+    const response = await axios.post(
+      "https://toknagah.viking-iceland.online/api/user/auth/register",
+      // formData
+      {type:"customer" ,
+        username,
+        email,
+        code_phone:code,
+        phone,
+        country,
+        password
+      }
+      
+    );
+
+    console.log("SUCCESS ", response.data);
     navigate("/login");
-  };
 
+  } catch (error) {
+    console.log("STATUS ", error.response?.status);
+    console.log("DATA ", error.response?.data);
+    console.log("ERRORS ", error.response?.errors);
+
+    setApiError("فشل إنشاء الحساب");
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <div className="registeration">
       <div className="container-fluid">
@@ -91,27 +129,28 @@ export default function Register() {
 
             {/* الدولة */}
             <label>الدولة</label>
-            <select
-              className="form-control"
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
-            >
-              <option value="">اختر الدولة</option>
-              <option value="Saudi Arabia">السعودية</option>
-              <option value="Egypt">مصر</option>
-              <option value="UAE">الإمارات</option>
-            </select>
+          <select
+  value={country}
+  onChange={(e) => setCountry(e.target.value)}
+>
+  <option value="">اختار الدولة</option>
+  <option value="egypt">مصر</option>
+  <option value="KSA">السعودية</option>
+</select>
+
             {errors.country && <small className="text-danger">{errors.country}</small>}
 
             {/* رقم الجوال */}
             <label className="mt-3">رقم الجوال</label>
             <div className="d-flex gap-2">
-        <select
+  <select
   className="form-control phone-code-input"
   value={code}
   onChange={(e) => setCode(e.target.value)}
 >
-  <option value="" disabled selected hidden>اختر كود الدولة</option>
+  <option value="" disabled hidden>
+    اختر كود الدولة
+  </option>
   <option value="+966">+966</option>
   <option value="+20">+20</option>
   <option value="+971">+971</option>
@@ -155,9 +194,13 @@ export default function Register() {
             </div>
             {errors.password && <small className="text-danger">{errors.password}</small>}
 
-            <button className="btn w-100  text-white mt-2" onClick={handleSubmit}>
-              إنشاء حساب
-            </button>
+          <button
+  className="btn w-100 text-white mt-2"
+  onClick={handleSubmit}
+  disabled={loading}
+>
+  {loading ? "جاري إنشاء الحساب..." : "إنشاء حساب"}
+</button>
 
             <p className="account-text mt-3 text-center fw-bold">
               تملك حساب ؟{" "}

@@ -51,12 +51,10 @@ export default function SellerLogin() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // ✅ بدون Validation
     console.log("Email:", email);
     console.log("Password:", password);
 
-    // ✅ تنقلك مباشرة بعد الضغط
-    navigate("/seller/sellerhome"); // غيريها لأي صفحة تحبي
+    navigate("/seller/sellerhome"); 
   }
 
 

@@ -11,7 +11,7 @@ export default function Layout() {
   const authRoutes = [
     "/login",
     
-    "/customer/register",
+    "/register",
     "/forgetpassword",
     "/resetpassword",
     "/changepassword",
