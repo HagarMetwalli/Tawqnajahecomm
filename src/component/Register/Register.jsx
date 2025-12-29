@@ -4,6 +4,8 @@ import registerbg from "../../assets/register-bg.png";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { BaseUrl } from "../../App";
+import BuyerServicesUrl from "../../BuyerServicesUrl";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -49,7 +51,7 @@ export default function Register() {
 
     try {
       const response = await axios.post(
-        "https://toknagah.viking-iceland.online/api/user/auth/register",
+        BaseUrl + BuyerServicesUrl.Register,
         {
           type: "customer",
           username,

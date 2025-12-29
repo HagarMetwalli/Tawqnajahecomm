@@ -1,22 +1,43 @@
 import React from "react";
 import "../LogoutConfirm/LogoutConfirm.css";
+import { Link, useNavigate } from "react-router-dom";
 
 import profilepicture from "../../assets/profileicon.png";
 import accountimg from "../../assets/account-img.png";
 import marketingimg from "../../assets/m-img.png";
 import survimg from "../../assets/surv-img.png";
-
-import myadvertisements from "../../assets/myadvertisements.png";
-import addadvertisements from "../../assets/addadvertisements.png";
 import logoutimg from "../../assets/logout-img.png";
 
-import { Link, useNavigate } from "react-router-dom";
+import { BaseUrl } from "../../App";
+import BuyerServicesUrl from "../../BuyerServicesUrl";
 
 export default function LogoutConfirm() {
   const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      const token = localStorage.getItem("token");
+
+      // Call backend logout
+      await fetch(BaseUrl + BuyerServicesUrl.LogOut, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+    } catch (err) {
+      console.error("Logout failed:", err);
+    } finally {
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+
+      navigate("/accounttype");
+    }
+  };
+
   return (
     <div className="logout-wrapper container" style={{ marginTop: "180px" }}>
-
       {/* ==== SIDEBAR ==== */}
       <div className="marketing-sidebar acc-profile mt-5">
 
@@ -40,7 +61,6 @@ export default function LogoutConfirm() {
           التقييم والعقود
         </Link>
 
-        {/* === ACTIVE BUTTON === */}
         <Link to="/logoutconfirm" className="side-btn logout active text-white">
           <img className="px-3" src={logoutimg} alt="" />
           تسجيل الخروج
@@ -52,14 +72,10 @@ export default function LogoutConfirm() {
       <div className="logout-content">
         <h2 className="logout-title">هل تريد تسجيل الخروج ؟</h2>
 
-   <button
-      className="logout-main-btn"
-      onClick={() => navigate("/accounttype")}
-    >
-      تسجيل الخروج
-    </button>
+        <button className="logout-main-btn" onClick={handleLogout}>
+          تسجيل الخروج
+        </button>
       </div>
-
     </div>
   );
 }
